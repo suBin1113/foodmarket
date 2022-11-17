@@ -1,4 +1,4 @@
-drop table tbl_product;
+//drop table tbl_product;
 
 create sequence seq_food;
 create table tbl_product(
