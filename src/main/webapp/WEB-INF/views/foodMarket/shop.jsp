@@ -34,7 +34,8 @@
 					<div class="product">
 						<a href='/foodMarket/detail?pid=${shop.pid}'>
 							<img class="img-fluid" src="../resources/images/${shop.pimg}" alt="Colorlib Template">
-							<div class="overlay"></div> </a>
+							<div class="overlay"></div> 
+						</a>
 						<div class="text py-3 pb-4 px-3 text-center">
 							<h3>
 								<a class="move" href='/foodMarket/detail?pid=${shop.pid}'>${shop.pname}</a>
@@ -42,17 +43,16 @@
 							<div class="d-flex">
 								<div class="pricing">
 									<p class="price">
-										<span class="mr-2 price">${shop.pprice}</span>
+										<span class="mr-2 price">${shop.pprice}원</span>
 									</p>
 								</div>
 							</div>
 							<div class="bottom-area d-flex px-3">
 								<div class="m-auto d-flex">
-									</a> <a href="#"
-										class="buy-now d-flex justify-content-center align-items-center mx-1">
+									<a href="/foodMarket/cart" class="buy-now d-flex justify-content-center align-items-center mx-1">
 										<span><i class="ion-ios-cart"></i></span>
-									</a> <a href="#"
-										class="heart d-flex justify-content-center align-items-center ">
+									</a> 
+									<a href="/foodMarket/wishlist" class="heart d-flex justify-content-center align-items-center">
 										<span><i class="ion-ios-heart"></i></span>
 									</a>
 								</div>

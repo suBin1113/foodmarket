@@ -28,7 +28,7 @@
 			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
 				<h3>${product.pname}</h3>
 				<p class="price">
-					<span>${product.pprice}</span>
+					<span>${product.pprice}원</span>
 				</p>
 				<p>${product.pcontent}</p>
 				<div class="row mt-4">
@@ -58,9 +58,9 @@
 		</div>
 	</div>
 </section>
-
-<%@ include file="../includes/footer.jsp"%>
-
 <script>
 	var num = 0; 
+	
 </script>
+<%@ include file="../includes/footer.jsp"%>
+
