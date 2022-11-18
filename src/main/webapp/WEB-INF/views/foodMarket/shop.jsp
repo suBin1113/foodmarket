@@ -30,54 +30,40 @@
 		</div>
 		<div class="row">
 
-			<c:forEach items="${list}" var="board">
-				<tr>
-					<td>${board.bno}</td>
-					<td><a class="move" href='${board.bno}'>${board.title} <b>[${board.replyCnt}]</b></a>
-					</td>
-					<td>${board.writer}</td>
-					<td><fmt:formatDate pattern="yyyy-MM-dd"
-							value="${board.regdate}" /></td>
-					<td><fmt:formatDate pattern="yyyy-MM-dd"
-							value="${board.updateDate}" /></td>
-				</tr>
-			</c:forEach>
-
-			<div class="col-md-6 col-lg-3 ftco-animate">
-				<div class="product">
-					<a href="#" class="img-prod"><img class="img-fluid"
-						src="../resources/images/product-1.jpg" alt="Colorlib Template">
-						<div class="overlay"></div> </a>
-					<div class="text py-3 pb-4 px-3 text-center">
-						<h3>
-							<a href="#">Bell Pepper</a>
-						</h3>
-						<div class="d-flex">
-							<div class="pricing">
-								<p class="price">
-									<span class="mr-2 price-dc">$120.00</span><span
-										class="price-sale">$80.00</span>
-								</p>
+			<c:forEach items="${shop}" var="shop">
+				<div class="col-md-6 col-lg-3 ftco-animate">
+					<div class="product">
+						<a href="/foodMarket/detail" class="img-prod"><img class="img-fluid" src="../resources/images/${shop.pimg}" alt="Colorlib Template">
+							<div class="overlay"></div> </a>
+						<div class="text py-3 pb-4 px-3 text-center">
+							<h3>
+								<a href="#">${shop.pname}</a>
+							</h3>
+							<div class="d-flex">
+								<div class="pricing">
+									<p class="price">
+										<span class="mr-2 price">${shop.pprice}</span>
+									</p>
+								</div>
 							</div>
-						</div>
-						<div class="bottom-area d-flex px-3">
-							<div class="m-auto d-flex">
-								<a href="#"
-									class="add-to-cart d-flex justify-content-center align-items-center text-center">
-									<span><i class="ion-ios-menu"></i></span>
-								</a> <a href="#"
-									class="buy-now d-flex justify-content-center align-items-center mx-1">
-									<span><i class="ion-ios-cart"></i></span>
-								</a> <a href="#"
-									class="heart d-flex justify-content-center align-items-center ">
-									<span><i class="ion-ios-heart"></i></span>
-								</a>
+							<div class="bottom-area d-flex px-3">
+								<div class="m-auto d-flex">
+									<a href="#"
+										class="add-to-cart d-flex justify-content-center align-items-center text-center">
+										<span><i class="ion-ios-menu"></i></span>
+									</a> <a href="#"
+										class="buy-now d-flex justify-content-center align-items-center mx-1">
+										<span><i class="ion-ios-cart"></i></span>
+									</a> <a href="#"
+										class="heart d-flex justify-content-center align-items-center ">
+										<span><i class="ion-ios-heart"></i></span>
+									</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-
+			</c:forEach>
 
 		</div>
 		<div class="row mt-5">

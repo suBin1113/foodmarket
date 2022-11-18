@@ -8,10 +8,10 @@ import org.springframework.stereotype.Service;
 import com.spring.domain.ShopVO;
 import com.spring.mapper.ShopMapper;
 
-import lombok.AllArgsConstructor;
+//import lombok.AllArgsConstructor;
 
 @Service
-@AllArgsConstructor//책에는 있고 실습한 곳에는 없음
+//@AllArgsConstructor//책에는 있고 실습한 곳에는 없음
 public class ShopServiceImpl implements ShopService{
 	@Autowired
 	private ShopMapper mapper;
