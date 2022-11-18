@@ -4,10 +4,10 @@ import lombok.Data;
 
 @Data
 public class ShopVO {
-	private Long pId;
-	private String pName;
-	private String pKind;
-	private String pContent;
-	private int pPrice;
-	private String pImg;
+	private Long pid;
+	private String pname;
+	private String pkind;
+	private String pcontent;
+	private int pprice;
+	private String pimg;
 }

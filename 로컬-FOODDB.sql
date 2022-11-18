@@ -10,6 +10,7 @@ create table tbl_product(
     pimg varchar2(50)
 );
 alter table tbl_product add CONSTRAINT pk_product primary key (pid);
+insert into tbl_product values(seq_food.nextval, '이름1', '테스트 종류', '테스트 내용', 100, 'product-1.jpg'); //더미데이터 추가문
 
 create sequence seq_cart;
 create table tbl_cart(

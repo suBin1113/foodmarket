@@ -2,24 +2,35 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../includes/header.jsp"%>
 
+<div class="hero-wrap hero-bread" style="background-image: url('../resources/images/bg_1.jpg');">
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+          	<p class="breadcrumbs">
+          		<span class="mr-2">
+          			<a href="/foodMarket/main">Home</a>
+          		</span> 
+          		<span>Products</span>
+          	</p>
+            <h1 class="mb-0 bread">PRODUCT DETAIL</h1>
+          </div>
+        </div>
+      </div>
+    </div>
 <section class="ftco-section">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 mb-5 ftco-animate">
-				<a href="../resources/images/product-1.jpg" class="image-popup"><img
-					src="../resources/images/product-1.jpg" class="img-fluid"
+				<a href="../resources/images/${product.pimg}" class="image-popup"><img
+					src="../resources/images/${product.pimg}" class="img-fluid"
 					alt="Colorlib Template"></a>
 			</div>
 			<div class="col-lg-6 product-details pl-md-5 ftco-animate">
-				<h3>Bell Pepper</h3>
+				<h3>${product.pname}</h3>
 				<p class="price">
-					<span>$120.00</span>
+					<span>${product.pprice}</span>
 				</p>
-				<p>A small river named Duden flows by their place and supplies
-					it with the necessary regelialia. It is a paradisematic country, in
-					which roasted parts of sentences fly into your mouth. Text should
-					turn around and return to its own, safe country. But nothing the
-					copy said could convince her and so it didn’t take long until.</p>
+				<p>${product.pcontent}</p>
 				<div class="row mt-4">
 					<div class="w-100"></div>
 					<div class="input-group col-md-6 d-flex mb-3">
