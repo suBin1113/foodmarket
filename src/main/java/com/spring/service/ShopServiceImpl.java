@@ -18,8 +18,7 @@ public class ShopServiceImpl implements ShopService{
 	
 	@Override
 	public ShopVO get(Long pid) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.read(pid);
 	}
 
 	@Override

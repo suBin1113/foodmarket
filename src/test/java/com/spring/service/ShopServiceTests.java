@@ -18,6 +18,10 @@ public class ShopServiceTests {
 	@Test
 	public void testGetList() {
 		service.getList().forEach(shop -> log.info(shop));
-		//안됨
+	}
+	
+	@Test
+	public void testGet() {
+		log.info(service.get(1L));
 	}
 }
