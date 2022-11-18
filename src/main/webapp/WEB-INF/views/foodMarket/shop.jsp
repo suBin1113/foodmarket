@@ -29,15 +29,15 @@
 			</div>
 		</div>
 		<div class="row">
-
 			<c:forEach items="${shop}" var="shop">
 				<div class="col-md-6 col-lg-3 ftco-animate">
 					<div class="product">
-						<a href="/foodMarket/detail" class="img-prod"><img class="img-fluid" src="../resources/images/${shop.pimg}" alt="Colorlib Template">
+						<a href='/foodMarket/detail?pid=${shop.pid}'>
+							<img class="img-fluid" src="../resources/images/${shop.pimg}" alt="Colorlib Template">
 							<div class="overlay"></div> </a>
 						<div class="text py-3 pb-4 px-3 text-center">
 							<h3>
-								<a href="#">${shop.pname}</a>
+								<a class="move" href='/foodMarket/detail?pid=${shop.pid}'>${shop.pname}</a>
 							</h3>
 							<div class="d-flex">
 								<div class="pricing">
@@ -48,9 +48,6 @@
 							</div>
 							<div class="bottom-area d-flex px-3">
 								<div class="m-auto d-flex">
-									<a href="#"
-										class="add-to-cart d-flex justify-content-center align-items-center text-center">
-										<span><i class="ion-ios-menu"></i></span>
 									</a> <a href="#"
 										class="buy-now d-flex justify-content-center align-items-center mx-1">
 										<span><i class="ion-ios-cart"></i></span>
@@ -64,7 +61,6 @@
 					</div>
 				</div>
 			</c:forEach>
-
 		</div>
 		<div class="row mt-5">
 			<div class="col text-center">
@@ -81,7 +77,10 @@
 				</div>
 			</div>
 		</div>
+		
 	</div>
 </section>
-
+<<script type="text/javascript">
+	$(".")
+</script>
 <%@ include file="../includes/footer.jsp"%>
