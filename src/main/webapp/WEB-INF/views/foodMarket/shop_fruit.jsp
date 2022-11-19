@@ -20,30 +20,30 @@
 		<div class="row justify-content-center">
 			<div class="col-md-10 mb-5 text-center">
 				<ul class="product-category">
-					<li><a href="/foodMarket/shop" class="active">All</a></li>
+					<li><a href="/foodMarket/shop">All</a></li>
 					<li><a href="/foodMarket/shop_vegetable">Vegetables</a></li>
-					<li><a href="/foodMarket/shop_fruit">Fruits</a></li>
+					<li><a href="/foodMarket/shop_fruit" class="active">Fruits</a></li>
 					<li><a href="/foodMarket/shop_juice">Juice</a></li>
 					<li><a href="/foodMarket/shop_dried">Dried</a></li>
 				</ul>
 			</div>
 		</div>
 		<div class="row">
-			<c:forEach items="${shop}" var="shop">
+			<c:forEach items="${shop_fru}" var="shop_fru">
 				<div class="col-md-6 col-lg-3 ftco-animate">
 					<div class="product">
-						<a href='/foodMarket/detail?pid=${shop.pid}'>
-							<img class="img-fluid" src="../resources/images/${shop.pimg}" alt="Colorlib Template">
+						<a href='/foodMarket/detail?pid=${shop_fru.pid}'>
+							<img class="img-fluid" src="../resources/images/${shop_fru.pimg}" alt="Colorlib Template">
 							<div class="overlay"></div> 
 						</a>
 						<div class="text py-3 pb-4 px-3 text-center">
 							<h3>
-								<a class="move" href='/foodMarket/detail?pid=${shop.pid}'>${shop.pname}</a>
+								<a class="move" href='/foodMarket/detail?pid=${shop_fru.pid}'>${shop_fru.pname}</a>
 							</h3>
 							<div class="d-flex">
 								<div class="pricing">
 									<p class="price">
-										<span class="mr-2 price">${shop.pprice}원</span>
+										<span class="mr-2 price">${shop_fru.pprice}원</span>
 									</p>
 								</div>
 							</div>

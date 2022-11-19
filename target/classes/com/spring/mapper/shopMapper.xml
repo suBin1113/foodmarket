@@ -9,4 +9,17 @@
  	<select id="read" resultType="com.spring.domain.ShopVO">
  		select * from tbl_product where pid = #{pid}
  	</select>
+ 	
+ 	<select id="getListVege" resultType="com.spring.domain.ShopVO">
+ 		select * from tbl_product where pkind = 'vegetable' order by pid
+ 	</select>
+ 	<select id="getListFru" resultType="com.spring.domain.ShopVO">
+ 		select * from tbl_product where pkind = 'fruit' order by pid
+ 	</select>
+ 	<select id="getListJui" resultType="com.spring.domain.ShopVO">
+ 		select * from tbl_product where pkind = 'juice' order by pid
+ 	</select>
+ 	<select id="getListDri" resultType="com.spring.domain.ShopVO">
+ 		select * from tbl_product where pkind = 'dried' order by pid
+ 	</select>
  </mapper>

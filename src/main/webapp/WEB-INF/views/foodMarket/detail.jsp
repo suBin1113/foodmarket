@@ -36,14 +36,14 @@
 					<div class="input-group col-md-6 d-flex mb-3">
 						<span class="input-group-btn mr-2">
 							<button type="button" class="quantity-left-minus btn"
-								data-type="minus" data-field="">
+								data-type="minus" name="minus" onclick="fnCalCount('m', this)">
 								<i class="ion-ios-remove"></i>
 							</button>
 						</span> 
-						<input type="text" id="quantity" name="quantity" class="form-control input-number" value="${num}" min="1" max="100">
+						<input type="text" name="quantity" class="form-control input-number" value="0" min="1" max="100">
 						<span class="input-group-btn ml-2">
 							<button type="button" class="quantity-right-plus btn"
-								data-type="plus" data-field="">
+								data-type="plus" name="plus" onclick="fnCalCount('p', this)">
 								<i class="ion-ios-add"></i>
 							</button>
 						</span>
@@ -60,6 +60,15 @@
 </section>
 <script>
 	var num = 0; 
+	function fnCalCount(type, ths){
+		num = $(ths).parents("div").find("input[name='quantity']");
+		var tCount = Number(num.val());
+		if(type == 'p'){
+			num.val(Number(tCount) + 1);
+		}else{
+			num.val(Number(tCount) - 1);
+		}
+	}
 	
 </script>
 <%@ include file="../includes/footer.jsp"%>

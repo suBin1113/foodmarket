@@ -29,4 +29,28 @@ public class ShopController {
 		log.info("detail form");
 		model.addAttribute("product", service.get(pid));
 	}
+	
+	@GetMapping("/shop_vegetable")
+	public void vegetable(Model model) {
+		log.info("vegetable form");
+		model.addAttribute("shop_vege", service.getListVege());
+	}
+
+	@GetMapping("/shop_fruit")
+	public void fruit(Model model) {
+		log.info("fruit form");
+		model.addAttribute("shop_fru", service.getListFru());
+	}
+	
+	@GetMapping("/shop_juice")
+	public void juice(Model model) {
+		log.info("juice form");
+		model.addAttribute("shop_jui", service.getListJui());
+	}
+	
+	@GetMapping("/shop_dried")
+	public void dried(Model model) {
+		log.info("dried form");
+		model.addAttribute("shop_dri", service.getListDri());
+	}
 }
