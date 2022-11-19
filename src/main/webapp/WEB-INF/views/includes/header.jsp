@@ -64,7 +64,7 @@
                 <a class="dropdown-item" href="/foodMarket/checkout">Checkout</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="/foodMarket/orderDetails" class="nav-link">Order Details</a></li>
+	          <li class="nav-item"><a href="#" class="nav-link">Order Details</a></li>
 	          <li class="nav-item cta cta-colored"><a href="/foodMarket/cart" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
 	        </ul>

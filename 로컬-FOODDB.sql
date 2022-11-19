@@ -38,25 +38,13 @@ create table tbl_wishlist(
 alter table tbl_wishlist add CONSTRAINT pk_wishlist primary key (wno);
 alter table tbl_wishlist add CONSTRAINT fk_wishlist FOREIGN key (pid) references tbl_product(pid);
 
-create table tbl_orderItem(
-    orderId number(10, 0) not null,
-    orderItemId number(10, 0),
-    pid number(10, 0),
-    pname varchar2(50),
-    pprice number,
-    pcount number,
-    totalPrice number
-);
-
 create sequence seq_checkout;
 create table tbl_checkout(
-    orderId number(10,0) not null,
-    name varchar2(50),
-    address varchar2(100),
-    zip varchar2(50),
-    orderDate date,
-    psum number
+    id number(10,0) not null,
+    name varchar2(50) not null,
+    adrress varchar2(100),
+    psum number not null
 );
-alter table tbl_checkout add CONSTRAINT pk_checkout primary key (orderId);
+alter table tbl_checkout add CONSTRAINT pk_checkout primary key (id);
 
 commit;
