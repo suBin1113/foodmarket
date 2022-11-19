@@ -40,7 +40,7 @@
 			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
 			from tbl_product 
 			 where rownum<=#{pageNum}*#{amount}) 
-			 where rn>(#{pageNum}-1)*#{amount} && pkind = 'vegetable'
+			 where rn>(#{pageNum}-1)*#{amount} and pkind = 'vegetable'
 		]]>
  	</select>
  	<select id="getListWithPagingFru" resultType="com.spring.domain.ShopVO">
@@ -50,7 +50,7 @@
 			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
 			from tbl_product 
 			 where rownum<=#{pageNum}*#{amount}) 
-			 where rn>(#{pageNum}-1)*#{amount} && pkind = 'fruit'
+			 where rn>(#{pageNum}-1)*#{amount} and pkind = 'fruit'
 		]]>
  	</select>
  	<select id="getListWithPagingJui" resultType="com.spring.domain.ShopVO">
@@ -60,7 +60,7 @@
 			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
 			from tbl_product 
 			 where rownum<=#{pageNum}*#{amount}) 
-			 where rn>(#{pageNum}-1)*#{amount} && pkind = 'juice'
+			 where rn>(#{pageNum}-1)*#{amount} and pkind = 'juice'
 		]]>
  	</select>
  	<select id="getListWithPagingDri" resultType="com.spring.domain.ShopVO">
@@ -70,7 +70,7 @@
 			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
 			from tbl_product 
 			 where rownum<=#{pageNum}*#{amount}) 
-			 where rn>(#{pageNum}-1)*#{amount} && pkind = 'dried'
+			 where rn>(#{pageNum}-1)*#{amount} and pkind = 'dried'
 		]]>
  	</select>
  </mapper>
