@@ -24,4 +24,21 @@ public class ShopServiceTests {
 	public void testGet() {
 		log.info(service.get(1L));
 	}
+	
+	@Test
+	public void testGetListVege() {
+		service.getListVege().forEach(shop_vege -> log.info(shop_vege));
+	}
+	@Test
+	public void testGetListFru() {
+		service.getListFru().forEach(shop_fru -> log.info(shop_fru));
+	}
+	@Test
+	public void testGetListJui() {
+		service.getListJui().forEach(shop_jui -> log.info(shop_jui));
+	}
+	@Test
+	public void testGetListDri() {
+		service.getListDri().forEach(shop_dri -> log.info(shop_dri));
+	}
 }

@@ -26,4 +26,24 @@ public class ShopServiceImpl implements ShopService{
 		return mapper.getList();
 	}
 
+	@Override
+	public List<ShopVO> getListVege() {
+		return mapper.getListVege();
+	}
+
+	@Override
+	public List<ShopVO> getListFru() {
+		return mapper.getListFru();
+	}
+
+	@Override
+	public List<ShopVO> getListJui() {
+		return mapper.getListJui();
+	}
+
+	@Override
+	public List<ShopVO> getListDri() {
+		return mapper.getListDri();
+	}
+
 }

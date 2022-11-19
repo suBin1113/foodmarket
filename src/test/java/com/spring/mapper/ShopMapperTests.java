@@ -25,4 +25,24 @@ public class ShopMapperTests {
 		log.info("------------");
 		log.info(mapper.read(1l));
 	}
+	@Test
+	public void testGetvege() {
+		log.info("------------");
+		mapper.getListVege();
+	}
+	@Test
+	public void testGetfru() {
+		log.info("------------");
+		mapper.getListFru();
+	}
+	@Test
+	public void testGetjui() {
+		log.info("------------");
+		mapper.getListJui();
+	}
+	@Test
+	public void testGetdri() {
+		log.info("------------");
+		mapper.getListDri();
+	}
 }
