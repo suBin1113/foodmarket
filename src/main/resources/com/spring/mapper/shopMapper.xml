@@ -22,4 +22,55 @@
  	<select id="getListDri" resultType="com.spring.domain.ShopVO">
  		select * from tbl_product where pkind = 'dried' order by pid
  	</select>
+ 	
+ 	<select id="getListWithPaging" resultType="com.spring.domain.ShopVO">
+ 		<![CDATA[
+			select pid, pname, pkind, pcontent, pprice, pimg
+			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
+			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
+			from tbl_product 
+			 where rownum<=#{pageNum}*#{amount}) 
+			 where rn>(#{pageNum}-1)*#{amount}
+		]]>
+ 	</select>
+ 	<select id="getListWithPagingVege" resultType="com.spring.domain.ShopVO">
+ 		<![CDATA[
+			select pid, pname, pkind, pcontent, pprice, pimg
+			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
+			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
+			from tbl_product 
+			 where rownum<=#{pageNum}*#{amount}) 
+			 where rn>(#{pageNum}-1)*#{amount} && pkind = 'vegetable'
+		]]>
+ 	</select>
+ 	<select id="getListWithPagingFru" resultType="com.spring.domain.ShopVO">
+ 		<![CDATA[
+			select pid, pname, pkind, pcontent, pprice, pimg
+			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
+			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
+			from tbl_product 
+			 where rownum<=#{pageNum}*#{amount}) 
+			 where rn>(#{pageNum}-1)*#{amount} && pkind = 'fruit'
+		]]>
+ 	</select>
+ 	<select id="getListWithPagingJui" resultType="com.spring.domain.ShopVO">
+ 		<![CDATA[
+			select pid, pname, pkind, pcontent, pprice, pimg
+			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
+			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
+			from tbl_product 
+			 where rownum<=#{pageNum}*#{amount}) 
+			 where rn>(#{pageNum}-1)*#{amount} && pkind = 'juice'
+		]]>
+ 	</select>
+ 	<select id="getListWithPagingDri" resultType="com.spring.domain.ShopVO">
+ 		<![CDATA[
+			select pid, pname, pkind, pcontent, pprice, pimg
+			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
+			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
+			from tbl_product 
+			 where rownum<=#{pageNum}*#{amount}) 
+			 where rn>(#{pageNum}-1)*#{amount} && pkind = 'dried'
+		]]>
+ 	</select>
  </mapper>

@@ -69,7 +69,6 @@
 			num.val(Number(tCount) - 1);
 		}
 	}
-	
 </script>
 <%@ include file="../includes/footer.jsp"%>
 

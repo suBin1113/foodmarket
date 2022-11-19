@@ -39,4 +39,11 @@ public class ShopControllerTests {
 		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/foodMarket/detail").param("pid", "1")).andReturn()
 				.getModelAndView().getModelMap());
 	}
+	
+	@Test
+	public void testListPaging() throws Exception {
+		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/foodMarket/shop").param("pageNum", "1").param("amount", "10"))
+				.andReturn()
+				.getModelAndView().getModelMap());
+	}
 }

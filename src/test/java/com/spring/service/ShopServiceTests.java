@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.spring.domain.Criteria;
+
 import lombok.extern.log4j.Log4j;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -17,7 +19,7 @@ public class ShopServiceTests {
 	
 	@Test
 	public void testGetList() {
-		service.getList().forEach(shop -> log.info(shop));
+		service.getList(new Criteria(2, 10)).forEach(shop -> log.info(shop));
 	}
 	
 	@Test
@@ -27,18 +29,18 @@ public class ShopServiceTests {
 	
 	@Test
 	public void testGetListVege() {
-		service.getListVege().forEach(shop_vege -> log.info(shop_vege));
+		service.getListVege(new Criteria(2, 10)).forEach(shop_vege -> log.info(shop_vege));
 	}
 	@Test
 	public void testGetListFru() {
-		service.getListFru().forEach(shop_fru -> log.info(shop_fru));
+		service.getListFru(new Criteria(2, 10)).forEach(shop_fru -> log.info(shop_fru));
 	}
 	@Test
 	public void testGetListJui() {
-		service.getListJui().forEach(shop_jui -> log.info(shop_jui));
+		service.getListJui(new Criteria(2, 10)).forEach(shop_jui -> log.info(shop_jui));
 	}
 	@Test
 	public void testGetListDri() {
-		service.getListDri().forEach(shop_dri -> log.info(shop_dri));
+		service.getListDri(new Criteria(2, 10)).forEach(shop_dri -> log.info(shop_dri));
 	}
 }
