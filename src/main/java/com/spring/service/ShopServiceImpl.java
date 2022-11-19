@@ -47,4 +47,9 @@ public class ShopServiceImpl implements ShopService{
 		return mapper.getListWithPagingDri(cri);
 	}
 
+	@Override
+	public List<ShopVO> getList() {
+		return mapper.getList();
+	}
+
 }

@@ -8,6 +8,7 @@ import com.spring.domain.ShopVO;
 public interface ShopService {
 	public ShopVO get(Long pid);
 	public List<ShopVO> getList(Criteria cri);
+	public List<ShopVO> getList();
 	
 	public List<ShopVO> getListVege(Criteria cri);
 	public List<ShopVO> getListFru(Criteria cri);

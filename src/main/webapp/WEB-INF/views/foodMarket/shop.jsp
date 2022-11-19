@@ -73,13 +73,17 @@
 			<div class="col text-center">
 				<div class="block-27">
 					<ul>
-						<li><a href="#">&lt;</a></li>
-						<li class="active"><span>1</span></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#">&gt;</a></li>
+						<c:if test="${pageMaker.prev}">
+							<li class = 'paginate_button previous'><a href="#">&lt;</a></li>
+						</c:if>
+						
+						<c:forEach var = "num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+							<li class = "paginate_button"><a href="#">${num}</a></li>
+						</c:forEach>
+						
+						<c:if test="${pageMaker.next}">
+							<li class = "paginate_button next"><a href="#">&gt;</a></li>
+						</c:if>
 					</ul>
 				</div>
 			</div>

@@ -54,6 +54,8 @@ public class ShopMapperTests {
 	@Test
 	public void testPaging() {
 		Criteria cri = new Criteria();
+		cri.setPageNum(1);
+		cri.setAmount(10);
 		List<ShopVO> list = mapper.getListWithPaging(cri);
 		list.forEach(shop -> log.info(shop));
 	}
