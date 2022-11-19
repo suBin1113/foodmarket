@@ -62,6 +62,13 @@
 				</div>
 			</c:forEach>
 		</div>
+		
+		<form id="actionForm" action="/foodmarket/shop_juice" method="get">
+			<input type="hidden" name="pageNum" value="-">
+			<input type="hidden" name="amount" value="-">
+			<input type="hidden" name="pageKide" value="juice">
+		</form>
+		
 		<div class="row mt-5">
 			<div class="col text-center">
 				<div class="block-27">
