@@ -4,13 +4,12 @@ import lombok.Data;
 
 @Data
 public class CartDTO {
+	private Long cno;
 	private String pimg;
 	private int pid;
 	private String pname;
 	private int pcount;
 	private int pprice;
-
-	private int totalcount;
 
 	public String getPimg() {
 		return pimg;
@@ -32,10 +31,10 @@ public class CartDTO {
 		return pcount;
 	}
 
-	public int getTotalcount() {
-		return totalcount;
+	public Long getCno() {
+		return cno;
 	}
-
+	
 	public void setPimg(String pimg) {
 		this.pimg = pimg;
 	}
@@ -54,10 +53,5 @@ public class CartDTO {
 
 	public void setPcount(int pcount) {
 		this.pcount = pcount;
-	}
-
-	// 총 가격 초기화
-	public void initTotal() {
-		this.totalcount = this.pcount * this.pprice;
 	}
 }

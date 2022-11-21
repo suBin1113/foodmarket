@@ -7,9 +7,12 @@
 		insert into tbl_cart values(seq_cart.nextval, #{pid}, #{pname},
 		#{pprice}, #{pcontent}, #{pimg}, #{pcount})
 	</insert>
+	
+	<!-- 물품 삭제 -->
 	<delete id="deleteCart">
-		delete from tbl_cart where pid=#{pid}
+		delete from tbl_cart where cno=#{cno}
 	</delete>
+	
 	<update id="modifyCart">
 		update tbl_cart set pcount=#{pcount} where pid=#{pid}
 	</update>

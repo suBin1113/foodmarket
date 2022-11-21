@@ -17,4 +17,10 @@ public class CartServiceImpl implements CartService{
 	public List<CartVO> cartList() {
 		return mapper.getCart();
 	}
+
+	@Override
+	public int deleteCart(Long cno) {
+		return mapper.deleteCart(cno);
+	}
+
 }

@@ -14,10 +14,15 @@ import lombok.extern.log4j.Log4j;
 public class CartMapperTests {
 	@Autowired
 	private CartMapper mapper;
-	
+
 	@Test
 	public void testGetCart() {
 		log.info("------------");
 		mapper.getCart();
+	}
+
+	@Test
+	public void testDeleteCart() {
+		log.info("DELETE COUNT: " + mapper.deleteCart(4L));
 	}
 }

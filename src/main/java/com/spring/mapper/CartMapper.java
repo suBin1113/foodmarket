@@ -11,7 +11,7 @@ public interface CartMapper {
 	public List<CartVO> getCart();
 
 	// 삭제
-	public int deleteCart(CartDTO cart);
+	public int deleteCart(Long cno);
 
 	// 수정
 	public int modifyCart(CartDTO cart);

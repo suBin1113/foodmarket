@@ -36,8 +36,11 @@
 							</tr>
 						</thead>
 						<tbody>
+							<c:set var="sum" value="0" />
 							<c:forEach items="${cart}" var="cart">
 								<tr class="text-center cart_info">
+								
+								<!-- 삭제 버튼 구현 -->
 									<td class="product-remove"><a href="#"><span
 											class="ion-ios-close"></span></a></td>
 
@@ -69,6 +72,13 @@
 										value="${pricesum}" readonly></td>
 								</tr>
 								<!-- END TR-->
+								<c:set var="sum"
+									value="${sum + (cart.pprice * cart.pcount)}" />
+									
+								<c:set var="delivery" value="0"/>
+								<c:if test="${sum > 30000}">
+									<c:set var="delivery" value="3000"/>
+								</c:if>
 							</c:forEach>
 
 						</tbody>
@@ -78,21 +88,19 @@
 		</div>
 		<div class="row justify-content-end">
 
-
 			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
 				<div class="cart-total mb-3">
 					<h3>Cart Totals</h3>
 					<p class="d-flex">
-					<!-- 총 금액 계산 및 배송비 부분 수정 -->
-						<span>Product</span> <span>$20.60</span>
+						<span>Product</span> <span>${sum}</span>
 					</p>
 					<p class="d-flex delivery">
-						<span>Delivery Fee</span> <span>$0</span>
+						<span>Delivery Fee</span> <span>${delivery}</span>
 					</p>
 
 					<hr>
 					<p class="d-flex total-price finaltotal">
-						<span>Total</span> <span>$20.60</span>
+						<span>Total</span> <span>${sum+delivery}</span>
 					</p>
 				</div>
 				<p>
