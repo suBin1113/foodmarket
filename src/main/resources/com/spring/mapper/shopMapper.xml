@@ -9,6 +9,7 @@
  	<select id="read" resultType="com.spring.domain.ShopVO">
  		select * from tbl_product where pid = #{pid}
  	</select>
+<<<<<<< HEAD
  	
  	<select id="getListVege" resultType="com.spring.domain.ShopVO">
  		select * from tbl_product where pkind = 'vegetable' order by pid
@@ -73,4 +74,6 @@
 			 where rn>(#{pageNum}-1)*#{amount} and pkind = 'dried'
 		]]>
  	</select>
+=======
+>>>>>>> parent of e33c9e2 (종류 분류 추가)
  </mapper>

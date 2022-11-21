@@ -20,11 +20,11 @@
 		<div class="row justify-content-center">
 			<div class="col-md-10 mb-5 text-center">
 				<ul class="product-category">
-					<li><a href="/foodMarket/shop" class="active">All</a></li>
-					<li><a href="/foodMarket/shop_vegetable">Vegetables</a></li>
-					<li><a href="/foodMarket/shop_fruit">Fruits</a></li>
-					<li><a href="/foodMarket/shop_juice">Juice</a></li>
-					<li><a href="/foodMarket/shop_dried">Dried</a></li>
+					<li><a href="#" class="active">All</a></li>
+					<li><a href="#">Vegetables</a></li>
+					<li><a href="#">Fruits</a></li>
+					<li><a href="#">Juice</a></li>
+					<li><a href="#">Dried</a></li>
 				</ul>
 			</div>
 		</div>
@@ -92,6 +92,6 @@
 	</div>
 </section>
 <<script type="text/javascript">
-	
+	$(".")
 </script>
 <%@ include file="../includes/footer.jsp"%>

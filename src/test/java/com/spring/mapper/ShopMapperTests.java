@@ -30,6 +30,7 @@ public class ShopMapperTests {
 		log.info("------------");
 		log.info(mapper.read(1l));
 	}
+<<<<<<< HEAD
 	@Test
 	public void testGetvege() {
 		log.info("------------");
@@ -59,4 +60,6 @@ public class ShopMapperTests {
 		List<ShopVO> list = mapper.getListWithPaging(cri);
 		list.forEach(shop -> log.info(shop));
 	}
+=======
+>>>>>>> parent of e33c9e2 (종류 분류 추가)
 }

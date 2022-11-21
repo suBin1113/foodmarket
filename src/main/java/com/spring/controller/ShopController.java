@@ -33,6 +33,7 @@ public class ShopController {
 		log.info("detail form");
 		model.addAttribute("product", service.get(pid));
 	}
+<<<<<<< HEAD
 	
 	@GetMapping("/shop_vegetable")
 	public void vegetable(Criteria cri, Model model) {
@@ -61,4 +62,6 @@ public class ShopController {
 		model.addAttribute("shop_dri", service.getListDri(cri));
 		model.addAttribute("pageMaker", new PageDTO(cri, 123));
 	}
+=======
+>>>>>>> parent of e33c9e2 (종류 분류 추가)
 }
