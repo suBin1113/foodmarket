@@ -23,7 +23,7 @@ public class ShopMapperTests {
 	@Test
 	public void testGetshop() {
 		log.info("------------");
-		mapper.getList(null);
+		mapper.getList();
 	}
 	@Test
 	public void testread() {

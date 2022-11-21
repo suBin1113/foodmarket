@@ -6,7 +6,7 @@ import com.spring.domain.Criteria;
 import com.spring.domain.ShopVO;
 
 public interface ShopMapper {
-	public List<ShopVO> getList(Criteria cri);
+	public List<ShopVO> getList();
 	public ShopVO read(Long pid);
 	
 	public List<ShopVO> getListVege();
