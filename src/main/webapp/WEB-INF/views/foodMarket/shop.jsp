@@ -72,7 +72,7 @@
 						</c:if>
 						
 						<c:forEach var = "num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-							<li class = "paginate_button ${pageMaker.cri.pageNum == num ? "active" : ""}"><a href="${num}">${num}</a></li>
+							<li class = "paginate_button ${pageMaker.cri.pageNum == num ? 'active' : ''}"><a href="${num}">${num}</a></li>
 						</c:forEach>
 						
 						<c:if test="${pageMaker.next}">
@@ -82,7 +82,7 @@
 				</div>
 			</div>
 		</div>
-		<form id="actionForm" action="/foodmarket/shop" method="get">
+		<form id="actionForm" action="/foodMarket/shop" method="get">
 			<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
 			<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
 			<input type="hidden" name="pageKind" value="all">

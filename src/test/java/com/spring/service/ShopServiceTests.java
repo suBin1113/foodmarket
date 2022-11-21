@@ -19,7 +19,7 @@ public class ShopServiceTests {
 	
 	@Test
 	public void testGetList() {
-		service.getList(new Criteria(1, 10)).forEach(shop -> log.info(shop));
+		service.getList(new Criteria(2, 10)).forEach(shop -> log.info(shop));
 	}
 	
 	@Test
@@ -29,7 +29,7 @@ public class ShopServiceTests {
 	
 	@Test
 	public void testGetListVege() {
-		service.getListVege(new Criteria(2, 10)).forEach(shop_vege -> log.info(shop_vege));
+		service.getListVege(new Criteria(1, 10)).forEach(shop_vege -> log.info(shop_vege));
 	}
 	@Test
 	public void testGetListFru() {
