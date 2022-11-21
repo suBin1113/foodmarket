@@ -8,8 +8,7 @@ import com.spring.domain.ShopVO;
 public interface ShopMapper {
 	public List<ShopVO> getList();
 	public ShopVO read(Long pid);
-<<<<<<< HEAD
-	
+
 	public List<ShopVO> getListVege();
 	public List<ShopVO> getListFru();
 	public List<ShopVO> getListJui();
@@ -21,6 +20,4 @@ public interface ShopMapper {
 	public List<ShopVO> getListWithPagingFru(Criteria cri);
 	public List<ShopVO> getListWithPagingJui(Criteria cri);
 	public List<ShopVO> getListWithPagingDri(Criteria cri);
-=======
->>>>>>> parent of e33c9e2 (종류 분류 추가)
 }

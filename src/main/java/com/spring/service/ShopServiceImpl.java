@@ -27,7 +27,6 @@ public class ShopServiceImpl implements ShopService{
 		return mapper.getListWithPaging(cri);
 	}
 
-<<<<<<< HEAD
 	@Override
 	public List<ShopVO> getListVege(Criteria cri) {
 		return mapper.getListWithPagingVege(cri);
@@ -48,6 +47,4 @@ public class ShopServiceImpl implements ShopService{
 		return mapper.getListWithPagingDri(cri);
 	}
 
-=======
->>>>>>> parent of e33c9e2 (종류 분류 추가)
 }

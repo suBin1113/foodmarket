@@ -26,7 +26,6 @@ public class ShopServiceTests {
 	public void testGet() {
 		log.info(service.get(1L));
 	}
-<<<<<<< HEAD
 	
 	@Test
 	public void testGetListVege() {
@@ -44,6 +43,4 @@ public class ShopServiceTests {
 	public void testGetListDri() {
 		service.getListDri(new Criteria(2, 10)).forEach(shop_dri -> log.info(shop_dri));
 	}
-=======
->>>>>>> parent of e33c9e2 (종류 분류 추가)
 }
