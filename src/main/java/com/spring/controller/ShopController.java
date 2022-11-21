@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.spring.domain.Criteria;
+import com.spring.domain.PageDTO;
 import com.spring.service.ShopService;
 
 import lombok.extern.log4j.Log4j;
@@ -19,9 +21,11 @@ public class ShopController {
 	private ShopService service;
 	
 	@GetMapping("/shop")
-	public void shop(Model model) {
+	public void shop(Criteria cri, Model model) {
 		log.info("shop form");
-		model.addAttribute("shop", service.getList());
+		log.info("cri:" + cri);
+		model.addAttribute("shop", service.getList(cri));
+		model.addAttribute("pageMaker", new PageDTO(cri, 123));
 	}
 	
 	@GetMapping("/detail")
@@ -31,26 +35,30 @@ public class ShopController {
 	}
 	
 	@GetMapping("/shop_vegetable")
-	public void vegetable(Model model) {
+	public void vegetable(Criteria cri, Model model) {
 		log.info("vegetable form");
-		model.addAttribute("shop_vege", service.getListVege());
+		model.addAttribute("shop_vege", service.getListVege(cri));
+		model.addAttribute("pageMaker", new PageDTO(cri, 123));
 	}
 
 	@GetMapping("/shop_fruit")
-	public void fruit(Model model) {
+	public void fruit(Criteria cri, Model model) {
 		log.info("fruit form");
-		model.addAttribute("shop_fru", service.getListFru());
+		model.addAttribute("shop_fru", service.getListFru(cri));
+		model.addAttribute("pageMaker", new PageDTO(cri, 123));
 	}
 	
 	@GetMapping("/shop_juice")
-	public void juice(Model model) {
+	public void juice(Criteria cri, Model model) {
 		log.info("juice form");
-		model.addAttribute("shop_jui", service.getListJui());
+		model.addAttribute("shop_jui", service.getListJui(cri));
+		model.addAttribute("pageMaker", new PageDTO(cri, 123));
 	}
 	
 	@GetMapping("/shop_dried")
-	public void dried(Model model) {
+	public void dried(Criteria cri, Model model) {
 		log.info("dried form");
-		model.addAttribute("shop_dri", service.getListDri());
+		model.addAttribute("shop_dri", service.getListDri(cri));
+		model.addAttribute("pageMaker", new PageDTO(cri, 123));
 	}
 }
