@@ -20,11 +20,11 @@
 		<div class="row justify-content-center">
 			<div class="col-md-10 mb-5 text-center">
 				<ul class="product-category">
-					<li><a href="/foodMarket/shop" class="active">All</a></li>
-					<li><a href="/foodMarket/shop_vegetable">Vegetables</a></li>
-					<li><a href="/foodMarket/shop_fruit">Fruits</a></li>
-					<li><a href="/foodMarket/shop_juice">Juice</a></li>
-					<li><a href="/foodMarket/shop_dried">Dried</a></li>
+					<li><a href="#" class="active">All</a></li>
+					<li><a href="#">Vegetables</a></li>
+					<li><a href="#">Fruits</a></li>
+					<li><a href="#">Juice</a></li>
+					<li><a href="#">Dried</a></li>
 				</ul>
 			</div>
 		</div>
@@ -73,13 +73,17 @@
 			<div class="col text-center">
 				<div class="block-27">
 					<ul>
-						<li><a href="#">&lt;</a></li>
-						<li class="active"><span>1</span></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#">&gt;</a></li>
+						<c:if test="${pageMaker.prev}">
+							<li class = 'paginate_button previous'><a href="#">&lt;</a></li>
+						</c:if>
+						
+						<c:forEach var = "num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+							<li class = "paginate_button"><a href="#">${num}</a></li>
+						</c:forEach>
+						
+						<c:if test="${pageMaker.next}">
+							<li class = "paginate_button next"><a href="#">&gt;</a></li>
+						</c:if>
 					</ul>
 				</div>
 			</div>
@@ -88,6 +92,6 @@
 	</div>
 </section>
 <<script type="text/javascript">
-	
+	$(".")
 </script>
 <%@ include file="../includes/footer.jsp"%>

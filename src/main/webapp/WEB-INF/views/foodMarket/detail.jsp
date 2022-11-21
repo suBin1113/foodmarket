@@ -36,14 +36,14 @@
 					<div class="input-group col-md-6 d-flex mb-3">
 						<span class="input-group-btn mr-2">
 							<button type="button" class="quantity-left-minus btn"
-								data-type="minus" name="minus" onclick="fnCalCount('m', this)">
+								data-type="minus" data-field="">
 								<i class="ion-ios-remove"></i>
 							</button>
 						</span> 
-						<input type="text" name="quantity" class="form-control input-number" value="0" min="1" max="100">
+						<input type="text" id="quantity" name="quantity" class="form-control input-number" value="${num}" min="1" max="100">
 						<span class="input-group-btn ml-2">
 							<button type="button" class="quantity-right-plus btn"
-								data-type="plus" name="plus" onclick="fnCalCount('p', this)">
+								data-type="plus" data-field="">
 								<i class="ion-ios-add"></i>
 							</button>
 						</span>
@@ -60,6 +60,7 @@
 </section>
 <script>
 	var num = 0; 
+<<<<<<< HEAD
 	function fnCalCount(type, ths){
 		num = $(ths).parents("div").find("input[name='quantity']");
 		var tCount = Number(num.val());
@@ -69,7 +70,9 @@
 			num.val(Number(tCount) - 1);
 		}
 	}
+=======
 	
+>>>>>>> parent of e33c9e2 (종류 분류 추가)
 </script>
 <%@ include file="../includes/footer.jsp"%>
 

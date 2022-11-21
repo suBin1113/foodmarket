@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.spring.domain.Criteria;
 import com.spring.domain.ShopVO;
 import com.spring.mapper.ShopMapper;
 
@@ -22,28 +23,28 @@ public class ShopServiceImpl implements ShopService{
 	}
 
 	@Override
-	public List<ShopVO> getList() {
-		return mapper.getList();
+	public List<ShopVO> getList(Criteria cri) {
+		return mapper.getListWithPaging(cri);
 	}
 
 	@Override
-	public List<ShopVO> getListVege() {
-		return mapper.getListVege();
+	public List<ShopVO> getListVege(Criteria cri) {
+		return mapper.getListWithPagingVege(cri);
 	}
 
 	@Override
-	public List<ShopVO> getListFru() {
-		return mapper.getListFru();
+	public List<ShopVO> getListFru(Criteria cri) {
+		return mapper.getListWithPagingFru(cri);
 	}
 
 	@Override
-	public List<ShopVO> getListJui() {
-		return mapper.getListJui();
+	public List<ShopVO> getListJui(Criteria cri) {
+		return mapper.getListWithPagingJui(cri);
 	}
 
 	@Override
-	public List<ShopVO> getListDri() {
-		return mapper.getListDri();
+	public List<ShopVO> getListDri(Criteria cri) {
+		return mapper.getListWithPagingDri(cri);
 	}
 
 }
