@@ -66,7 +66,7 @@
 		<form id="actionForm" action="/foodmarket/shop_dried" method="get">
 			<input type="hidden" name="pageNum" value="-">
 			<input type="hidden" name="amount" value="-">
-			<input type="hidden" name="pageKide" value="dried">
+			<input type="hidden" name="pageKind" value="dried">
 		</form>
 		
 		<div class="row mt-5">
