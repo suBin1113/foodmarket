@@ -9,6 +9,8 @@ import com.spring.domain.Criteria;
 import com.spring.domain.ShopVO;
 import com.spring.mapper.ShopMapper;
 
+import jdk.internal.org.jline.utils.Log;
+
 //import lombok.AllArgsConstructor;
 
 @Service
@@ -45,6 +47,31 @@ public class ShopServiceImpl implements ShopService{
 	@Override
 	public List<ShopVO> getListDri(Criteria cri) {
 		return mapper.getListWithPagingDri(cri);
+	}
+
+	@Override
+	public int getTotal(Criteria cri) {
+		return mapper.getTotalCount(cri);
+	}
+
+	@Override
+	public int getTotalVege(Criteria cri) {
+		return mapper.getTotalCountVege(cri);
+	}
+
+	@Override
+	public int getTotalFru(Criteria cri) {
+		return mapper.getTotalCountFru(cri);
+	}
+
+	@Override
+	public int getTotalJui(Criteria cri) {
+		return mapper.getTotalCountJui(cri);
+	}
+
+	@Override
+	public int getTotalDri(Criteria cri) {
+		return mapper.getTotalCountDri(cri);
 	}
 
 }

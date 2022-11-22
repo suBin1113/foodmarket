@@ -25,8 +25,9 @@ public class ShopController {
 	public void shop(Criteria cri, Model model) {
 		log.info("shop form");
 		log.info("cri:" + cri);
+		int total = service.getTotal(cri);
 		model.addAttribute("shop", service.getList(cri));
-		model.addAttribute("pageMaker", new PageDTO(cri, 123));
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
 	}
 	
 	@GetMapping("/detail")
@@ -40,28 +41,32 @@ public class ShopController {
 	@GetMapping("/shop_vegetable")
 	public void vegetable(Criteria cri, Model model) {
 		log.info("vegetable form");
+		int total = service.getTotalVege(cri);
 		model.addAttribute("shop_vege", service.getListVege(cri));
-		model.addAttribute("pageMaker", new PageDTO(cri, 123));
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
 	}
 
 	@GetMapping("/shop_fruit")
 	public void fruit(Criteria cri, Model model) {
 		log.info("fruit form");
+		int total = service.getTotalFru(cri);
 		model.addAttribute("shop_fru", service.getListFru(cri));
-		model.addAttribute("pageMaker", new PageDTO(cri, 123));
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
 	}
 	
 	@GetMapping("/shop_juice")
 	public void juice(Criteria cri, Model model) {
 		log.info("juice form");
+		int total = service.getTotalJui(cri);
 		model.addAttribute("shop_jui", service.getListJui(cri));
-		model.addAttribute("pageMaker", new PageDTO(cri, 123));
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
 	}
 	
 	@GetMapping("/shop_dried")
 	public void dried(Criteria cri, Model model) {
 		log.info("dried form");
+		int total = service.getTotalDri(cri);
 		model.addAttribute("shop_dri", service.getListDri(cri));
-		model.addAttribute("pageMaker", new PageDTO(cri, 123));
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
 	}
 }

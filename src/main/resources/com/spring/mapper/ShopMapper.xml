@@ -72,4 +72,19 @@
 			 where rn>(#{pageNum}-1)*#{amount}
 		]]>
  	</select>
+ 	<select id="getTotalCount" resultType="int">
+ 		select count(*) from tbl_product where pid > 0
+ 	</select>
+ 	<select id="getTotalCountVege" resultType="int">
+ 		select count(*) from tbl_product where pid > 0 and pkind = 'vegetable'
+ 	</select>
+ 	<select id="getTotalCountFru" resultType="int">
+ 		select count(*) from tbl_product where pid > 0 and pkind = 'fruit'
+ 	</select>
+ 	<select id="getTotalCountJui" resultType="int">
+ 		select count(*) from tbl_product where pid > 0	and pkind = 'juice'
+ 	</select>
+ 	<select id="getTotalCountDri" resultType="int">
+ 		select count(*) from tbl_product where pid > 0	and pkind = 'dried'
+ 	</select>
  </mapper>
