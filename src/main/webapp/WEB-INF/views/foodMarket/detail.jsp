@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <% 
 	String pageKind = (String)request.getAttribute("pageKind");
-	int count = 0;
 %>
 <%@ include file="../includes/header.jsp"%>
 
@@ -43,7 +42,7 @@
 								<i class="ion-ios-remove"></i>
 							</button>
 						</span> 
-						<input type="text" id="quantity" name="quantity" class="form-control input-number" value="<%=count%>">
+						<input type="text" id="quantity" name="quantity" class="form-control input-number" value="0" min="0" max="100">
 						<span class="input-group-btn ml-2">
 							<button type="button" onclick="fnCalCount('p', this)" class="quantity-right-plus btn" data-type="plus" data-field="">
 								<i class="ion-ios-add"></i>
@@ -71,7 +70,9 @@
 	</div>
 </section>
 <script>
-	console.log(${pageKind});
+	$(function(){
+		history.replaceState({}, null, null);
+	});
 	function fnCalCount(type, ths){
 		var num = $(ths).parents("div").find("input[name='quantity']");
 		var tCount = Number(num.val());
