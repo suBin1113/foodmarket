@@ -63,31 +63,41 @@
 			</c:forEach>
 		</div>
 		
-		<form id="actionForm" action="/foodmarket/shop_fruit" method="get">
-			<input type="hidden" name="pageNum" value="-">
-			<input type="hidden" name="amount" value="-">
-			<input type="hidden" name="pageKide" value="fruit">
-		</form>
-		
 		<div class="row mt-5">
 			<div class="col text-center">
 				<div class="block-27">
 					<ul>
-						<li><a href="#">&lt;</a></li>
-						<li class="active"><span>1</span></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#">&gt;</a></li>
+						<c:if test="${pageMaker.prev}">
+							<li class = 'paginate_button previous'><a href="${pageMaker.startPage -1}">&lt;</a></li>
+						</c:if>
+						
+						<c:forEach var = "num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+							<li class = "paginate_button ${pageMaker.cri.pageNum == num ? 'active' : ''}"><a href="${num}">${num}</a></li>
+						</c:forEach>
+						
+						<c:if test="${pageMaker.next}">
+							<li class = "paginate_button next"><a href="${pageMaker.endPage +1}">&gt;</a></li>
+						</c:if>
 					</ul>
 				</div>
 			</div>
 		</div>
-		
+		<form id="actionForm" action="/foodMarket/shop_fruit" method="get">
+			<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+			<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+			<input type="hidden" name="pageKind" value="fruit">
+		</form>
 	</div>
 </section>
 <<script type="text/javascript">
-	
+	$(function(){
+		var actionForm = $("#actionForm");
+		$('.block-27 a').on('click', function(e){
+			e.preventDefault();
+			console.log("click");
+			actionForm.find("input[name='pageNum']").val($(this).attr("href"));
+			actionForm.submit();
+		});
+	});
 </script>
 <%@ include file="../includes/footer.jsp"%>
