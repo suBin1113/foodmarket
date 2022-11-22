@@ -39,10 +39,13 @@
 							<c:set var="sum" value="0" />
 							<c:forEach items="${cart}" var="cart">
 								<tr class="text-center cart_info">
-								
-								<!-- 삭제 버튼 구현 -->
-									<td class="product-remove"><a href="#"><span
-											class="ion-ios-close"></span></a></td>
+
+									<!-- 삭제 버튼 구현 -->
+									<div>
+										<td class="product-remove"><a
+											href="#"><span
+												class="ion-ios-close"></span></a></td>
+									</div>
 
 									<td class="image-prod"><div class="img"
 											style="background-image: url(../resources/images/${cart.pimg});"></div></td>
@@ -72,12 +75,11 @@
 										value="${pricesum}" readonly></td>
 								</tr>
 								<!-- END TR-->
-								<c:set var="sum"
-									value="${sum + (cart.pprice * cart.pcount)}" />
-									
-								<c:set var="delivery" value="0"/>
+								<c:set var="sum" value="${sum + (cart.pprice * cart.pcount)}" />
+
+								<c:set var="delivery" value="0" />
 								<c:if test="${sum > 30000}">
-									<c:set var="delivery" value="3000"/>
+									<c:set var="delivery" value="3000" />
 								</c:if>
 							</c:forEach>
 
@@ -111,4 +113,9 @@
 		</div>
 	</div>
 </section>
+
+<script type="text/javascript">
+
+</script>
+
 <%@ include file="../includes/footer.jsp"%>
