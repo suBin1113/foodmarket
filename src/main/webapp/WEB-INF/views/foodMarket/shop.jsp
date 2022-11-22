@@ -91,6 +91,8 @@
 </section>
 <script type="text/javascript">
 	$(function(){
+		history.replaceState({}, null, null);
+		
 		var actionForm = $("#actionForm");
 		$('.block-27 a').on('click', function(e){
 			e.preventDefault();
