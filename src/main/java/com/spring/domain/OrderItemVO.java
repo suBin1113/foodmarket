@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class OrderItemVO {
-	private int orderId;
+	private Long orderId;
 	private int orderItemId;
 	private int pid;
 	private String pname;

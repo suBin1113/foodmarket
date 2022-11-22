@@ -72,9 +72,9 @@
 								<p class="d-flex">
 									<span>Delivery</span> <span>$0.00</span>
 								</p>
-								<p class="d-flex">
+								<!-- <p class="d-flex">
 									<span>Discount</span> <span>$3.00</span>
-								</p>
+								</p> -->
 								<hr>
 								<p class="d-flex total-price">
 									<span>Total</span> <span>$17.60</span>
@@ -84,8 +84,6 @@
 						<div class="col-md-12">
 							<div class="cart-detail p-3 p-md-4">
 								<p>
-									<input type="hidden" name="cno" value="1"> <input
-										type="hidden" name="psum" value="1">
 									<button type="submit" class="btn btn-primary py-3 px-4">Place
 										an order</button>
 								</p>

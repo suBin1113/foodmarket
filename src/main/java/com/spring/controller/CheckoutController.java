@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.domain.CheckoutVO;
@@ -28,27 +29,27 @@ public class CheckoutController {
 		log.info("register: " + checkout);
 		service.register(checkout);
 		rttr.addFlashAttribute("result", checkout.getOrderId());
-		return "redirect:./main";
+		return "redirect:./orderDetails?orderId=" + checkout.getOrderId();
 	}
 	
 	@PostMapping("foodMarket/checkout/remove")
-	public String Remove(int orderId, RedirectAttributes rttr) {
+	public String Remove(Long orderId, RedirectAttributes rttr) {
 		if (service.remove(orderId) == 1) {
 			rttr.addFlashAttribute("result", "success");
 		}
 		
-		return "redirect:./main";
+		return "redirect:../orderDetails";
 	}
 
 	@GetMapping("foodMarket/orderDetails")
-	public void get() {
-		
-	}
-	
-	@PostMapping("foodMarket/orderDetails")
-	public void get(int orderId, Model model) {
+	public void get(@RequestParam(required = false) Long orderId, Model model) {
 		model.addAttribute("checkout", service.get(orderId));
 		model.addAttribute("orderList", service.getOrderList(orderId));
 	}
+	
+	//@PostMapping("foodMarket/orderDetails")
+	//public void get() {
+		
+	//}
 	
 }

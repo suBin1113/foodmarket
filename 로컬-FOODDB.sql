@@ -39,7 +39,7 @@ alter table tbl_wishlist add CONSTRAINT pk_wishlist primary key (wno);
 alter table tbl_wishlist add CONSTRAINT fk_wishlist FOREIGN key (pid) references tbl_product(pid);
 
 create table tbl_orderItem(
-    orderId number(10, 0) not null,
+    orderId number(20) not null,
     orderItemId number(10, 0),
     pid number(10, 0),
     pname varchar2(50),
@@ -50,11 +50,11 @@ create table tbl_orderItem(
 
 create sequence seq_checkout;
 create table tbl_checkout(
-    orderId number(10,0) not null,
+    orderId number(20) not null,
     name varchar2(50),
     address varchar2(100),
     zip varchar2(50),
-    orderDate date,
+    orderDate date default sysdate,
     psum number
 );
 alter table tbl_checkout add CONSTRAINT pk_checkout primary key (orderId);

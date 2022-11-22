@@ -19,36 +19,22 @@ public class CheckoutServiceImpl implements CheckoutService {
 
 	@Override
 	public void register(CheckoutVO checkout) {
-		List<OrderItemVO> orders = new ArrayList<>();
-		for(OrderItemVO item : checkout.getOrders()) {
-			OrderItemVO orderItem = mapper.readItem(item.getPid());
-			orderItem.setPcount(item.getPcount());
-			orders.add(orderItem);
-		}
-		
-		checkout.setOrders(orders);
-		Date orderDate = new Date();
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		checkout.setOrderDate(orderDate);
+		//List<OrderItemVO> orders = new ArrayList<>();
 		mapper.insert(checkout);
-		for(OrderItemVO item : checkout.getOrders()) {
-			item.setOrderId(checkout.getOrderId());
-			mapper.itemInsert(item);
-		}
 	}
 
 	@Override
-	public CheckoutVO get(int orderId) {
+	public CheckoutVO get(Long orderId) {
 		return mapper.read(orderId);
 	}
 
 	@Override
-	public int remove(int orderId) {
+	public int remove(Long orderId) {
 		return mapper.delete(orderId);
 	}
 
 	@Override
-	public List<OrderItemVO> getOrderList(int orderId) {
+	public List<OrderItemVO> getOrderList(Long orderId) {
 		return mapper.readOrderList(orderId);
 	}
 	

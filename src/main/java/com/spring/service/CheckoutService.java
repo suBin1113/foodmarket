@@ -7,7 +7,7 @@ import com.spring.domain.OrderItemVO;
 
 public interface CheckoutService {
 	public void register(CheckoutVO checkout);
-	public CheckoutVO get(int orderId);
-	public List<OrderItemVO> getOrderList(int orderId);
-	public int remove(int orderId);
+	public CheckoutVO get(Long orderId);
+	public List<OrderItemVO> getOrderList(Long orderId);
+	public int remove(Long orderId);
 }
