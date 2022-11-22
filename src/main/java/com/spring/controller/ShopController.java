@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -24,41 +25,48 @@ public class ShopController {
 	public void shop(Criteria cri, Model model) {
 		log.info("shop form");
 		log.info("cri:" + cri);
+		int total = service.getTotal(cri);
 		model.addAttribute("shop", service.getList(cri));
-		model.addAttribute("pageMaker", new PageDTO(cri, 123));
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
 	}
 	
 	@GetMapping("/detail")
-	public void detailForm(@RequestParam("pid") Long pid, Model model) {
+	public void detailForm(@RequestParam("pid") Long pid, @RequestParam("pageKind") String pageKind, @ModelAttribute("cri") Criteria cri, Model model) {
 		log.info("detail form");
 		model.addAttribute("product", service.get(pid));
+		//log.info(pageKind);
+		model.addAttribute("pageKind", pageKind);
 	}
 	
 	@GetMapping("/shop_vegetable")
 	public void vegetable(Criteria cri, Model model) {
 		log.info("vegetable form");
+		int total = service.getTotalVege(cri);
 		model.addAttribute("shop_vege", service.getListVege(cri));
-		model.addAttribute("pageMaker", new PageDTO(cri, 123));
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
 	}
 
 	@GetMapping("/shop_fruit")
 	public void fruit(Criteria cri, Model model) {
 		log.info("fruit form");
+		int total = service.getTotalFru(cri);
 		model.addAttribute("shop_fru", service.getListFru(cri));
-		model.addAttribute("pageMaker", new PageDTO(cri, 123));
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
 	}
 	
 	@GetMapping("/shop_juice")
 	public void juice(Criteria cri, Model model) {
 		log.info("juice form");
+		int total = service.getTotalJui(cri);
 		model.addAttribute("shop_jui", service.getListJui(cri));
-		model.addAttribute("pageMaker", new PageDTO(cri, 123));
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
 	}
 	
 	@GetMapping("/shop_dried")
 	public void dried(Criteria cri, Model model) {
 		log.info("dried form");
+		int total = service.getTotalDri(cri);
 		model.addAttribute("shop_dri", service.getListDri(cri));
-		model.addAttribute("pageMaker", new PageDTO(cri, 123));
+		model.addAttribute("pageMaker", new PageDTO(cri, total));
 	}
 }

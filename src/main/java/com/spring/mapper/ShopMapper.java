@@ -20,4 +20,10 @@ public interface ShopMapper {
 	public List<ShopVO> getListWithPagingFru(Criteria cri);
 	public List<ShopVO> getListWithPagingJui(Criteria cri);
 	public List<ShopVO> getListWithPagingDri(Criteria cri);
+	
+	public int getTotalCount(Criteria cri);
+	public int getTotalCountVege(Criteria cri);
+	public int getTotalCountFru(Criteria cri);
+	public int getTotalCountJui(Criteria cri);
+	public int getTotalCountDri(Criteria cri);
 }
