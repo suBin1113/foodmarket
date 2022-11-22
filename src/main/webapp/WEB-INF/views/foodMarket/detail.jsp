@@ -58,9 +58,15 @@
 		</div>
 	</div>
 </section>
+<form id="actionForm" action="/board/list" method="get">
+	<input type="hidden" name="id" value="${product.pid}"> 
+	<input type="hidden" name="pageNum" value="${cri.pageNum}"> 
+	<input type="hidden" name="amount" value="${cri.amount}"> 
+	<input type="hidden" name="pageKind" value="${pageKind}">
+</form>
 <script>
+	console.log(${pageKind});
 	var num = 0; 
-<<<<<<< HEAD
 	function fnCalCount(type, ths){
 		num = $(ths).parents("div").find("input[name='quantity']");
 		var tCount = Number(num.val());
@@ -70,9 +76,6 @@
 			num.val(Number(tCount) - 1);
 		}
 	}
-=======
-	
->>>>>>> parent of e33c9e2 (종류 분류 추가)
 </script>
 <%@ include file="../includes/footer.jsp"%>
 

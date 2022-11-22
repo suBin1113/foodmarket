@@ -89,7 +89,7 @@
 		</form>
 	</div>
 </section>
-<<script type="text/javascript">
+<script type="text/javascript">
 	$(function(){
 		var actionForm = $("#actionForm");
 		$('.block-27 a').on('click', function(e){

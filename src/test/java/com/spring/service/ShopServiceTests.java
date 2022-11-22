@@ -33,7 +33,7 @@ public class ShopServiceTests {
 	}
 	@Test
 	public void testGetListFru() {
-		service.getListFru(new Criteria(2, 10)).forEach(shop_fru -> log.info(shop_fru));
+		service.getListFru(new Criteria(1, 10)).forEach(shop_fru -> log.info(shop_fru));
 	}
 	@Test
 	public void testGetListJui() {

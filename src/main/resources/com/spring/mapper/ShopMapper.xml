@@ -56,10 +56,10 @@
  		<![CDATA[
 			select pid, pname, pkind, pcontent, pprice, pimg
 			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
-			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
-			from tbl_product 
-			 where rownum<=#{pageNum}*#{amount}) 
-			 where rn>(#{pageNum}-1)*#{amount} and pkind = 'juice'
+				rownum rn, pid, pname, pkind, pcontent, pprice, pimg
+				from tbl_product 
+			 	where rownum<=#{pageNum}*#{amount}) 
+			where rn>(#{pageNum}-1)*#{amount} and pkind = 'juice'
 		]]>
  	</select>
  	<select id="getListWithPagingDri" resultType="com.spring.domain.ShopVO">
