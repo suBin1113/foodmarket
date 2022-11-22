@@ -20,11 +20,11 @@
 		<div class="row justify-content-center">
 			<div class="col-md-10 mb-5 text-center">
 				<ul class="product-category">
-					<li><a href="#" class="active">All</a></li>
-					<li><a href="#">Vegetables</a></li>
-					<li><a href="#">Fruits</a></li>
-					<li><a href="#">Juice</a></li>
-					<li><a href="#">Dried</a></li>
+					<li><a href="/foodMarket/shop" class="active">All</a></li>
+					<li><a href="/foodMarket/shop_vegetable">Vegetables</a></li>
+					<li><a href="/foodMarket/shop_fruit">Fruits</a></li>
+					<li><a href="/foodMarket/shop_juice">Juice</a></li>
+					<li><a href="/foodMarket/shop_dried">Dried</a></li>
 				</ul>
 			</div>
 		</div>
@@ -63,35 +63,41 @@
 			</c:forEach>
 		</div>
 		
-		<form id="actionForm" action="/foodmarket/shop" method="get">
-			<input type="hidden" name="pageNum" value="-">
-			<input type="hidden" name="amount" value="-">
-			<input type="hidden" name="pageKide" value="all">
-		</form>
-		
 		<div class="row mt-5">
 			<div class="col text-center">
 				<div class="block-27">
 					<ul>
 						<c:if test="${pageMaker.prev}">
-							<li class = 'paginate_button previous'><a href="#">&lt;</a></li>
+							<li class = 'paginate_button previous'><a href="${pageMaker.startPage -1}">&lt;</a></li>
 						</c:if>
 						
 						<c:forEach var = "num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-							<li class = "paginate_button"><a href="#">${num}</a></li>
+							<li class = "paginate_button ${pageMaker.cri.pageNum == num ? 'active' : ''}"><a href="${num}">${num}</a></li>
 						</c:forEach>
 						
 						<c:if test="${pageMaker.next}">
-							<li class = "paginate_button next"><a href="#">&gt;</a></li>
+							<li class = "paginate_button next"><a href="${pageMaker.endPage +1}">&gt;</a></li>
 						</c:if>
 					</ul>
 				</div>
 			</div>
 		</div>
-		
+		<form id="actionForm" action="/foodMarket/shop" method="get">
+			<input type="hidden" name="pageNum" value="${pageMaker.cri.pageNum}">
+			<input type="hidden" name="amount" value="${pageMaker.cri.amount}">
+			<input type="hidden" name="pageKind" value="all">
+		</form>
 	</div>
 </section>
 <<script type="text/javascript">
-	$(".")
+	$(function(){
+		var actionForm = $("#actionForm");
+		$('.block-27 a').on('click', function(e){
+			e.preventDefault();
+			console.log("click");
+			actionForm.find("input[name='pageNum']").val($(this).attr("href"));
+			actionForm.submit();
+		});
+	});
 </script>
 <%@ include file="../includes/footer.jsp"%>
