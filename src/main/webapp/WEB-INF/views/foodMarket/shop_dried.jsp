@@ -32,13 +32,13 @@
 			<c:forEach items="${shop_dri}" var="shop_dri">
 				<div class="col-md-6 col-lg-3 ftco-animate">
 					<div class="product">
-						<a href='/foodMarket/detail?pid=${shop_dri.pid}'>
+						<a class="move" href='${shop_dri.pid}'>
 							<img class="img-fluid" src="../resources/images/${shop_dri.pimg}" alt="Colorlib Template">
 							<div class="overlay"></div> 
 						</a>
 						<div class="text py-3 pb-4 px-3 text-center">
 							<h3>
-								<a class="move" href='/foodMarket/detail?pid=${shop_dri.pid}'>${shop_dri.pname}</a>
+								<a class="move" href='${shop_dri.pid}'>${shop_dri.pname}</a>
 							</h3>
 							<div class="d-flex">
 								<div class="pricing">
@@ -96,6 +96,12 @@
 			e.preventDefault();
 			console.log("click");
 			actionForm.find("input[name='pageNum']").val($(this).attr("href"));
+			actionForm.submit();
+		});
+		$(".move").on('click', function(e){
+			e.preventDefault();
+			actionForm.append('<input type="hidden" name="pid" value="' + $(this).attr("href") + '">');
+			actionForm.attr("action", "/foodMarket/detail");
 			actionForm.submit();
 		});
 	});

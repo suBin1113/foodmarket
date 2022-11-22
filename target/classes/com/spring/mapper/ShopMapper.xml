@@ -38,8 +38,8 @@
 			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
 			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
 			from tbl_product 
-			 where rownum<=#{pageNum}*#{amount}) 
-			 where rn>(#{pageNum}-1)*#{amount} and pkind = 'vegetable'
+			 where rownum<=#{pageNum}*#{amount} and pkind = 'vegetable') 
+			 where rn>(#{pageNum}-1)*#{amount} 
 		]]>
  	</select>
  	<select id="getListWithPagingFru" resultType="com.spring.domain.ShopVO">
@@ -48,8 +48,8 @@
 			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
 			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
 			from tbl_product 
-			 where rownum<=#{pageNum}*#{amount}) 
-			 where rn>(#{pageNum}-1)*#{amount} and pkind = 'fruit'
+			 where rownum<=#{pageNum}*#{amount} and pkind = 'fruit') 
+			 where rn>(#{pageNum}-1)*#{amount}
 		]]>
  	</select>
  	<select id="getListWithPagingJui" resultType="com.spring.domain.ShopVO">
@@ -58,8 +58,8 @@
 			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
 				rownum rn, pid, pname, pkind, pcontent, pprice, pimg
 				from tbl_product 
-			 	where rownum<=#{pageNum}*#{amount}) 
-			where rn>(#{pageNum}-1)*#{amount} and pkind = 'juice'
+			 	where rownum<=#{pageNum}*#{amount} and pkind = 'juice') 
+			where rn>(#{pageNum}-1)*#{amount}
 		]]>
  	</select>
  	<select id="getListWithPagingDri" resultType="com.spring.domain.ShopVO">
@@ -68,8 +68,8 @@
 			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
 			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
 			from tbl_product 
-			 where rownum<=#{pageNum}*#{amount}) 
-			 where rn>(#{pageNum}-1)*#{amount} and pkind = 'dried'
+			 where rownum<=#{pageNum}*#{amount} and pkind = 'dried') 
+			 where rn>(#{pageNum}-1)*#{amount}
 		]]>
  	</select>
  </mapper>

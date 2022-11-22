@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -29,9 +30,11 @@ public class ShopController {
 	}
 	
 	@GetMapping("/detail")
-	public void detailForm(@RequestParam("pid") Long pid, Model model) {
+	public void detailForm(@RequestParam("pid") Long pid, @RequestParam("pageKind") String pageKind, @ModelAttribute("cri") Criteria cri, Model model) {
 		log.info("detail form");
 		model.addAttribute("product", service.get(pid));
+		//log.info(pageKind);
+		model.addAttribute("pageKind", pageKind);
 	}
 	
 	@GetMapping("/shop_vegetable")

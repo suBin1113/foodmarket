@@ -59,4 +59,36 @@ public class ShopMapperTests {
 		List<ShopVO> list = mapper.getListWithPaging(cri);
 		list.forEach(shop -> log.info(shop));
 	}
+	@Test
+	public void testPagingV() {
+		Criteria cri = new Criteria();
+		cri.setPageNum(1);
+		cri.setAmount(10);
+		List<ShopVO> list = mapper.getListWithPagingVege(cri);
+		list.forEach(shop -> log.info(shop));
+	}
+	@Test
+	public void testPagingF() {
+		Criteria cri = new Criteria();
+		cri.setPageNum(1);
+		cri.setAmount(10);
+		List<ShopVO> list = mapper.getListWithPagingFru(cri);
+		list.forEach(shop -> log.info(shop));
+	}
+	@Test
+	public void testPagingJ() {
+		Criteria cri = new Criteria();
+		cri.setPageNum(1);
+		cri.setAmount(10);
+		List<ShopVO> list = mapper.getListWithPagingJui(cri);
+		list.forEach(shop -> log.info(shop));
+	}
+	@Test
+	public void testPagingD() {
+		Criteria cri = new Criteria();
+		cri.setPageNum(1);
+		cri.setAmount(10);
+		List<ShopVO> list = mapper.getListWithPagingDri(cri);
+		list.forEach(shop -> log.info(shop));
+	}
 }

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<% String pageKind = (String)request.getAttribute("pageKind"); %>
 <%@ include file="../includes/header.jsp"%>
 
 <div class="hero-wrap hero-bread" style="background-image: url('../resources/images/bg_1.jpg');">
@@ -51,19 +52,23 @@
 					<div class="w-100"></div>
 				</div>
 				<p>
-					<a href="/foodMarket/shop" class="btn btn-black py-3 px-5">Back to the Shop</a>
+					<%if(pageKind.equals("all")){%>
+						<a href="/foodMarket/shop?pageNum=${cri.pageNum}&amount=${cri.amount}&pageKind=<%=pageKind%>" class="btn btn-black py-3 px-5">Back to the Shop</a>
+					<%}else if (pageKind.equals("vegetable")){%>
+						<a href="/foodMarket/shop_vegetable?pageNum=${cri.pageNum}&amount=${cri.amount}&pageKind=<%=pageKind%>" class="btn btn-black py-3 px-5">Back to the Shop</a>
+					<%}else if (pageKind.equals("fruit")){%>
+						<a href="/foodMarket/shop_fruit?pageNum=${cri.pageNum}&amount=${cri.amount}&pageKind=<%=pageKind%>" class="btn btn-black py-3 px-5">Back to the Shop</a>
+					<%}else if (pageKind.equals("juice")){%>
+						<a href="/foodMarket/shop_juice?pageNum=${cri.pageNum}&amount=${cri.amount}&pageKind=<%=pageKind%>" class="btn btn-black py-3 px-5">Back to the Shop</a>
+					<%}else if (pageKind.equals("dried")){%>
+						<a href="/foodMarket/shop_dried?pageNum=${cri.pageNum}&amount=${cri.amount}&pageKind=<%=pageKind%>" class="btn btn-black py-3 px-5">Back to the Shop</a>
+					<%}%>
 					<a href="/foodMarket/cart" class="btn btn-black py-3 px-5">Add to Cart</a>
 				</p>
 			</div>
 		</div>
 	</div>
 </section>
-<form id="actionForm" action="/board/list" method="get">
-	<input type="hidden" name="id" value="${product.pid}"> 
-	<input type="hidden" name="pageNum" value="${cri.pageNum}"> 
-	<input type="hidden" name="amount" value="${cri.amount}"> 
-	<input type="hidden" name="pageKind" value="${pageKind}">
-</form>
 <script>
 	console.log(${pageKind});
 	var num = 0; 
