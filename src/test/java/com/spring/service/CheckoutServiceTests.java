@@ -20,7 +20,7 @@ public class CheckoutServiceTests {
 	@Test
 	public void testRegister() {
 		CheckoutVO checkout = new CheckoutVO();
-		checkout.setOrderId(1);
+		checkout.setOrderId(1L);
 		checkout.setName("김주현");
 		checkout.setAddress("대구");
 		checkout.setZip("12345");
@@ -32,14 +32,14 @@ public class CheckoutServiceTests {
 	@Test
 	public void testGet() {
 		CheckoutVO checkout = new CheckoutVO();
-		checkout.setOrderId(1);
+		checkout.setOrderId(1L);
 		log.info("testGet: " + service.get(checkout.getOrderId()));
 	}
 	
 	@Test
 	public void testRemove() {
 		CheckoutVO checkout = new CheckoutVO();
-		checkout.setOrderId(1);
+		checkout.setOrderId(1L);
 		log.info("testRemove: " + service.remove(checkout.getOrderId()));
 	}
 }
