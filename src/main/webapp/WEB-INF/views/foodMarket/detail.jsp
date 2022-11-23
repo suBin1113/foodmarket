@@ -80,7 +80,7 @@
 		var tCount = Number(num.val());
 		if(type == 'p'){
 			num.val(Number(tCount) + 1);
-		}else if (type == 'm'){
+		}else if (type == 'm' & tCount > 0){
 			num.val(Number(tCount) - 1);
 		}
 	}
