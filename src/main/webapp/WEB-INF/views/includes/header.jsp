@@ -41,6 +41,7 @@
 <link rel="stylesheet" href="../resources/css/flaticon.css">
 <link rel="stylesheet" href="../resources/css/icomoon.css">
 <link rel="stylesheet" href="../resources/css/style.css">
+
 </head>
 <body class="goto-here">
 	<div class="py-1 bg-primary">
@@ -83,11 +84,10 @@
 						</div></li>
 					<li class="nav-item"><a href="/foodMarket/orderDetails"
 						class="nav-link">Order Details</a></li>
-					<!-- 카트 아이템 수 집계되게 변경 -->
-					<c:set var="counting" value="${counting+cart.pcount}" />
+					
 					<li class="nav-item cta cta-colored"><a
 						href="/foodMarket/cart" class="nav-link"><span
-							class="icon-shopping_cart"></span>[${counting}]</a></li>
+							class="icon-shopping_cart"></span>[0]</a></li>
 
 				</ul>
 			</div>

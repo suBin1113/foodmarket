@@ -39,12 +39,20 @@
 							<c:set var="sum" value="0" />
 							<c:forEach items="${cart}" var="cart">
 								<tr class="text-center cart_info">
+									<!-- 삭제 폼 -->
+									<form action="/foodMarket/delete" class="delete_form"
+										method="post">
+										<input type="hidden" name="cno" class="delete_cartcno">
+									</form>
 
 									<!-- 삭제 버튼 구현 -->
 									<div>
-										<td class="product-remove"><a
-											href="#"><span
-												class="ion-ios-close"></span></a></td>
+										<td class="product-remove">
+											<button class="ion-ios-close" id="btn_delete"
+												data-cartcno="${cart.cno}" style="width: 35px; height: 35px !important">
+												<span></span>
+											</button>
+										</td>
 									</div>
 
 									<td class="image-prod"><div class="img"
@@ -78,11 +86,10 @@
 								<c:set var="sum" value="${sum + (cart.pprice * cart.pcount)}" />
 
 								<c:set var="delivery" value="0" />
-								<c:if test="${sum > 30000}">
+								<c:if test="${sum < 30000}">
 									<c:set var="delivery" value="3000" />
 								</c:if>
 							</c:forEach>
-
 						</tbody>
 					</table>
 				</div>
@@ -115,7 +122,14 @@
 </section>
 
 <script type="text/javascript">
-
+	$(function() {
+		$('#btn_delete').on("click", function(e) {
+			e.preventDefault();
+			var cno = $(this).data("cartcno");
+			$(".delete_cartcno").val(cno);
+			$(".delete_form").submit();
+		});
+	});
 </script>
 
 <%@ include file="../includes/footer.jsp"%>
