@@ -8,8 +8,12 @@ import org.springframework.stereotype.Service;
 import com.spring.domain.CartVO;
 import com.spring.mapper.CartMapper;
 
+import jdk.internal.org.jline.utils.Log;
+import lombok.extern.log4j.Log4j;
+
 @Service
-public class CartServiceImpl implements CartService{
+@Log4j
+public class CartServiceImpl implements CartService {
 	@Autowired
 	private CartMapper mapper;
 
@@ -19,8 +23,9 @@ public class CartServiceImpl implements CartService{
 	}
 
 	@Override
-	public int deleteCart(Long cno) {
-		return mapper.deleteCart(cno);
+	public int delete(Long cno) {
+		log.info("remove..." + cno);
+		return mapper.delete(cno);
 	}
 
 }

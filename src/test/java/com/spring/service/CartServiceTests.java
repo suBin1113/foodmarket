@@ -1,4 +1,4 @@
-package com.spring.mapper;
+package com.spring.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,18 +11,13 @@ import lombok.extern.log4j.Log4j;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 @Log4j
-public class CartMapperTests {
+public class CartServiceTests {
 	@Autowired
-	private CartMapper mapper;
-
+	private CartService service;
+	
 	@Test
-	public void testGetCart() {
-		log.info("------------");
-		mapper.getCart();
-	}
-
-	@Test
-	public void testDeleteCart() {
-		log.info("DELETE COUNT: " + mapper.delete(21L));
+	public void testDelete() {
+		// 게시물 번호 존재 여부 확인하고 테스트
+		log.info("REMOVE RESULE: " + service.delete(61L));
 	}
 }
