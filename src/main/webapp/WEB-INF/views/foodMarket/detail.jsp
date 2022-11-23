@@ -62,6 +62,8 @@
 						<a href="/foodMarket/shop_juice?pageNum=${cri.pageNum}&amount=${cri.amount}&pageKind=<%=pageKind%>" class="btn btn-black py-3 px-5">Back to the Shop</a>
 					<%}else if (pageKind.equals("dried")){%>
 						<a href="/foodMarket/shop_dried?pageNum=${cri.pageNum}&amount=${cri.amount}&pageKind=<%=pageKind%>" class="btn btn-black py-3 px-5">Back to the Shop</a>
+					<%}else{%>
+						<a href="/foodMarket/main" class="btn btn-black py-3 px-5">Back to the Main</a>
 					<%}%>
 					<a href="/foodMarket/cart" class="btn btn-black py-3 px-5">Add to Cart</a>
 				</p>
