@@ -91,4 +91,7 @@
  	<insert id="insert">
  	
  	</insert>
+ 	<insert id="insertSelectKey">
+ 	
+ 	</insert>
  </mapper>
