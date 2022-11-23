@@ -143,22 +143,23 @@
         	<div class="col-md-12 heading-section text-center ftco-animate">
           		<span class="subheading">Featured Products</span>
             	<h2 class="mb-4">Our Products</h2>
-            	<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+            	<p>신상품을 확인해보세요</p>
           	</div>
         </div>   		
     </div>
     <div class="container">
     	<div class="row">
+    	<c:forEach items="${productList}" var="productList">
     		<div class="col-md-6 col-lg-3 ftco-animate">
     			<div class="product">
-    				<a href="#" class="img-prod"><img class="img-fluid" src="../resources/images/product-1.jpg" alt="Colorlib Template">
+    				<a href="#" class="img-prod"><img class="img-fluid" src="../resources/images/${productList.pimg}" alt="Colorlib Template">
     					<div class="overlay"></div>
     				</a>
     				<div class="text py-3 pb-4 px-3 text-center">
-    					<h3><a href="#">Bell Pepper</a></h3>
+    					<h3><a href="#">${productList.pname}</a></h3>
     					<div class="d-flex">
     						<div class="pricing">
-		    					<p class="price"><span>$80.00</span></p>
+		    					<p class="price"><span>${productList.pprice}원</span></p>
 		    				</div>
 	    				</div>
 	    				<div class="bottom-area d-flex px-3">
@@ -174,6 +175,7 @@
     				</div>
     			</div>
     		</div>
+    	</c:forEach>
     	
     	</div>
    	</div>

@@ -13,8 +13,8 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Vegefoods</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+              <h2 class="ftco-heading-2">FoodMarket</h2>
+              <p>팀원 소개?</p>
             </div>
           </div>
           <div class="col-md">
@@ -74,8 +74,8 @@
   <script src="../resources/js/jquery.animateNumber.min.js"></script>
   <script src="../resources/js/bootstrap-datepicker.js"></script>
   <script src="../resources/js/scrollax.min.js"></script>
-  <script src="../resources/https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="../resources/js/google-map.js"></script>
+  <!--  --><script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <!-- <script src="../resources/js/google-map.js"></script> -->
   <script src="../resources/js/main.js"></script>
     
   </body>
