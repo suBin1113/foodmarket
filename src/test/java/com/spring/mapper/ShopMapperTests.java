@@ -91,4 +91,16 @@ public class ShopMapperTests {
 		List<ShopVO> list = mapper.getListWithPagingDri(cri);
 		list.forEach(shop -> log.info(shop));
 	}
+	@Test
+	public void testInsert() {
+		ShopVO shop = new ShopVO();
+		shop.setPid(61L);
+		shop.setPname("이름1");
+		shop.setPprice(100);
+		shop.setPcontent("테스트 내용");
+		shop.setPimg("product-1.jpg");
+		
+		mapper.insert(shop);
+		log.info(shop);
+	}
 }

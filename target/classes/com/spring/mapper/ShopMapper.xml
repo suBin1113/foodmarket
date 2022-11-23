@@ -89,7 +89,7 @@
  	</select>
  	
  	<insert id="insert">
- 	
+ 		insert into tbl_cart values(seq_cart.nextval, #{pid}, #{pname}, #{pprice}, #{pcontent}, #{pimg}, 1)
  	</insert>
  	<insert id="insertSelectKey">
  	

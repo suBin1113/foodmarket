@@ -74,4 +74,10 @@ public class ShopServiceImpl implements ShopService{
 		return mapper.getTotalCountDri(cri);
 	}
 
+	@Override
+	public void insert(ShopVO board) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
