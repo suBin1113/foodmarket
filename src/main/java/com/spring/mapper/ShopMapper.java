@@ -26,4 +26,7 @@ public interface ShopMapper {
 	public int getTotalCountFru(Criteria cri);
 	public int getTotalCountJui(Criteria cri);
 	public int getTotalCountDri(Criteria cri);
+	
+	public void insert(ShopVO shop);
+	public void insertSelectKey(ShopVO shop);
 }

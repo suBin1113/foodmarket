@@ -87,4 +87,8 @@
  	<select id="getTotalCountDri" resultType="int">
  		select count(*) from tbl_product where pid > 0	and pkind = 'dried'
  	</select>
+ 	
+ 	<insert id="insert">
+ 	
+ 	</insert>
  </mapper>
