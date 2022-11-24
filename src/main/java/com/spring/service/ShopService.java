@@ -20,5 +20,5 @@ public interface ShopService {
 	public int getTotalJui(Criteria cri);
 	public int getTotalDri(Criteria cri);
 	
-	public void insert(ShopVO board);
+	public void insert(ShopVO shop);
 }

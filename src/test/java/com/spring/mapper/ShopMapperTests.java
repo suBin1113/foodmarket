@@ -99,8 +99,22 @@ public class ShopMapperTests {
 		shop.setPprice(100);
 		shop.setPcontent("테스트 내용");
 		shop.setPimg("product-1.jpg");
+		shop.setCount(3);
 		
 		mapper.insert(shop);
+		log.info(shop);
+	}
+	@Test
+	public void testInsertSelectKey() {
+		ShopVO shop = new ShopVO();
+		shop.setPid(61L);
+		shop.setPname("이름1");
+		shop.setPprice(100);
+		shop.setPcontent("테스트 내용");
+		shop.setPimg("product-1.jpg");
+		shop.setCount(4);
+		
+		mapper.insertSelectKey(shop);
 		log.info(shop);
 	}
 }
