@@ -10,4 +10,6 @@ public class ShopVO {
 	private String pcontent;
 	private int pprice;
 	private String pimg;
+	private Long cno;
+	private int count;
 }
