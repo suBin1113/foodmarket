@@ -5,11 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.spring.domain.Criteria;
 import com.spring.domain.PageDTO;
+import com.spring.domain.ShopVO;
 import com.spring.service.ShopService;
 
 import lombok.extern.log4j.Log4j;
@@ -68,5 +71,12 @@ public class ShopController {
 		int total = service.getTotalDri(cri);
 		model.addAttribute("shop_dri", service.getListDri(cri));
 		model.addAttribute("pageMaker", new PageDTO(cri, total));
+	}
+	
+	@PostMapping("/addCart")
+	public String addCart(ShopVO shop, RedirectAttributes rttr) {
+		service.insert(shop);
+		rttr.addFlashAttribute("insertCart", shop);
+		return "redirect:/foodMarket/cart";
 	}
 }

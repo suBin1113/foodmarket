@@ -75,9 +75,8 @@ public class ShopServiceImpl implements ShopService{
 	}
 
 	@Override
-	public void insert(ShopVO board) {
-		// TODO Auto-generated method stub
-		
+	public void insert(ShopVO shop) {
+		mapper.insertSelectKey(shop);
 	}
 
 }

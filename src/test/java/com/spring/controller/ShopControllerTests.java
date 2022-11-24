@@ -46,4 +46,19 @@ public class ShopControllerTests {
 				.andReturn()
 				.getModelAndView().getModelMap());
 	}
+	
+	@Test
+	public void testInsert() throws Exception {
+		String result = mockMvc.perform(MockMvcRequestBuilders.post("/foodMarket/addCart")
+				.param("pid", "61")
+				.param("pname", "이름1")
+				.param("pprice", "100")
+				.param("pcontent", "테스트 내용1")
+				.param("pimg", "product-1.jpg"))
+				.andReturn()
+				.getModelAndView()
+				.getViewName();
+		
+		log.info("-----------------------------"+ result);
+	}
 }

@@ -30,11 +30,19 @@
 		</div>
 		<div class="row">
 			<c:forEach items="${shop}" var="shop">
+				<form>
+				<input type="hidden" name="pid" value="${shop.pid}">
+				<input type="hidden" name="pname" value="${shop.pname}">
+				<input type="hidden" name="pprice" value="${shop.pprice}">
+				<input type="hidden" name="pcontent" value="${shop.pcontent}">
+				<input type="hidden" name="pimg" value="${shop.pimg}">
+				<input type="hidden" name="count" value="1">
+				</form>
 				<div class="col-md-6 col-lg-3 ftco-animate">
 					<div class="product">
-						<a class="move" href='${shop.pid}'>
-							<img class="img-fluid" src="../resources/images/${shop.pimg}" alt="Colorlib Template">
-							<div class="overlay"></div> 
+						<a class="move" href='${shop.pid}'> <img class="img-fluid"
+							src="../resources/images/${shop.pimg}" alt="Colorlib Template">
+							<div class="overlay"></div>
 						</a>
 						<div class="text py-3 pb-4 px-3 text-center">
 							<h3>
@@ -49,10 +57,10 @@
 							</div>
 							<div class="bottom-area d-flex px-3">
 								<div class="m-auto d-flex">
-									<a href="/foodMarket/cart" class="buy-now d-flex justify-content-center align-items-center mx-1">
+									<a class="buy-now d-flex justify-content-center align-items-center mx-1" onclick="insert(this)" data-oper="insert">
 										<span><i class="ion-ios-cart"></i></span>
-									</a> 
-									<a href="/foodMarket/wishlist" class="heart d-flex justify-content-center align-items-center">
+									</a> <a href="/foodMarket/wishlist"
+										class="heart d-flex justify-content-center align-items-center">
 										<span><i class="ion-ios-heart"></i></span>
 									</a>
 								</div>
@@ -108,5 +116,16 @@
 			actionForm.submit();
 		});
 	});
+	function insert(ths){
+		var formObj = $("form");
+		var operation = $(ths).data("oper");
+		if(operation ==='insert'){
+			formObj.attr({
+			"action" : "/foodMarket/addCart",
+			"method" : "post"
+			});
+		}
+		formObj.submit();
+	}
 </script>
 <%@ include file="../includes/footer.jsp"%>

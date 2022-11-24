@@ -7,6 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.spring.domain.Criteria;
+import com.spring.domain.ShopVO;
 
 import lombok.extern.log4j.Log4j;
 
@@ -42,5 +43,17 @@ public class ShopServiceTests {
 	@Test
 	public void testGetListDri() {
 		service.getListDri(new Criteria(2, 10)).forEach(shop_dri -> log.info(shop_dri));
+	}
+	@Test
+	public void testInsert() {
+		ShopVO shop = new ShopVO();
+		shop.setPid(61L);
+		shop.setPname("이름1");
+		shop.setPprice(100);
+		shop.setPcontent("테스트 내용");
+		shop.setPimg("product-1.jpg");
+		shop.setCount(5);
+		
+		service.insert(shop);
 	}
 }
