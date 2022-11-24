@@ -51,7 +51,7 @@
 									</td>
 									<td class="price">${ list.pprice }</td>
 									<td class="price">${ list.pcount }</td>
-									<td class="total">${ list.pprice * list.pcount }</td>
+									<td class="total">${ list.totalPrice }</td>
 								</tr>
 							</c:forEach>
 						</tbody>
@@ -113,8 +113,6 @@
 <script>
 	$(function() {
 		var result = '${result}';
-
-		//$("#myModal").modal("show");
 
 		checkModal(result);
 

@@ -19,7 +19,8 @@
 
 <section class="ftco-section">
 	<div class="container">
-		<form action="/foodMarket/checkout" class="billing-form" method="post">
+		<form action="/foodMarket/checkout" class="billing-form" method="post"
+			id="chkoutForm">
 			<div class="row justify-content-center">
 				<div class="col-xl-7 ftco-animate">
 					<h3 class="mb-4 billing-heading">Billing Details</h3>
@@ -45,22 +46,10 @@
 									type="text" class="form-control" name="zip">
 							</div>
 						</div>
-						<!-- <div class="w-100"></div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<label for="phone">Phone</label> <input type="text"
-									class="form-control" placeholder="">
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<label for="emailaddress">Email Address</label> <input
-									type="text" class="form-control" placeholder="">
-							</div>
-						</div> -->
 					</div>
-					<!-- END -->
 				</div>
+				<!-- 아이템 삽입 -->
+				<div class="itemsDiv"></div>
 				<div class="col-xl-5">
 					<div class="row mt-5 pt-3">
 						<div class="col-md-12 d-flex mb-5">
@@ -91,11 +80,25 @@
 						</div>
 					</div>
 				</div>
-				<!-- .col-md-8 -->
 			</div>
 		</form>
 	</div>
 </section>
 <!-- .section -->
 
+<script>
+	$(function() {
+		var str = "";
+		
+		// 더미 값
+		for(var i=0; i<5; i++) {
+			str += '<input type="hidden" name="orders[' + i + '].pid" value="' + (i+1) + '">';
+			str += '<input type="hidden" name="orders[' + i + '].pname" value="item' + (i+1) + '">';
+			str += '<input type="hidden" name="orders[' + i + '].pcount" value="' + i + '">';
+			str += '<input type="hidden" name="orders[' + i + '].pprice" value="' + (i*1000) + '">';
+		}
+			
+		$(".itemsDiv").html(str);
+	});
+</script>
 <%@ include file="../includes/footer.jsp"%>

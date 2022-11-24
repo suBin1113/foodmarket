@@ -40,7 +40,6 @@ alter table tbl_wishlist add CONSTRAINT fk_wishlist FOREIGN key (pid) references
 
 create table tbl_orderItem(
     orderId number(20) not null,
-    orderItemId number(10, 0),
     pid number(10, 0),
     pname varchar2(50),
     pprice number,

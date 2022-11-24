@@ -7,6 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.spring.domain.CheckoutVO;
+import com.spring.domain.OrderItemVO;
 
 import lombok.extern.log4j.Log4j;
 
@@ -32,14 +33,14 @@ public class CheckoutServiceTests {
 	@Test
 	public void testGet() {
 		CheckoutVO checkout = new CheckoutVO();
-		checkout.setOrderId(1L);
+		checkout.setOrderId(72L);
 		log.info("testGet: " + service.get(checkout.getOrderId()));
 	}
 	
 	@Test
 	public void testRemove() {
 		CheckoutVO checkout = new CheckoutVO();
-		checkout.setOrderId(1L);
+		checkout.setOrderId(72L);
 		log.info("testRemove: " + service.remove(checkout.getOrderId()));
 	}
 }

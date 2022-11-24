@@ -24,30 +24,18 @@ public class CheckoutMapperTests {
 	@Test
 	public void testInsert() {
 		CheckoutVO checkout = new CheckoutVO();
-		List<OrderItemVO> orders = new ArrayList<>();
-		OrderItemVO orderItem = new OrderItemVO();
-		
-		orderItem.setOrderId(1L);
-		orderItem.setPid(1);
-		orderItem.setPcount(1);
-		orderItem.setPprice(1000);
-		orderItem.setTotalPrice(1000);
-		
-		orders.add(orderItem);
-		
 		checkout.setOrderId(1L);
 		checkout.setName("김주현");
 		checkout.setAddress("대구");
 		checkout.setZip("12345");
 		checkout.setPsum(10000);
-		checkout.setOrders(orders);
 		mapper.insert(checkout);
 		log.info("==================testInsert: " + checkout.getOrderId());
 	}
 	
 	@Test
 	public void testRead() {
-		CheckoutVO checkout = mapper.read(1L);
+		CheckoutVO checkout = mapper.read(71L);
 		log.info(checkout);
 	}
 	
@@ -58,7 +46,7 @@ public class CheckoutMapperTests {
 	
 	@Test
 	public void testDelete() {
-		int count = mapper.delete(1L);
+		int count = mapper.delete(71L);
 		log.info("==================testDelete: " + count);
 	}
 	
@@ -66,7 +54,6 @@ public class CheckoutMapperTests {
 	public void testItemInsert() {
 		OrderItemVO orderItem = new OrderItemVO();
 		orderItem.setOrderId(1L);
-		orderItem.setOrderItemId(1);
 		orderItem.setPid(1);
 		orderItem.setPcount(1);
 		orderItem.setPprice(1000);

@@ -1,8 +1,6 @@
 package com.spring.service;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +17,19 @@ public class CheckoutServiceImpl implements CheckoutService {
 
 	@Override
 	public void register(CheckoutVO checkout) {
-		//List<OrderItemVO> orders = new ArrayList<>();
 		mapper.insert(checkout);
 	}
+	
+	@Override
+	public void registerItem(OrderItemVO orderItem) {
+		mapper.itemInsert(orderItem);
+	}
 
+	@Override
+	public void updatePsum(CheckoutVO checkout) {
+		mapper.updatePsum(checkout);
+	}
+	
 	@Override
 	public CheckoutVO get(Long orderId) {
 		return mapper.read(orderId);
@@ -32,11 +39,15 @@ public class CheckoutServiceImpl implements CheckoutService {
 	public int remove(Long orderId) {
 		return mapper.delete(orderId);
 	}
+	
+	@Override
+	public int removeItem(Long orderId) {
+		return mapper.deleteItem(orderId);
+	}
 
 	@Override
 	public List<OrderItemVO> getOrderList(Long orderId) {
 		return mapper.readOrderList(orderId);
 	}
-	
-	
+
 }
