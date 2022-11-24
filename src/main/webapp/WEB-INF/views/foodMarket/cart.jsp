@@ -38,22 +38,20 @@
 						<tbody>
 							<c:set var="sum" value="0" />
 							<c:forEach items="${cart}" var="cart">
-								<tr class="text-center cart_info">
-									<!-- 삭제 폼 -->
-									<form action="/foodMarket/delete" class="delete_form"
-										method="post">
-										<input type="hidden" name="cno" class="delete_cartcno">
-									</form>
 
+								<!-- 삭제 폼 -->
+								<form action="/foodMarket/delete" class="delete_form"
+									method="post">
+									<input type="hidden" name="cno" class="delete_cartcno">
+								</form>
+
+								<tr class="text-center cart_info">
 									<!-- 삭제 버튼 구현 -->
-									<div>
-										<td class="product-remove">
-											<button class="ion-ios-close" id="btn_delete"
-												data-cartcno="${cart.cno}" style="width: 35px; height: 35px !important">
-												<span></span>
-											</button>
-										</td>
-									</div>
+									<td class="product-remove">
+										<button class="btn_delete ion-ios-close"
+											data-cartcno="${cart.cno}"
+											style="width: 35px; height: 35px !important"></button>
+									</td>
 
 									<td class="image-prod"><div class="img"
 											style="background-image: url(../resources/images/${cart.pimg});"></div></td>
@@ -113,7 +111,7 @@
 					</p>
 				</div>
 				<p>
-					<a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed
+					<a href="/foodMarket/checkout" class="btn btn-primary py-3 px-4">Proceed
 						to Checkout</a>
 				</p>
 			</div>
@@ -123,7 +121,7 @@
 
 <script type="text/javascript">
 	$(function() {
-		$('#btn_delete').on("click", function(e) {
+		$('.btn_delete').on("click", function(e) {
 			e.preventDefault();
 			var cno = $(this).data("cartcno");
 			$(".delete_cartcno").val(cno);
