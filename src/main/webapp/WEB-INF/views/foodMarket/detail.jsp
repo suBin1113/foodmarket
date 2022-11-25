@@ -92,7 +92,7 @@
 		var tCount = Number(num.val());
 		
 		if(tCount == 0){
-			alert("수량을 확인해주세요.");
+			alert("수량을 확인해주세요");
 			return;
 		}else{
 			if(operation ==='insert'){
@@ -101,6 +101,7 @@
 				"method" : "post"
 				});
 			}
+			alert("장바구니에 추가되었습니다")
 			formObj.submit();
 		}
 		
