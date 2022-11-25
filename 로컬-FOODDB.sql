@@ -45,6 +45,7 @@ create table tbl_orderItem(
     pname varchar2(50),
     pprice number,
     pcount number,
+    pimg varchar2(50),
     totalPrice number
 );
 
