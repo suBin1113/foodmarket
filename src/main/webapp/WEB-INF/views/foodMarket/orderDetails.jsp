@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../includes/header.jsp"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 <div class="hero-wrap hero-bread"
 	style="background-image: url('../resources/images/bg_1.jpg');">
@@ -18,59 +19,120 @@
 		</div>
 	</div>
 </div>
-
-<section class="ftco-section">
+<form
+	class="form-inline col-md-12 mt-5 align-items justify-content-center"
+	action="/foodMarket/orderDetails">
+	<input type="text" class="form-control col-md-4 mr-2"
+		placeholder="Order Number.." name="orderId">
+	<button type="submit" id="submit" class="btn btn-primary py-3 px-4">Submit</button>
+</form>
+<section class="ftco-section ftco-cart">
 	<div class="container">
-		<div class="row justify-content-center">
-			<div class="col-xl-12">
-				<div class="row col-md-12">
-					<label for="cno">Order Number</label>
-					<form class="form-inline col-md-12"
-						action="/foodMarket/orderDetails" method="post">
-						<input type="text" class="form-control col-md-10 mr-2"
-							placeholder="" name="orderId">
-						<button type="submit" class="btn btn-primary py-3 px-4">Submit</button>
-					</form>
-				</div>
-				<div class="row mt-5 pt-3">
-					<div class="col-md-12 d-flex mb-5">
-						<div class="cart-detail cart-total p-3 p-md-4">
-							<h3 class="billing-heading mb-4">Order Items</h3>
+		<div class="row">
+			<div class="col-md-12 ftco-animate">
+				<div class="cart-list">
+					<table class="table">
+						<thead class="thead-primary">
+							<tr class="text-center">
+								<th>&nbsp;</th>
+								<th>Product name</th>
+								<th>Price</th>
+								<th>Quantity</th>
+								<th>Total</th>
+							</tr>
+						</thead>
+						<tbody>
 							<c:forEach items="${ orderList }" var="list">
-								<p class="d-flex">
-									<span>${ list.pname }</span>
-									<span>${ list.pcount }</span>
-									<span>${ list.pprice }</span>
-								</p>
+								<tr class="text-center">
+									<td class="image-prod"><div class="img"
+											style="background-image: url(../resources/images/${ list.pimg }.jpg);"></div></td>
+									<td class="product-name">
+										<h3>${ list.pname }</h3>
+									</td>
+									<td class="price">${ list.pprice }</td>
+									<td class="price">${ list.pcount }</td>
+									<td class="total">${ list.totalPrice }</td>
+								</tr>
 							</c:forEach>
-						</div>
-					</div>
-				</div>
-				<div class="row mt-5 pt-3">
-					<div class="cart-detail cart-total p-3 p-md-4">
-						<h3 class="billing-heading mb-4">Order Details</h3>
-						<p class="d-flex">
-							<span>Order Number</span> <span>${ checkout.orderId }</span>
-						</p>
-						<p class="d-flex">
-							<span>name</span> <span>${ checkout.name }</span>
-						</p>
-						<p class="d-flex">
-							<span>Address</span> <span>${ checkout.address }</span>
-						</p>
-						<p class="d-flex">
-							<span>ZIP</span> <span>${ checkout.zip }</span>
-						</p>
-						<p class="d-flex">
-							<span>Order Date</span> <span>${ checkout.orderDate }</span>
-						</p>
-					</div>
+						</tbody>
+					</table>
 				</div>
 			</div>
-			<!-- .col-md-8 -->
+		</div>
+		<div class="row justify-content-end">
+			<div class="col-lg-4 mt-5 cart-wrap ftco-animate">
+				<div class="cart-total mb-3">
+					<h3>Order Details</h3>
+					<p class="d-flex">
+						<span>Order Number</span> <span>${ checkout.orderId }</span>
+					</p>
+					<p class="d-flex">
+						<span>name</span> <span>${ checkout.name }</span>
+					</p>
+					<p class="d-flex">
+						<span>Address</span> <span>${ checkout.address }</span>
+					</p>
+					<p class="d-flex">
+						<span>ZIP</span> <span>${ checkout.zip }</span>
+					</p>
+					<p class="d-flex">
+						<span>Order Date</span> <span><fmt:formatDate
+								pattern="yyyy-MM-dd" value="${ checkout.orderDate }" /></span>
+					</p>
+				</div>
+				<form action="/foodMarket/checkout/remove" method="post">
+					<input type="hidden" name="orderId" value="${ checkout.orderId }">
+					<p>
+						<input type="submit" class="btn btn-primary py-3 px-4"
+							id="submitButton" value="주문 취소">
+					</p>
+				</form>
+			</div>
 		</div>
 	</div>
 </section>
-<!-- .section -->
+
+<div class="modal fade in" id="myModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				<!-- <button type="button" class="close" data-dismiss="modal"
+					aria-hidden="true">×</button> -->
+			</div>
+			<div class="modal-body">lorem</div>
+			<div class="modal-footer">
+				<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 <%@ include file="../includes/footer.jsp"%>
+<script>
+	$(function() {
+		var result = '${result}';
+
+		checkModal(result);
+
+		history.replaceState({}, null, null);
+
+		function checkModal(result) {
+			if (result === '' || history.state) {
+				return;
+			}
+
+			if (result === 'success') {
+				$(".modal-title").html("주문 취소")
+				$(".modal-body").html("정상적으로 처리되었습니다.");
+			} else if (parseInt(result) > 0) {
+				$(".modal-title").html("주문 완료")
+				$(".modal-body").html(
+						"주문번호 " + parseInt(result) + "번으로 주문되었습니다.");
+			}
+
+			$("#myModal").modal("show");
+		}
+	});
+</script>

@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 public class CheckoutVO {
-	private int orderId;
+	private Long orderId;
 	private String name;
 	private String address;
 	private String zip;
