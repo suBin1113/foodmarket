@@ -64,4 +64,10 @@ public class WishlistServiceImpl implements WishlistService {
 		this.mapper = mapper;
 	}
 
+	@Override
+	public void deleteWishlist(int wno) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

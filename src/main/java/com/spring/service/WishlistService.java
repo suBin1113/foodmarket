@@ -13,4 +13,5 @@ public interface WishlistService {
 	public List<WishlistVO> getList();
 	public List<WishlistVO> getList(Criteria cri);
 	public int getTotal(Criteria cri);
+	public void deleteWishlist(int wno);
 }
