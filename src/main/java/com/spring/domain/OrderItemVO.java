@@ -11,5 +11,6 @@ public class OrderItemVO {
 	private String pname;
 	private int pcount;
 	private int pprice;
+	private String pimg;
 	private int totalPrice;
 }

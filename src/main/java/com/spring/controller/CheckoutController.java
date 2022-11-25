@@ -40,6 +40,7 @@ public class CheckoutController {
 			orderItem.setPname(checkout.getOrders().get(i).getPname());
 			orderItem.setPcount(checkout.getOrders().get(i).getPcount());
 			orderItem.setPprice(checkout.getOrders().get(i).getPprice());
+			orderItem.setPimg(checkout.getOrders().get(i).getPimg());
 			orderItem.setTotalPrice(totalPrice);
 			
 			psum += totalPrice;

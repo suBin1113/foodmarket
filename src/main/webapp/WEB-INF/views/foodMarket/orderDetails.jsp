@@ -45,7 +45,7 @@
 							<c:forEach items="${ orderList }" var="list">
 								<tr class="text-center">
 									<td class="image-prod"><div class="img"
-											style="background-image: url(../resources/images/product-3.jpg);"></div></td>
+											style="background-image: url(../resources/images/${ list.pimg }.jpg);"></div></td>
 									<td class="product-name">
 										<h3>${ list.pname }</h3>
 									</td>

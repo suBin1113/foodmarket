@@ -49,16 +49,5 @@ public class CheckoutMapperTests {
 		int count = mapper.delete(71L);
 		log.info("==================testDelete: " + count);
 	}
-	
-	@Test
-	public void testItemInsert() {
-		OrderItemVO orderItem = new OrderItemVO();
-		orderItem.setOrderId(1L);
-		orderItem.setPid(1);
-		orderItem.setPcount(1);
-		orderItem.setPprice(1000);
-		orderItem.setTotalPrice(1000);
-		mapper.itemInsert(orderItem);
-		log.info("==================testItemInsert: " + orderItem.getOrderId());
-	}
+
 }

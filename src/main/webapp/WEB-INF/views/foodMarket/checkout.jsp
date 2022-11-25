@@ -91,11 +91,12 @@
 		var str = "";
 		
 		// 더미 값
-		for(var i=0; i<5; i++) {
+		for(var i=0; i<=4; i++) {
 			str += '<input type="hidden" name="orders[' + i + '].pid" value="' + (i+1) + '">';
 			str += '<input type="hidden" name="orders[' + i + '].pname" value="item' + (i+1) + '">';
-			str += '<input type="hidden" name="orders[' + i + '].pcount" value="' + i + '">';
-			str += '<input type="hidden" name="orders[' + i + '].pprice" value="' + (i*1000) + '">';
+			str += '<input type="hidden" name="orders[' + i + '].pcount" value="' + (i+1) + '">';
+			str += '<input type="hidden" name="orders[' + i + '].pimg" value="product-' + (i+1) + '">';
+			str += '<input type="hidden" name="orders[' + i + '].pprice" value="' + ((i+1)*1000) + '">';
 		}
 			
 		$(".itemsDiv").html(str);

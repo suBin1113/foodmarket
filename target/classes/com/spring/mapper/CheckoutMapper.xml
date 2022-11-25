@@ -21,7 +21,7 @@
 			resultType="Long">
 			select seq_checkout.currval from dual
 		</selectKey>
-		insert into tbl_orderItem(orderId, pid, pname, pcount, pprice, totalPrice) values(#{orderId}, #{pid}, #{pname}, #{pcount}, #{pprice}, #{totalPrice})
+		insert into tbl_orderItem(orderId, pid, pname, pcount, pprice, pimg, totalPrice) values(#{orderId}, #{pid}, #{pname}, #{pcount}, #{pprice}, #{pimg}, #{totalPrice})
 	</insert>
 	<update id="updatePsum">
 		update tbl_checkout set psum=#{psum} where orderId=#{orderId}
