@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.google.gson.annotations.Expose;
-import com.spring.domain.CartDTO;
 import com.spring.service.CartService;
 
 import lombok.extern.log4j.Log4j;
