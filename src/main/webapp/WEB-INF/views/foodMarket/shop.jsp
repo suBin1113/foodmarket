@@ -31,12 +31,12 @@
 		<div class="row">
 			<c:forEach items="${shop}" var="shop">
 				<form>
-				<input type="hidden" name="pid" value="${shop.pid}">
-				<input type="hidden" name="pname" value="${shop.pname}">
-				<input type="hidden" name="pprice" value="${shop.pprice}">
-				<input type="hidden" name="pcontent" value="${shop.pcontent}">
-				<input type="hidden" name="pimg" value="${shop.pimg}">
-				<input type="hidden" name="count" value="1">
+					<input type="hidden" name="pid" value="${shop.pid}">
+					<input type="hidden" name="pname" value="${shop.pname}">
+					<input type="hidden" name="pprice" value="${shop.pprice}">
+					<input type="hidden" name="pcontent" value="${shop.pcontent}">
+					<input type="hidden" name="pimg" value="${shop.pimg}">
+					<input type="hidden" name="count" value="1">
 				</form>
 				<div class="col-md-6 col-lg-3 ftco-animate">
 					<div class="product">
