@@ -8811,7 +8811,7 @@ h1, h2, h3, h4, h5,
   padding: 0 15px; }
 
 .product-details button, .product-details .form-control {
-  height: 40px !important;
+  height: 40px ;
   text-align: center;
   border: 1px solid rgba(0, 0, 0, 0.1) !important;
   color: #82ae46;
@@ -8880,7 +8880,7 @@ h1, h2, h3, h4, h5,
   padding: 16px 20px; }
 
 .ftco-cart button, .ftco-cart .form-control {
-  height: 54px !important;
+  height: 50px !important;
   text-align: center;
   bordeR: 1px solid rgba(0, 0, 0, 0.05) !important;
   color: #000000 !important;

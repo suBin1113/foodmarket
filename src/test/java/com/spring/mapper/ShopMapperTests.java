@@ -59,4 +59,62 @@ public class ShopMapperTests {
 		List<ShopVO> list = mapper.getListWithPaging(cri);
 		list.forEach(shop -> log.info(shop));
 	}
+	@Test
+	public void testPagingV() {
+		Criteria cri = new Criteria();
+		cri.setPageNum(1);
+		cri.setAmount(10);
+		List<ShopVO> list = mapper.getListWithPagingVege(cri);
+		list.forEach(shop -> log.info(shop));
+	}
+	@Test
+	public void testPagingF() {
+		Criteria cri = new Criteria();
+		cri.setPageNum(1);
+		cri.setAmount(10);
+		List<ShopVO> list = mapper.getListWithPagingFru(cri);
+		list.forEach(shop -> log.info(shop));
+	}
+	@Test
+	public void testPagingJ() {
+		Criteria cri = new Criteria();
+		cri.setPageNum(1);
+		cri.setAmount(10);
+		List<ShopVO> list = mapper.getListWithPagingJui(cri);
+		list.forEach(shop -> log.info(shop));
+	}
+	@Test
+	public void testPagingD() {
+		Criteria cri = new Criteria();
+		cri.setPageNum(1);
+		cri.setAmount(10);
+		List<ShopVO> list = mapper.getListWithPagingDri(cri);
+		list.forEach(shop -> log.info(shop));
+	}
+	@Test
+	public void testInsert() {
+		ShopVO shop = new ShopVO();
+		shop.setPid(61L);
+		shop.setPname("이름1");
+		shop.setPprice(100);
+		shop.setPcontent("테스트 내용");
+		shop.setPimg("product-1.jpg");
+		shop.setCount(3);
+		
+		mapper.insert(shop);
+		log.info(shop);
+	}
+	@Test
+	public void testInsertSelectKey() {
+		ShopVO shop = new ShopVO();
+		shop.setPid(61L);
+		shop.setPname("이름1");
+		shop.setPprice(100);
+		shop.setPcontent("테스트 내용");
+		shop.setPimg("product-1.jpg");
+		shop.setCount(4);
+		
+		mapper.insertSelectKey(shop);
+		log.info(shop);
+	}
 }

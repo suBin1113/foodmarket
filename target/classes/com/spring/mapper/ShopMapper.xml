@@ -38,8 +38,8 @@
 			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
 			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
 			from tbl_product 
-			 where rownum<=#{pageNum}*#{amount}) 
-			 where rn>(#{pageNum}-1)*#{amount} and pkind = 'vegetable'
+			 where rownum<=#{pageNum}*#{amount} and pkind = 'vegetable') 
+			 where rn>(#{pageNum}-1)*#{amount} 
 		]]>
  	</select>
  	<select id="getListWithPagingFru" resultType="com.spring.domain.ShopVO">
@@ -48,18 +48,18 @@
 			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
 			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
 			from tbl_product 
-			 where rownum<=#{pageNum}*#{amount}) 
-			 where rn>(#{pageNum}-1)*#{amount} and pkind = 'fruit'
+			 where rownum<=#{pageNum}*#{amount} and pkind = 'fruit') 
+			 where rn>(#{pageNum}-1)*#{amount}
 		]]>
  	</select>
  	<select id="getListWithPagingJui" resultType="com.spring.domain.ShopVO">
  		<![CDATA[
 			select pid, pname, pkind, pcontent, pprice, pimg
 			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
-			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
-			from tbl_product 
-			 where rownum<=#{pageNum}*#{amount}) 
-			 where rn>(#{pageNum}-1)*#{amount} and pkind = 'juice'
+				rownum rn, pid, pname, pkind, pcontent, pprice, pimg
+				from tbl_product 
+			 	where rownum<=#{pageNum}*#{amount} and pkind = 'juice') 
+			where rn>(#{pageNum}-1)*#{amount}
 		]]>
  	</select>
  	<select id="getListWithPagingDri" resultType="com.spring.domain.ShopVO">
@@ -68,8 +68,36 @@
 			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
 			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
 			from tbl_product 
-			 where rownum<=#{pageNum}*#{amount}) 
-			 where rn>(#{pageNum}-1)*#{amount} and pkind = 'dried'
+			 where rownum<=#{pageNum}*#{amount} and pkind = 'dried') 
+			 where rn>(#{pageNum}-1)*#{amount}
 		]]>
  	</select>
+ 	<select id="getTotalCount" resultType="int">
+ 		select count(*) from tbl_product where pid > 0
+ 	</select>
+ 	<select id="getTotalCountVege" resultType="int">
+ 		select count(*) from tbl_product where pid > 0 and pkind = 'vegetable'
+ 	</select>
+ 	<select id="getTotalCountFru" resultType="int">
+ 		select count(*) from tbl_product where pid > 0 and pkind = 'fruit'
+ 	</select>
+ 	<select id="getTotalCountJui" resultType="int">
+ 		select count(*) from tbl_product where pid > 0	and pkind = 'juice'
+ 	</select>
+ 	<select id="getTotalCountDri" resultType="int">
+ 		select count(*) from tbl_product where pid > 0	and pkind = 'dried'
+ 	</select>
+ 	
+ 	<insert id="insert">
+ 		insert into tbl_cart values(seq_cart.nextval, #{pid}, #{pname}, #{pprice}, #{pcontent}, #{pimg}, #{count})
+ 	</insert>
+ 	
+ 	<insert id="insertSelectKey">
+ 		<selectKey keyProperty="cno" order="BEFORE" resultType="long">
+ 			select seq_cart.nextval from dual
+ 		</selectKey>
+ 		
+ 		insert into tbl_cart 
+ 			values(#{cno}, #{pid}, #{pname}, #{pprice}, #{pcontent}, #{pimg}, #{count})
+ 	</insert>
  </mapper>

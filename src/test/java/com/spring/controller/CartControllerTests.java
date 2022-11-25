@@ -19,46 +19,22 @@ import lombok.extern.log4j.Log4j;
 @ContextConfiguration({ "file:src/main/webapp/WEB-INF/spring/root-context.xml",
 		"file:src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" })
 @Log4j
-public class ShopControllerTests {
+public class CartControllerTests {
 	@Autowired
 	private WebApplicationContext ctx;
 	private MockMvc mockMvc;
-	
+
 	@Before
 	public void setup() {
 		mockMvc = MockMvcBuilders.webAppContextSetup(ctx).build();
 	}
-	
+
 	@Test
-	public void testList() throws Exception {
-		log.info(
-				mockMvc.perform(MockMvcRequestBuilders.get("/foodMarket/shop")).andReturn().getModelAndView().getModelMap());
+	public void testDelete() throws Exception {
+		// 삭제 전 데베에서 게시물 번호 확인
+		String resultPage = mockMvc.perform(MockMvcRequestBuilders.post("/foodMarket/delete").param("cno", "23"))
+				.andReturn().getModelAndView().getViewName();
+		log.info(resultPage);
 	}
-	@Test
-	public void testGet() throws Exception {
-		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/foodMarket/detail").param("pid", "1")).andReturn()
-				.getModelAndView().getModelMap());
-	}
-	
-	@Test
-	public void testListPaging() throws Exception {
-		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/foodMarket/shop").param("pageNum", "2").param("amount", "10"))
-				.andReturn()
-				.getModelAndView().getModelMap());
-	}
-	
-	@Test
-	public void testInsert() throws Exception {
-		String result = mockMvc.perform(MockMvcRequestBuilders.post("/foodMarket/addCart")
-				.param("pid", "61")
-				.param("pname", "이름1")
-				.param("pprice", "100")
-				.param("pcontent", "테스트 내용1")
-				.param("pimg", "product-1.jpg"))
-				.andReturn()
-				.getModelAndView()
-				.getViewName();
-		
-		log.info("-----------------------------"+ result);
-	}
+
 }

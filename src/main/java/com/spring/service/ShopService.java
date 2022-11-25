@@ -13,4 +13,12 @@ public interface ShopService {
 	public List<ShopVO> getListFru(Criteria cri);
 	public List<ShopVO> getListJui(Criteria cri);
 	public List<ShopVO> getListDri(Criteria cri);
+	
+	public int getTotal(Criteria cri);
+	public int getTotalVege(Criteria cri);
+	public int getTotalFru(Criteria cri);
+	public int getTotalJui(Criteria cri);
+	public int getTotalDri(Criteria cri);
+	
+	public void insert(ShopVO shop);
 }
