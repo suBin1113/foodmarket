@@ -4,21 +4,35 @@
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spring.mapper.CheckoutMapper">
 	<select id="read" resultType="com.spring.domain.CheckoutVO">
-		select * from tbl_checkout where orderId=#{orderId}
+		select * from tbl_checkout where orderId=#{orderId, jdbcType=NUMERIC}
 	</select>
 	<select id="readItem" resultType="com.spring.domain.OrderItemVO">
-		select pid, pprice from tbl_orderItem where pid=#{pid}
+		select pid, pprice from tbl_orderItem where orderId=#{orderId}
 	</select>
 	<insert id="insert">
+	<selectKey keyProperty="orderId" order="BEFORE"
+			resultType="Long">
+			select seq_checkout.nextval from dual
+		</selectKey>
 		insert into tbl_checkout(orderId, name, address, zip, psum) values(#{orderId}, #{name}, #{address}, #{zip}, #{psum})
 	</insert>
 	<insert id="itemInsert">
-		insert into tbl_orderItem(orderId, pid, pcount, pprice) values(#{orderId}, #{pid}, #{pcount}, #{pprice})
+	<selectKey keyProperty="orderId" order="BEFORE"
+			resultType="Long">
+			select seq_checkout.currval from dual
+		</selectKey>
+		insert into tbl_orderItem(orderId, pid, pname, pcount, pprice, pimg, totalPrice) values(#{orderId}, #{pid}, #{pname}, #{pcount}, #{pprice}, #{pimg}, #{totalPrice})
 	</insert>
+	<update id="updatePsum">
+		update tbl_checkout set psum=#{psum} where orderId=#{orderId}
+	</update>
 	<delete id="delete">
 		delete tbl_checkout where orderId=#{orderId}
 	</delete>
+	<delete id="deleteItem">
+		delete tbl_orderItem where orderId=#{orderId}
+	</delete>
 	<select id="readOrderList" resultType="com.spring.domain.OrderItemVO">
-		select * from tbl_orderItem where orderId=#{orderId}
+		select * from tbl_orderItem where orderId=#{orderId, jdbcType=NUMERIC}
 	</select>
 </mapper>
