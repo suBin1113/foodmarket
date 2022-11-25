@@ -96,9 +96,9 @@
 			return;
 		}else{
 			if(operation ==='insert'){
-			formObj.attr({
-				"action" : "/foodMarket/addCart",
-				"method" : "post"
+				formObj.attr({
+					"action" : "/foodMarket/addCart",
+					"method" : "post"
 				});
 			}
 			alert("장바구니에 추가되었습니다")

@@ -1,5 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<style>
+	#product img{
+		width: 500px;
+		height: 180px;
+	}
+</style>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="../includes/header.jsp"%>
@@ -28,7 +34,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row" id="product">
 			<c:forEach items="${shop_dri}" var="shop_dri">
 				<div class="col-md-6 col-lg-3 ftco-animate">
 					<div class="product">
