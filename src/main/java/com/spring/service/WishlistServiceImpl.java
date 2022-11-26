@@ -17,49 +17,9 @@ public class WishlistServiceImpl implements WishlistService {
 	private WishlistMapper mapper;
 
 	@Override
-	public void register(WishlistVO vo) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public WishlistVO get(Long wno) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int modify(WishlistVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
 	public List<WishlistVO> getList() {
-		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public List<WishlistVO> getList(Criteria cri) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public int getTotal(Criteria cri) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	public WishlistMapper getMapper() {
-		return mapper;
-	}
-
-	public void setMapper(WishlistMapper mapper) {
-		this.mapper = mapper;
-	}
-
 
 	@Override
 	public int deleteWishlist(Long wno) {
