@@ -42,7 +42,7 @@ public class ShopControllerTests {
 	
 	@Test
 	public void testListPaging() throws Exception {
-		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/foodMarket/shop").param("pageNum", "2").param("amount", "10"))
+		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/foodMarket/shop").param("pageNum", "1").param("amount", "10"))
 				.andReturn()
 				.getModelAndView().getModelMap());
 	}
