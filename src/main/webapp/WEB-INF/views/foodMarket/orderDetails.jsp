@@ -23,7 +23,9 @@
 	class="form-inline col-md-12 mt-5 align-items justify-content-center"
 	action="/foodMarket/orderDetails">
 	<input type="text" class="form-control col-md-4 mr-2"
-		placeholder="Order Number.." name="orderId">
+		placeholder="Order Number.." name="orderId" method="post"
+		oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+		required>
 	<button type="submit" id="submit" class="btn btn-primary py-3 px-4">Submit</button>
 </form>
 <section class="ftco-section ftco-cart">
@@ -54,6 +56,10 @@
 									<td class="total">${ list.totalPrice }</td>
 								</tr>
 							</c:forEach>
+							<hr>
+							<tr>
+								<td colspan="5" style="color: #000; font-size: 2em;">물품 총 구매가격 : ${ checkout.psum }</td>
+							</tr>
 						</tbody>
 					</table>
 				</div>
@@ -112,9 +118,25 @@
 <%@ include file="../includes/footer.jsp"%>
 <script>
 	$(function() {
-		var result = '${result}';
-
+		var result = "${result}";
+		var orderId = $(location).attr("search");
 		checkModal(result);
+		
+		if(${orderList} == "") {
+			$("section").hide();
+			$(".mouse").hide();
+		}
+		
+		if(orderId != "") {
+			if (${orderList} == "") {
+				$(".modal-title").html("유효하지 않은 주문번호");
+				$(".modal-body").html("유효하지 않은 주문번호입니다. 주문번호를 확인해주세요.")
+				$("#myModal").modal("show");
+			} else {
+				$("section").show();
+				$(".mouse").show();
+			}
+		}
 
 		history.replaceState({}, null, null);
 
