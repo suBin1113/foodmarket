@@ -19,8 +19,7 @@
 
 <section class="ftco-section">
 	<div class="container">
-		<form action="/foodMarket/checkout" class="billing-form" method="post"
-			id="chkoutForm">
+		<form action="/foodMarket/checkout" class="billing-form" method="post">
 			<div class="row justify-content-center">
 				<div class="col-xl-7 ftco-animate">
 					<h3 class="mb-4 billing-heading">Billing Details</h3>
@@ -28,7 +27,7 @@
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="firstname">Name</label> <input type="text"
-									class="form-control" name="name">
+									class="form-control" name="name" required>
 							</div>
 						</div>
 						<div class="w-100"></div>
@@ -36,14 +35,16 @@
 							<div class="form-group">
 								<label for="streetaddress">Address</label> <input type="text"
 									class="form-control" placeholder="House number and street name"
-									name="address">
+									name="address" required>
 							</div>
 						</div>
 						<div class="w-100"></div>
 						<div class="col-md-6">
 							<div class="form-group">
 								<label for="postcodezip">Postcode / ZIP *</label> <input
-									type="text" class="form-control" name="zip">
+									type="text" class="form-control" name="zip" id="zipInput"
+									oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+									pattern="[0-9]{5}" required title="정확한 우편번호를 입력해주세요.">
 							</div>
 						</div>
 					</div>
@@ -89,16 +90,21 @@
 <script>
 	$(function() {
 		var str = "";
-		
+
 		// 더미 값
-		for(var i=0; i<=4; i++) {
-			str += '<input type="hidden" name="orders[' + i + '].pid" value="' + (i+1) + '">';
-			str += '<input type="hidden" name="orders[' + i + '].pname" value="item' + (i+1) + '">';
-			str += '<input type="hidden" name="orders[' + i + '].pcount" value="' + (i+1) + '">';
-			str += '<input type="hidden" name="orders[' + i + '].pimg" value="product-' + (i+1) + '">';
-			str += '<input type="hidden" name="orders[' + i + '].pprice" value="' + ((i+1)*1000) + '">';
+		for (var i = 0; i <= 4; i++) {
+			str += '<input type="hidden" name="orders[' + i + '].pid" value="'
+					+ (i + 1) + '">';
+			str += '<input type="hidden" name="orders[' + i
+					+ '].pname" value="item' + (i + 1) + '">';
+			str += '<input type="hidden" name="orders[' + i
+					+ '].pcount" value="' + (i + 1) + '">';
+			str += '<input type="hidden" name="orders[' + i
+					+ '].pimg" value="product-' + (i + 1) + '">';
+			str += '<input type="hidden" name="orders[' + i
+					+ '].pprice" value="' + ((i + 1) * 1000) + '">';
 		}
-			
+
 		$(".itemsDiv").html(str);
 	});
 </script>
