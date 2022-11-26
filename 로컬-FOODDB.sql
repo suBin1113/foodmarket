@@ -32,29 +32,32 @@ create table tbl_wishlist(
     pname varchar2(50) not null,
     pprice number not null,
     pcontent varchar2(300),
-    pimg varchar2(50),
-    pcount number not null
+    pimg varchar2(50)
 );
+
+insert into tbl_wishlist values(seq_wishlist.nextval, 61, '이름1', 100, '테스트 내용', 'product-1.jpg'); //더미데이터
+
 alter table tbl_wishlist add CONSTRAINT pk_wishlist primary key (wno);
 alter table tbl_wishlist add CONSTRAINT fk_wishlist FOREIGN key (pid) references tbl_product(pid);
 
-create table tbl_orderItem(
-    orderId number(20) not null,
-    pid number(10, 0),
-    pname varchar2(50),
-    pprice number,
-    pcount number,
-    pimg varchar2(50),
-    totalPrice number
-);
+    create table tbl_orderItem(
+        orderId number(10, 0) not null,
+        orderItemId number(10, 0),
+        pid number(10, 0),
+        pname varchar2(50),
+        pprice number,
+        pcount number,
+        pimg varchar2(50),
+        totalPrice number
+    );
 
 create sequence seq_checkout;
 create table tbl_checkout(
-    orderId number(20) not null,
+    orderId number(10,0) not null,
     name varchar2(50),
     address varchar2(100),
     zip varchar2(50),
-    orderDate date default sysdate,
+    orderDate date,
     psum number
 );
 alter table tbl_checkout add CONSTRAINT pk_checkout primary key (orderId);
