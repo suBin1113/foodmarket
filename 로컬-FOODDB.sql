@@ -57,7 +57,7 @@ create table tbl_checkout(
     name varchar2(50),
     address varchar2(100),
     zip varchar2(50),
-    orderDate date,
+    orderDate date default sysdate,
     psum number
 );
 alter table tbl_checkout add CONSTRAINT pk_checkout primary key (orderId);
