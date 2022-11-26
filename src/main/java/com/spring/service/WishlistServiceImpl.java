@@ -18,7 +18,7 @@ public class WishlistServiceImpl implements WishlistService {
 
 	@Override
 	public List<WishlistVO> getList() {
-		return null;
+		return mapper.getList();
 	}
 
 	@Override

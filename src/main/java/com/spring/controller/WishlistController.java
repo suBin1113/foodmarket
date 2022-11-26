@@ -22,8 +22,9 @@ public class WishlistController {
 	public void uploadForm(Model model) {
 		model.addAttribute("wishlist", service.getList());
 	}
-
-	@PostMapping("/wishlist/delete")
+	
+	//url 주소 수정
+	@PostMapping("/wishDelete")
 	public String deleteWishlist(Long wno, RedirectAttributes rttr) {
 		log.info("delete..." + wno);
 		if(service.deleteWishlist(wno) == 1) {

@@ -10,5 +10,4 @@ public class WishlistVO {
 	private int pprice;
 	private String pcontent;
 	private String pimg;
-	private int pcount;
 }
