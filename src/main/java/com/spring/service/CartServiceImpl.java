@@ -28,4 +28,9 @@ public class CartServiceImpl implements CartService {
 		return mapper.delete(cno);
 	}
 
+	@Override
+	public int getCount() {
+		return mapper.getCount();
+	}
+
 }
