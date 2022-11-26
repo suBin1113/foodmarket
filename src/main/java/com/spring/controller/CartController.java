@@ -36,4 +36,10 @@ public class CartController {
 		}
 		return "redirect:/foodMarket/cart";
 	}
+
+	@GetMapping("/count")
+	public void getCount(Model model) {
+		log.info("count");
+		model.addAttribute("count", service.getCount());
+	}
 }
