@@ -7,11 +7,10 @@ import com.spring.domain.WishlistVO;
 
 public interface WishlistService {
 	public void register(WishlistVO vo);
-	public WishlistVO get(Long pid);
+	public WishlistVO get(Long wno);
 	public int modify(WishlistVO vo);
-	public int remove(Long pid);
 	public List<WishlistVO> getList();
 	public List<WishlistVO> getList(Criteria cri);
 	public int getTotal(Criteria cri);
-	public void deleteWishlist(int wno);
+	public int deleteWishlist(Long wno);
 }

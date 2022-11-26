@@ -9,6 +9,8 @@ import com.spring.domain.WishlistVO;
 import com.spring.domain.Criteria;
 import com.spring.mapper.WishlistMapper;
 
+import jdk.internal.org.jline.utils.Log;
+
 @Service
 public class WishlistServiceImpl implements WishlistService {
 	@Autowired
@@ -21,19 +23,13 @@ public class WishlistServiceImpl implements WishlistService {
 	}
 
 	@Override
-	public WishlistVO get(Long bno) {
+	public WishlistVO get(Long wno) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public int modify(WishlistVO vo) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int remove(Long bno) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
@@ -64,10 +60,11 @@ public class WishlistServiceImpl implements WishlistService {
 		this.mapper = mapper;
 	}
 
+
 	@Override
-	public void deleteWishlist(int wno) {
-		// TODO Auto-generated method stub
-		
+	public int deleteWishlist(Long wno) {
+		Log.info("remove..." + wno);
+		return mapper.delete(wno);
 	}
 
 }
