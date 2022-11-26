@@ -30,6 +30,7 @@ public class CartServiceImpl implements CartService {
 
 	@Override
 	public int getCount() {
+		log.info("getCount...");
 		return mapper.getCount();
 	}
 
