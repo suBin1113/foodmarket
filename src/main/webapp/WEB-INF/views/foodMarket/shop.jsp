@@ -61,16 +61,6 @@
 									</p>
 								</div>
 							</div>
-							<div class="bottom-area d-flex px-3">
-								<div class="m-auto d-flex">
-									<a class="buy-now d-flex justify-content-center align-items-center mx-1" onclick="insert(this)" data-oper="insert">
-										<span><i class="ion-ios-cart"></i></span>
-									</a> <a href="/foodMarket/wishlist"
-										class="heart d-flex justify-content-center align-items-center">
-										<span><i class="ion-ios-heart"></i></span>
-									</a>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
@@ -122,16 +112,5 @@
 			actionForm.submit();
 		});
 	});
-	function insert(ths){
-		var formObj = $("form");
-		var operation = $(ths).data("oper");
-		if(operation ==='insert'){
-			formObj.attr({
-			"action" : "/foodMarket/addCart",
-			"method" : "post"
-			});
-		}
-		formObj.submit();
-	}
 </script>
 <%@ include file="../includes/footer.jsp"%>

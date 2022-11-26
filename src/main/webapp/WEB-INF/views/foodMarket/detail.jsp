@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<style>
+	#box{
+		width: 20px;
+	}
+</style>
 <% 
 	String pageKind = (String)request.getAttribute("pageKind");
 %>
@@ -37,7 +42,7 @@
 				<form>
 				<div class="row mt-4">
 					<div class="w-100"></div>
-					<div class="input-group col-md-6 d-flex mb-3">
+					<div class="input-group col-md-6 d-flex mb-3" style="padding: 10px;">
 						<span class="input-group-btn mr-2">
 							<button type="button" onclick="fnCalCount('m', this)" class="quantity-left-minus btn" data-type="minus" data-field="">
 								<i class="ion-ios-remove"></i>
@@ -52,7 +57,7 @@
 					</div>
 					<div class="w-100"></div>
 				</div>
-				
+					<a href="/foodMarket/wishlist" class="btn py-3 px-5" style="background-color: #82ae46; color: white;">WishList</a>
 					<input type="hidden" name="pid" value="${product.pid}">
 					<input type="hidden" name="pname" value="${product.pname}">
 					<input type="hidden" name="pprice" value="${product.pprice}">
