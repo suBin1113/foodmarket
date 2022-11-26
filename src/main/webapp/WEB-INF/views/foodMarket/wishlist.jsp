@@ -43,7 +43,7 @@
 											class="ion-ios-close"></span></a></td>
 
 									<td class="image-prod"><div class="img"
-											style="background-image: url(../resources/images/${wishlist.pimg});"></div></td>
+											style="background-image: url(../resources/images/${wishlist.pimg}.jpg);"></div></td>
 
 									<td class="product-name">
 										<h3>${wishlist.pname}</h3>
@@ -56,14 +56,13 @@
 												value="${wishlist.pprice}" readonly>
 										</div></td>
 
-									<td class="quantity">
-										<div class="input-group mb-3">
+									<td class="quantity"><div class="input-group mb-3">
 											<input type="text" name="quantity" id="count"
 												class="quantity form-control input-number countcart"
 												value="${wishlist.pcount}" readonly>
-										</div>
-									</td>
-									<c:set var="pricesum" value="${wishlist.pcount * wishlist.pprice}" />
+										</div></td>
+									<c:set var="pricesum"
+										value="${wishlist.pcount * wishlist.pprice}" />
 									<td class="total"><input type="text" id="totalprice"
 										name="total"
 										class="quantity form-control input-number totalprices"
@@ -72,10 +71,10 @@
 								<!-- END TR-->
 								<c:set var="sum"
 									value="${sum + (wishlist.pprice * wishlist.pcount)}" />
-									
-								<c:set var="delivery" value="0"/>
+
+								<c:set var="delivery" value="0" />
 								<c:if test="${sum > 30000}">
-									<c:set var="delivery" value="3000"/>
+									<c:set var="delivery" value="3000" />
 								</c:if>
 							</c:forEach>
 						</tbody>
@@ -85,5 +84,14 @@
 		</div>
 	</div>
 </section>
-
+<script type="text/javascript">
+	$(function() {
+		$('.btn_delete').on("click", function(e) {
+			e.preventDefault();
+			var wno = $(this).data("cartwno");
+			$(".delete_cartwno").val(wno);
+			$(".delete_form").submit();
+		});
+	});
+</script>
 <%@ include file="../includes/footer.jsp"%>
