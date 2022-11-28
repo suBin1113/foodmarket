@@ -35,4 +35,16 @@
 	<select id="readOrderList" resultType="com.spring.domain.OrderItemVO">
 		select * from tbl_orderItem where orderId=#{orderId, jdbcType=NUMERIC}
 	</select>
+	
+	<select id="getCart" resultType="com.spring.domain.CartVO">
+		select * from tbl_cart order by cno
+	</select>
+	<delete id="cartDelete">
+		delete from tbl_cart
+	</delete>
+	<select id="getOrderId" resultType="long">
+		select orderId from (
+			select * from tbl_checkout order by orderId desc
+		) where ROWNUM = 1
+	</select>
 </mapper>

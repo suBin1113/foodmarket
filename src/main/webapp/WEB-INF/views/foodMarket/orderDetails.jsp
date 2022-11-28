@@ -28,6 +28,8 @@
 		required>
 	<button type="submit" id="submit" class="btn btn-primary py-3 px-4">Submit</button>
 </form>
+${ result }
+${ orderList }
 <section class="ftco-section ftco-cart">
 	<div class="container">
 		<div class="row">
@@ -47,7 +49,7 @@
 							<c:forEach items="${ orderList }" var="list">
 								<tr class="text-center">
 									<td class="image-prod"><div class="img"
-											style="background-image: url(../resources/images/${ list.pimg }.jpg);"></div></td>
+											style="background-image: url(../resources/images/${list.pimg});"></div></td>
 									<td class="product-name">
 										<h3>${ list.pname }</h3>
 									</td>
@@ -58,7 +60,12 @@
 							</c:forEach>
 							<hr>
 							<tr>
-								<td colspan="5" style="color: #000; font-size: 2em;">물품 총 구매가격 : ${ checkout.psum }</td>
+							<c:if test="${checkout.psum<30000}">
+								<td colspan="5" style="color: #000; font-size: 2em;">물품 총 구매가격 : ${checkout.psum+3000}</td>
+							</c:if>
+							<c:if test="${checkout.psum>=30000}">
+								<td colspan="5" style="color: #000; font-size: 2em;">물품 총 구매가격 : ${checkout.psum}</td>
+							</c:if>
 							</tr>
 						</tbody>
 					</table>
@@ -122,13 +129,14 @@
 		var orderId = $(location).attr("search");
 		checkModal(result);
 		
-		if(${orderList} == "") {
+		
+		if("${orderList}" == "[]") {
 			$("section").hide();
 			$(".mouse").hide();
 		}
 		
 		if(orderId != "") {
-			if (${orderList} == "") {
+			if ("${orderList}" == "[]") {
 				$(".modal-title").html("유효하지 않은 주문번호");
 				$(".modal-body").html("유효하지 않은 주문번호입니다. 주문번호를 확인해주세요.")
 				$("#myModal").modal("show");

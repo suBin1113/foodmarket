@@ -1,10 +1,8 @@
 package com.spring.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,6 +20,8 @@ import lombok.extern.log4j.Log4j;
 public class CheckoutController {
 	@Autowired
 	private CheckoutService service;
+	@Autowired
+	private JavaMailSender mailsender;
 
 	@GetMapping("foodMarket/checkout")
 	public void register() {
@@ -33,15 +33,17 @@ public class CheckoutController {
 		log.info("register: " + checkout);
 		int psum = 0;
 		service.register(checkout);
-		for (int i = 0; i < checkout.getOrders().size(); i++) {
+		for (int i = 0; i < service.getCartList().size(); i++) {
 			OrderItemVO orderItem = new OrderItemVO();
-			int totalPrice = (checkout.getOrders().get(i).getPprice() * checkout.getOrders().get(i).getPcount());
-			orderItem.setPid(checkout.getOrders().get(i).getPid());
-			orderItem.setPname(checkout.getOrders().get(i).getPname());
-			orderItem.setPcount(checkout.getOrders().get(i).getPcount());
-			orderItem.setPprice(checkout.getOrders().get(i).getPprice());
-			orderItem.setPimg(checkout.getOrders().get(i).getPimg());
+			int totalPrice = (service.getCartList().get(i).getPprice() * service.getCartList().get(i).getPcount());
+			orderItem.setOrderId(service.getOrderId());
+			orderItem.setPid(service.getCartList().get(i).getPid());
+			orderItem.setPname(service.getCartList().get(i).getPname());
+			orderItem.setPcount(service.getCartList().get(i).getPcount());
+			orderItem.setPprice(service.getCartList().get(i).getPprice());
+			orderItem.setPimg(service.getCartList().get(i).getPimg());
 			orderItem.setTotalPrice(totalPrice);
+			//삽입하는거 수정
 			
 			psum += totalPrice;
 
@@ -50,6 +52,7 @@ public class CheckoutController {
 		
 		checkout.setPsum(psum);
 		service.updatePsum(checkout);
+		service.cartDelete(); //추가
 		rttr.addFlashAttribute("result", checkout.getOrderId());
 		return "redirect:./orderDetails?orderId=" + checkout.getOrderId();
 	}

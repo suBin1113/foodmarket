@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.spring.domain.CartVO;
 import com.spring.domain.CheckoutVO;
 import com.spring.domain.OrderItemVO;
 import com.spring.mapper.CheckoutMapper;
@@ -48,6 +49,21 @@ public class CheckoutServiceImpl implements CheckoutService {
 	@Override
 	public List<OrderItemVO> getOrderList(Long orderId) {
 		return mapper.readOrderList(orderId);
+	}
+
+	@Override
+	public List<CartVO> getCartList() {
+		return mapper.getCart();
+	}
+
+	@Override
+	public int cartDelete() {
+		return mapper.cartDelete();
+	}
+
+	@Override
+	public Long getOrderId() {
+		return mapper.getOrderId();
 	}
 
 }
