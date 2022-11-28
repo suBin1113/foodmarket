@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.spring.domain.CartVO;
 import com.spring.domain.CheckoutVO;
 import com.spring.domain.OrderItemVO;
 
@@ -42,5 +43,21 @@ public class CheckoutServiceTests {
 		CheckoutVO checkout = new CheckoutVO();
 		checkout.setOrderId(72L);
 		log.info("testRemove: " + service.remove(checkout.getOrderId()));
+	}
+	
+	@Test
+	public void testGetCart() {
+		//CartVO cart = new CartVO();
+		service.getCartList();
+	}
+	
+	@Test
+	public void testGetOrderId() {
+		log.info(service.getOrderId());
+	}
+	
+	@Test
+	public void testDeleteCart() {
+		log.info(service.cartDelete());
 	}
 }
