@@ -29,6 +29,7 @@
 	<button type="submit" id="submit" class="btn btn-primary py-3 px-4">Submit</button>
 </form>
 ${ result }
+${ orderList }
 <section class="ftco-section ftco-cart">
 	<div class="container">
 		<div class="row">
@@ -128,11 +129,13 @@ ${ result }
 		var orderId = $(location).attr("search");
 		checkModal(result);
 		
-		if(${orderList} == "") {
+		
+		if("${orderList}" == "") {
 			$("section").hide();
 			$(".mouse").hide();
 		}
 		
+		/*
 		if(orderId != "") {
 			if (${orderList} == "") {
 				$(".modal-title").html("유효하지 않은 주문번호");
@@ -143,6 +146,7 @@ ${ result }
 				$(".mouse").show();
 			}
 		}
+		*/
 
 		history.replaceState({}, null, null);
 

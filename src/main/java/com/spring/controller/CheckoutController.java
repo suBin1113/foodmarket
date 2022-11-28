@@ -52,8 +52,8 @@ public class CheckoutController {
 		
 		checkout.setPsum(psum);
 		service.updatePsum(checkout);
-		rttr.addFlashAttribute("result", checkout.getOrderId());
 		service.cartDelete(); //추가
+		rttr.addFlashAttribute("result", checkout.getOrderId());
 		return "redirect:./orderDetails?orderId=" + checkout.getOrderId();
 	}
 
