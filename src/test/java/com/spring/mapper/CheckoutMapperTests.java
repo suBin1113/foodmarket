@@ -49,5 +49,24 @@ public class CheckoutMapperTests {
 		int count = mapper.delete(71L);
 		log.info("==================testDelete: " + count);
 	}
+	
+	//추가부분(작업: 최혜원)
+	@Test
+	public void testGetListCart() {
+		log.info("==================");
+		mapper.getCart();
+	}
+	@Test
+	public void testCartDelete() {
+		log.info("==================");
+		mapper.cartDelete();
+		mapper.getCart();
+	}
+	
+	@Test
+	public void testOrderId() {
+		log.info("==================" + mapper.getOrderId());
+		
+	}
 
 }

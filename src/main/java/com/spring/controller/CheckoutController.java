@@ -33,15 +33,17 @@ public class CheckoutController {
 		log.info("register: " + checkout);
 		int psum = 0;
 		service.register(checkout);
-		for (int i = 0; i < checkout.getOrders().size(); i++) {
+		for (int i = 0; i < service.getCartList().size(); i++) {
 			OrderItemVO orderItem = new OrderItemVO();
-			int totalPrice = (checkout.getOrders().get(i).getPprice() * checkout.getOrders().get(i).getPcount());
-			orderItem.setPid(checkout.getOrders().get(i).getPid());
-			orderItem.setPname(checkout.getOrders().get(i).getPname());
-			orderItem.setPcount(checkout.getOrders().get(i).getPcount());
-			orderItem.setPprice(checkout.getOrders().get(i).getPprice());
-			orderItem.setPimg(checkout.getOrders().get(i).getPimg());
+			int totalPrice = (service.getCartList().get(i).getPprice() * service.getCartList().get(i).getPcount());
+			orderItem.setOrderId(service.getOrderId());
+			orderItem.setPid(service.getCartList().get(i).getPid());
+			orderItem.setPname(service.getCartList().get(i).getPname());
+			orderItem.setPcount(service.getCartList().get(i).getPcount());
+			orderItem.setPprice(service.getCartList().get(i).getPprice());
+			orderItem.setPimg(service.getCartList().get(i).getPimg());
 			orderItem.setTotalPrice(totalPrice);
+			//삽입하는거 수정
 			
 			psum += totalPrice;
 
@@ -51,6 +53,7 @@ public class CheckoutController {
 		checkout.setPsum(psum);
 		service.updatePsum(checkout);
 		rttr.addFlashAttribute("result", checkout.getOrderId());
+		service.cartDelete(); //추가
 		return "redirect:./orderDetails?orderId=" + checkout.getOrderId();
 	}
 

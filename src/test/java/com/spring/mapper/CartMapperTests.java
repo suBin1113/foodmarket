@@ -25,4 +25,10 @@ public class CartMapperTests {
 	public void testDeleteCart() {
 		log.info("DELETE COUNT: " + mapper.delete(118L));
 	}
+
+	@Test
+	public void testgetCount() {
+		log.info("------------");
+		mapper.getCount();
+	}
 }
