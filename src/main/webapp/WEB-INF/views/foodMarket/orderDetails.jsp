@@ -130,14 +130,13 @@ ${ orderList }
 		checkModal(result);
 		
 		
-		if("${orderList}" == "") {
+		if("${orderList}" == "[]") {
 			$("section").hide();
 			$(".mouse").hide();
 		}
 		
-		/*
 		if(orderId != "") {
-			if (${orderList} == "") {
+			if ("${orderList}" == "[]") {
 				$(".modal-title").html("유효하지 않은 주문번호");
 				$(".modal-body").html("유효하지 않은 주문번호입니다. 주문번호를 확인해주세요.")
 				$("#myModal").modal("show");
@@ -146,7 +145,6 @@ ${ orderList }
 				$(".mouse").show();
 			}
 		}
-		*/
 
 		history.replaceState({}, null, null);
 
