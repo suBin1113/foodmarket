@@ -47,7 +47,7 @@
 							<c:forEach items="${ orderList }" var="list">
 								<tr class="text-center">
 									<td class="image-prod"><div class="img"
-											style="background-image: url(../resources/images/${ list.pimg }.jpg);"></div></td>
+											style="background-image: url(../resources/images/${list.pimg});"></div></td>
 									<td class="product-name">
 										<h3>${ list.pname }</h3>
 									</td>
@@ -58,7 +58,12 @@
 							</c:forEach>
 							<hr>
 							<tr>
-								<td colspan="5" style="color: #000; font-size: 2em;">물품 총 구매가격 : ${ checkout.psum }</td>
+							<c:if test="${checkout.psum<30000}">
+								<td colspan="5" style="color: #000; font-size: 2em;">물품 총 구매가격 : ${checkout.psum+3000}</td>
+							</c:if>
+							<c:if test="${checkout.psum>=30000}">
+								<td colspan="5" style="color: #000; font-size: 2em;">물품 총 구매가격 : ${checkout.psum}</td>
+							</c:if>
 							</tr>
 						</tbody>
 					</table>
