@@ -24,37 +24,7 @@ public class MailSenderTests {
 		String from = "pudeumakes@gmail.com";
 		String to = "maing219@naver.com";
 		
-		content += "<body>\r\n" + 
-				"    <table style=\"margin: 0 auto; width: 500px; text-align: center;\">\r\n" + 
-				"        <tr>\r\n" + 
-				"            <th>Product Name</th>\r\n" + 
-				"            <th>Price</th>\r\n" + 
-				"            <th>Quantity</th>\r\n" + 
-				"            <th>Total</th>\r\n" + 
-				"        </tr>\r\n" + 
-				"        <tr>\r\n" + 
-				"            <th>item1</th>\r\n" + 
-				"            <td>1000</td>\r\n" + 
-				"            <td>2</td>\r\n" + 
-				"            <td>2000</td>\r\n" + 
-				"        </tr>\r\n" + 
-				"        <tr>\r\n" + 
-				"            <th>item2</th>\r\n" + 
-				"            <td>1000</td>\r\n" + 
-				"            <td>2</td>\r\n" + 
-				"            <td>2000</td>\r\n" + 
-				"        </tr>\r\n" + 
-				"        <tr>\r\n" + 
-				"            <th>item3</th>\r\n" + 
-				"            <td>1000</td>\r\n" + 
-				"            <td>2</td>\r\n" + 
-				"            <td>2000</td>\r\n" + 
-				"        </tr>\r\n" + 
-				"        <tr>\r\n" + 
-				"            <td colspan=\"4\">물품 총 구매 가격 : 6000</td>\r\n" + 
-				"        </tr>\r\n" + 
-				"    </table>\r\n" + 
-				"</body>";
+		content += "";
 
 		try {
 			MimeMessage mail = mailSender.createMimeMessage();

@@ -1,7 +1,11 @@
 package com.spring.controller;
 
+import javax.mail.internet.MimeMessage;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +25,7 @@ public class CheckoutController {
 	@Autowired
 	private CheckoutService service;
 	@Autowired
-	private JavaMailSender mailsender;
+	JavaMailSenderImpl mailSender;
 
 	@GetMapping("foodMarket/checkout")
 	public void register() {
@@ -48,6 +52,74 @@ public class CheckoutController {
 			psum += totalPrice;
 
 			service.registerItem(orderItem);
+		}
+		
+		//메일 전송 부분
+		String subject = "test 메일";
+		String content = "";
+		String from = "pudeumakes@gmail.com";
+		String to = "maing219@naver.com";
+		
+		content += "<table style=\"width: 500px; text-align: center;\">"; 
+		content += "<tr>";
+		content += "<th style=\"padding: 10px 0;\">Product Name</th>";
+		content += "<th>Price</th>";
+		content += "<th>Quantity</th>";
+		content += "<th>Total</th>";
+		content += "</tr>";
+		
+		for (int i=0; i<service.getCartList().size(); i++) {
+			content += "<tr>";
+			content += "<th style=\"padding: 10px 0;\">" + service.getCartList().get(i).getPname() + "</th>";
+			content += "<td>" + service.getCartList().get(i).getPprice() + "</td>";
+			content += "<td>" + service.getCartList().get(i).getPcount() + "</td>";
+			content += "<td>" + (service.getCartList().get(i).getPprice() * + service.getCartList().get(i).getPcount()) + "</td>";
+			content += "</tr>";
+		}
+
+		content += "<tr>"; 
+		content += "<td colspan=\"4\" style=\"padding: 10px 0;\">물품 총 구매 가격 : " + psum + "</td>"; 
+		content += "</tr>";
+		content += "</table>"; 
+		content += "<div style=\"width: 500px; text-align: center;\">"; 
+		content += "<p style=\"margin: 10px 0\"><b>Order Details</b></p>"; 
+		content += "<table style=\"width: 500px; text-align: center;\">";
+		content += "<tr>";
+		content += "<th>주문번호</th>"; 
+		content += "<td>" + checkout.getOrderId() + "</td>";
+		content += "</tr>";
+		content += "<tr>"; 
+		content += "<th>이름</th>";
+		content += "<td>" + checkout.getName() + "</td>";
+		content += "</tr>";
+		content += "<tr>";
+		content += "<th>주소</th>"; 
+		content += "<td>" + checkout.getAddress() + "</td>"; 
+		content += "</tr>";
+		content += "<tr>";
+		content += "<th>우편번호</th>"; 
+		content += "<td>" + checkout.getZip() + "</td>";
+		content += "</tr>";
+		content += "<tr>";
+		content += "<th>주문일</th>";
+		content += "<td>" + checkout.getAddress() + "</td>";
+		content += "</tr>";
+		content += "</table>";
+		content += "</div>";
+
+		try {
+			MimeMessage mail = mailSender.createMimeMessage();
+			MimeMessageHelper mailHelper = new MimeMessageHelper(mail, "UTF-8");
+
+			mailHelper.setFrom(from);
+			mailHelper.setTo(to);
+			mailHelper.setSubject(subject);
+			mailHelper.setText(content, true);
+
+			mailSender.send(mail);
+
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 		
 		checkout.setPsum(psum);

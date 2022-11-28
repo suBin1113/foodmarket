@@ -28,8 +28,6 @@
 		required>
 	<button type="submit" id="submit" class="btn btn-primary py-3 px-4">Submit</button>
 </form>
-${ result }
-${ orderList }
 <section class="ftco-section ftco-cart">
 	<div class="container">
 		<div class="row">

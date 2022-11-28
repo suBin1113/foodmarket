@@ -49,8 +49,9 @@
 						</div>
 					</div>
 				</div>
-				<!-- 아이템 삽입 -->
-				<div class="itemsDiv"></div>
+				<!--
+				<div class="itemsDiv"></div> // 아이템 삽입
+				-->
 				<div class="col-xl-5">
 					<div class="row mt-5 pt-3">
 						<div class="col-md-12 d-flex mb-5">
@@ -88,7 +89,7 @@
 <!-- .section -->
 
 <script>
-	$(function() {
+	/*$(function() {
 		var str = "";
 
 		// 더미 값
@@ -106,6 +107,6 @@
 		}
 
 		$(".itemsDiv").html(str);
-	});
+	});*/
 </script>
 <%@ include file="../includes/footer.jsp"%>
