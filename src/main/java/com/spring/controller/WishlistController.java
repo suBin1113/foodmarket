@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+
 import com.spring.service.WishlistService;
 
 import lombok.extern.log4j.Log4j;
@@ -23,10 +25,11 @@ public class WishlistController {
 		model.addAttribute("wishlist", service.getList());
 	}
 
-	@PostMapping("/wishlist/delete")
-	public String deleteWishlist(Long wno, RedirectAttributes rttr) {
+	//url 주소 수정
+	@PostMapping("/wishDelete")
+	public String wishDelete(Long wno, RedirectAttributes rttr) {
 		log.info("delete..." + wno);
-		if(service.deleteWishlist(wno) == 1) {
+		if(service.wishDelete(wno) > 0) {
 			rttr.addFlashAttribute("result", "success");
 		}
 		return "redirect:/foodMarket/wishlist/";
