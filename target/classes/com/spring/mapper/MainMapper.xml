@@ -5,7 +5,7 @@
 <mapper namespace="com.spring.mapper.MainMapper">
 	<select id="getList" resultType="com.spring.domain.ShopVO">
 		<![CDATA[
-			select * from tbl_product where ROWNUM <= 12 order by pid desc
+			select * from tbl_product where ROWNUM <= 8 order by pid desc
 		]]>
 	</select>
 </mapper>
