@@ -88,9 +88,9 @@
 						href="/foodMarket/cart" class="nav-link"> <span
 							class="icon-shopping_cart"></span>
 							<!-- 이 부분 다시 수정하기 -->
-						<c:forEach items="${count}" var="count">
-								<c:set var="totalcount" value="${count}" />
-							</c:forEach> [${totalcount}]
+						<c:forEach items="${cart}" var="cart">
+								<c:set var="realcount" value="${cart.cno}" />
+							</c:forEach> [${realcount}] 
 					</a></li>
 
 				</ul>

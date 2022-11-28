@@ -17,7 +17,7 @@
 
 	<!-- 물품 개수 조회 -->
 	<select id="getCount" resultType="int">
-		select count(*) as count
+		select count(*) as totalCnt
 		from TBL_CART
 	</select>
 </mapper>
