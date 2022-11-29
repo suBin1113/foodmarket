@@ -31,7 +31,7 @@
 								<th>Product List</th>
 								<th>Product Name</th>
 								<th>Price</th>
-								<th>Content</th>
+								<th>Detail</th>
 								<th>주문하기</th>
 							</tr>
 						</thead>
@@ -66,7 +66,7 @@
 												value="${wishlist.pprice}" readonly>
 										</div></td>
 
-									<td class="quantity"><a href="/foodMarket/wishDelete?pid=${wishlist.pid}&pageKind=null">상품정보</a></td>
+									<td class="quantity"><a href="/foodMarket/detail?pid=${wishlist.pid}&pageKind=null">상품정보</a></td>
 									<td class="total"><button id="modalRegisterBtn" type="button" class="btn btn-primary">주문</button></td>
 								</tr>
 								<!-- END TR-->
