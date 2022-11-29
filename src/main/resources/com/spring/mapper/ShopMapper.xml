@@ -113,4 +113,7 @@
  		insert into tbl_wishlist 
  			values(#{wno}, #{pid}, #{pname}, #{pprice}, #{pcontent}, #{pimg})
  	</insert>
+ 	<select id="getWishListPid" resultType="long">
+ 		select pid from tbl_wishlist
+ 	</select>
  </mapper>

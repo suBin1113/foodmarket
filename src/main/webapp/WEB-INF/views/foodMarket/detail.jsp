@@ -9,7 +9,6 @@
 	String pageKind = (String)request.getAttribute("pageKind");
 %>
 <%@ include file="../includes/header.jsp"%>
-
 <div class="hero-wrap hero-bread" style="background-image: url('../resources/images/bg_1.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -64,6 +63,15 @@
 					<input type="hidden" name="pcontent" value="${product.pcontent}">
 					<input type="hidden" name="pimg" value="${product.pimg}">
 				</form>
+				
+				<c:forEach items="${wishPid}" var="wishPid">
+					<c:if test="${wishPid==product.pid}">
+						<c:set var="dataOper" value="none"/>
+					</c:if>
+					<c:if test="${wishPid!=product.pid}">
+						<c:set var="dataOper" value="insertWish"/>
+					</c:if>
+				</c:forEach>
 				<form name="wishlist">
 					<input type="hidden" name="pid" value="${product.pid}">
 					<input type="hidden" name="pname" value="${product.pname}">
@@ -73,7 +81,7 @@
 				</form>
 				
 				<a class="btn py-3 px-5" style="background-color: #82ae46; color: white;"
-						onclick="insertWish(this)" data-oper="insertWish">WishList</a>
+						onclick="insertWish(this)" data-oper="${dataOper}">WishList</a>
 				<div><p></p></div>
 				<p>
 					<%if(pageKind.equals("all")){%>
@@ -123,19 +131,20 @@
 	}
 	
 	function insertWish(ths){
-		var formObj = $("form[name='wishlist']");
 		var operation = $(ths).data("oper");
 		
 		if(operation ==='insertWish'){
+			var formObj = $("form[name='wishlist']");
 			formObj.attr({
 				"action" : "/foodMarket/addWishList",
 				"method" : "post"
 			});
+			alert("위시리스트에 추가되었습니다")
+			formObj.submit();
+		}else if(operation ==='none'){
+			alert("이미 위시리스트에 있습니다");
+			return;
 		}
-		alert("위시리스트에 추가되었습니다")
-		formObj.submit();
-		
-		
 	}
 	function fnCalCount(type, ths){
 		var num = $(ths).parents("div").find("input[name='count']");

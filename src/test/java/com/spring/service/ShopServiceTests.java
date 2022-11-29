@@ -69,4 +69,8 @@ public class ShopServiceTests {
 		
 		service.insertWish(wish);
 	}
+	@Test
+	public void testGetWishList() {
+		service.getWishListPid();
+	}
 }

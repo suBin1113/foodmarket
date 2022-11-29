@@ -33,4 +33,5 @@ public interface ShopMapper {
 	
 	public void insertWish(WishlistVO wish);
 	public void insertSelectKeyWish(WishlistVO wish);
+	public List<Long> getWishListPid();
 }

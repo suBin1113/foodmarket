@@ -32,7 +32,6 @@
 								<th>Product Name</th>
 								<th>Price</th>
 								<th>Detail</th>
-								<th>주문하기</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -47,9 +46,9 @@
 
 								<tr class="text-center wishlist_info">
 									<td class="product-remove">
-										<button class="btn_delete btn btn-danger"
+										<button class="btn_delete ion-ios-close"
 											data-wishlistwno="${wishlist.wno}"
-											style="width: 35px; height: 35px !important">X</button>
+											style="width: 35px; height: 35px !important"></button>
 									</td>
 
 									<td class="image-prod"><div class="img"
@@ -67,7 +66,6 @@
 										</div></td>
 
 									<td class="quantity"><a href="/foodMarket/detail?pid=${wishlist.pid}&pageKind=null">상품정보</a></td>
-									<td class="total"><button id="modalRegisterBtn" type="button" class="btn btn-primary">주문</button></td>
 								</tr>
 								<!-- END TR-->
 

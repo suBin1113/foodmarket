@@ -143,4 +143,8 @@ public class ShopMapperTests {
 		mapper.insertSelectKeyWish(wish);
 		log.info(wish);
 	}
+	@Test
+	public void testGetWishList() {
+		mapper.getWishListPid();
+	}
 }

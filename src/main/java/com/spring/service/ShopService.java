@@ -23,4 +23,5 @@ public interface ShopService {
 	
 	public void insert(ShopVO shop);
 	public void insertWish(WishlistVO wish);
+	public List<Long> getWishListPid();
 }

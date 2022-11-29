@@ -85,4 +85,9 @@ public class ShopServiceImpl implements ShopService{
 		mapper.insertSelectKeyWish(wish);
 	}
 
+	@Override
+	public List<Long> getWishListPid() {
+		return mapper.getWishListPid();
+	}
+
 }
