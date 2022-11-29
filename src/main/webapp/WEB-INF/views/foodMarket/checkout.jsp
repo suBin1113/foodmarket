@@ -57,18 +57,27 @@
 						<div class="col-md-12 d-flex mb-5">
 							<div class="cart-detail cart-total p-3 p-md-4">
 								<h3 class="billing-heading mb-4">Cart Total</h3>
+								<c:forEach items="${cart}" var="cart">
+									<c:set var="sum" value="${sum + (cart.pprice * cart.pcount)}" />
+								</c:forEach>
+								<c:if test="${sum<30000}">
+									<c:set var="delivery" value="3000"/>
+								</c:if>
+								<c:if test="${sum>=30000}">
+									<c:set var="delivery" value="0"/>
+								</c:if>
 								<p class="d-flex">
-									<span>Subtotal</span> <span>$20.60</span>
+									<span>Subtotal</span> <span>${sum}원</span>
 								</p>
 								<p class="d-flex">
-									<span>Delivery</span> <span>$0.00</span>
+									<span>Delivery</span> <span>${delivery}원</span>
 								</p>
 								<!-- <p class="d-flex">
 									<span>Discount</span> <span>$3.00</span>
 								</p> -->
 								<hr>
 								<p class="d-flex total-price">
-									<span>Total</span> <span>$17.60</span>
+									<span>Total</span> <span>${sum+delivery}원</span>
 								</p>
 							</div>
 						</div>

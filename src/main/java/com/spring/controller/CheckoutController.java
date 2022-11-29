@@ -28,8 +28,8 @@ public class CheckoutController {
 	JavaMailSenderImpl mailSender;
 
 	@GetMapping("foodMarket/checkout")
-	public void register() {
-
+	public void getCart(Model model) {
+		model.addAttribute("cart", service.getCartList());
 	}
 
 	@PostMapping("foodMarket/checkout")

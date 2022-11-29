@@ -23,6 +23,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 ftco-animate">
+				<a href="/foodMarket/shop" class="btn btn-black py-3 px-5" data-oper="back">Back to the Shop</a>
+				<div><p></p></div>
 				<div class="cart-list">
 					<table class="table">
 						<thead class="thead-primary">
