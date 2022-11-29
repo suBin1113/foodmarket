@@ -56,10 +56,9 @@
 									<td class="total">${ list.totalPrice }</td>
 								</tr>
 							</c:forEach>
-							<hr>
 							<tr>
 							<c:if test="${checkout.psum<30000}">
-								<td colspan="5" style="color: #000; font-size: 2em;">물품 총 구매가격 : ${checkout.psum+3000}</td>
+								<td colspan="5" style="color: #000; font-size: 2em;">물품 총 구매가격 : ${checkout.psum} + 배송비 : 3000 = 총 구매가격 : ${ checkout.psum + 3000 }</td>
 							</c:if>
 							<c:if test="${checkout.psum>=30000}">
 								<td colspan="5" style="color: #000; font-size: 2em;">물품 총 구매가격 : ${checkout.psum}</td>
@@ -127,13 +126,14 @@
 		var orderId = $(location).attr("search");
 		checkModal(result);
 		
-		if(${orderList} == "") {
+		
+		if("${orderList}" == "[]") {
 			$("section").hide();
 			$(".mouse").hide();
 		}
 		
 		if(orderId != "") {
-			if (${orderList} == "") {
+			if ("${orderList}" == "[]") {
 				$(".modal-title").html("유효하지 않은 주문번호");
 				$(".modal-body").html("유효하지 않은 주문번호입니다. 주문번호를 확인해주세요.")
 				$("#myModal").modal("show");
