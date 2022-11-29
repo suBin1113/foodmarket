@@ -39,7 +39,7 @@
 					<span>${product.pprice}원</span>
 				</p>
 				<p>${product.pcontent}</p>
-				<form>
+				<form name="cart">
 				<div class="row mt-4">
 					<div class="w-100"></div>
 					<div class="input-group col-md-6 d-flex mb-3" style="padding: 10px;">
@@ -57,13 +57,24 @@
 					</div>
 					<div class="w-100"></div>
 				</div>
-					<a href="/foodMarket/wishlist" class="btn py-3 px-5" style="background-color: #82ae46; color: white;">WishList</a>
+					
 					<input type="hidden" name="pid" value="${product.pid}">
 					<input type="hidden" name="pname" value="${product.pname}">
 					<input type="hidden" name="pprice" value="${product.pprice}">
 					<input type="hidden" name="pcontent" value="${product.pcontent}">
 					<input type="hidden" name="pimg" value="${product.pimg}">
 				</form>
+				<form name="wishlist">
+					<input type="hidden" name="pid" value="${product.pid}">
+					<input type="hidden" name="pname" value="${product.pname}">
+					<input type="hidden" name="pprice" value="${product.pprice}">
+					<input type="hidden" name="pcontent" value="${product.pcontent}">
+					<input type="hidden" name="pimg" value="${product.pimg}">
+				</form>
+				
+				<a class="btn py-3 px-5" style="background-color: #82ae46; color: white;"
+						onclick="insertWish(this)" data-oper="insertWish">WishList</a>
+				<div><p></p></div>
 				<p>
 					<%if(pageKind.equals("all")){%>
 						<a href="/foodMarket/shop?pageNum=${cri.pageNum}&amount=${cri.amount}&pageKind=<%=pageKind%>" class="btn btn-black py-3 px-5" data-oper="back">Back to the Shop</a>
@@ -80,7 +91,6 @@
 					<%}%>
 					<a class="btn btn-black py-3 px-5" data-oper="insert" onclick="insert(this)" style="color:white">Add to Cart</a>
 				</p>
-				
 			</div>
 		</div>
 	</div>
@@ -90,7 +100,7 @@
 		history.replaceState({}, null, null);
 	});
 	function insert(ths){
-		var formObj = $("form");
+		var formObj = $("form[name='cart']");
 		var operation = $(ths).data("oper");
 		
 		var num = $(ths).parents("div").find("input[name='count']");
@@ -109,6 +119,22 @@
 			alert("장바구니에 추가되었습니다")
 			formObj.submit();
 		}
+		
+	}
+	
+	function insertWish(ths){
+		var formObj = $("form[name='wishlist']");
+		var operation = $(ths).data("oper");
+		
+		if(operation ==='insertWish'){
+			formObj.attr({
+				"action" : "/foodMarket/addWishList",
+				"method" : "post"
+			});
+		}
+		alert("위시리스트에 추가되었습니다")
+		formObj.submit();
+		
 		
 	}
 	function fnCalCount(type, ths){

@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.spring.domain.Criteria;
 import com.spring.domain.PageDTO;
 import com.spring.domain.ShopVO;
+import com.spring.domain.WishlistVO;
 import com.spring.service.ShopService;
 
 import lombok.extern.log4j.Log4j;
@@ -78,5 +79,12 @@ public class ShopController {
 		service.insert(shop);
 		rttr.addFlashAttribute("insertCart", shop);
 		return "redirect:/foodMarket/cart";
+	}
+	
+	@PostMapping("/addWishList")
+	public String addWishList(WishlistVO wish, RedirectAttributes rttr) {
+		service.insertWish(wish);
+		rttr.addFlashAttribute("insertWish", wish);
+		return "redirect:/foodMarket/wishlist";
 	}
 }

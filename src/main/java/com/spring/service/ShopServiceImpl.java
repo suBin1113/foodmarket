@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.spring.domain.Criteria;
 import com.spring.domain.ShopVO;
+import com.spring.domain.WishlistVO;
 import com.spring.mapper.ShopMapper;
 
 import jdk.internal.org.jline.utils.Log;
@@ -77,6 +78,11 @@ public class ShopServiceImpl implements ShopService{
 	@Override
 	public void insert(ShopVO shop) {
 		mapper.insertSelectKey(shop);
+	}
+
+	@Override
+	public void insertWish(WishlistVO wish) {
+		mapper.insertSelectKeyWish(wish);
 	}
 
 }

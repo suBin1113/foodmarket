@@ -61,4 +61,19 @@ public class ShopControllerTests {
 		
 		log.info("-----------------------------"+ result);
 	}
+	
+	@Test
+	public void testInsertWish() throws Exception {
+		String result = mockMvc.perform(MockMvcRequestBuilders.post("/foodMarket/addWishList")
+				.param("pid", "62")
+				.param("pname", "이름1")
+				.param("pprice", "100")
+				.param("pcontent", "테스트 내용2")
+				.param("pimg", "product-2.jpg"))
+				.andReturn()
+				.getModelAndView()
+				.getViewName();
+		
+		log.info("-----------------------------"+ result);
+	}
 }

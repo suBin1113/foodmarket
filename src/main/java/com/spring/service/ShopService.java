@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.spring.domain.Criteria;
 import com.spring.domain.ShopVO;
+import com.spring.domain.WishlistVO;
 
 public interface ShopService {
 	public ShopVO get(Long pid);
@@ -21,4 +22,5 @@ public interface ShopService {
 	public int getTotalDri(Criteria cri);
 	
 	public void insert(ShopVO shop);
+	public void insertWish(WishlistVO wish);
 }

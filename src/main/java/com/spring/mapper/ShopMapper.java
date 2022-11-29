@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.spring.domain.Criteria;
 import com.spring.domain.ShopVO;
+import com.spring.domain.WishlistVO;
 
 public interface ShopMapper {
 	public List<ShopVO> getList();
@@ -29,4 +30,7 @@ public interface ShopMapper {
 	
 	public void insert(ShopVO shop);
 	public void insertSelectKey(ShopVO shop);
+	
+	public void insertWish(WishlistVO wish);
+	public void insertSelectKeyWish(WishlistVO wish);
 }

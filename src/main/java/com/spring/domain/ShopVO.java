@@ -12,4 +12,5 @@ public class ShopVO {
 	private String pimg;
 	private Long cno;
 	private int count;
+	private Long wno;
 }

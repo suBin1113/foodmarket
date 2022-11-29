@@ -8,6 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.spring.domain.Criteria;
 import com.spring.domain.ShopVO;
+import com.spring.domain.WishlistVO;
 
 import lombok.extern.log4j.Log4j;
 
@@ -55,5 +56,17 @@ public class ShopServiceTests {
 		shop.setCount(5);
 		
 		service.insert(shop);
+	}
+	
+	@Test
+	public void testInsertWish() {
+		WishlistVO wish = new WishlistVO();
+		wish.setPid(61L);
+		wish.setPname("이름1");
+		wish.setPprice(100);
+		wish.setPcontent("테스트 내용");
+		wish.setPimg("product-1.jpg");
+		
+		service.insertWish(wish);
 	}
 }

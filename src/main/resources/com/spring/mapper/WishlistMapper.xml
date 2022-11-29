@@ -2,11 +2,24 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
- <mapper namespace="com.spring.mapper.WishlistMapper">
- 	<select id="getList" resultType="com.spring.domain.WishlistVO">
- 		select * from tbl_wishlist order by wno
- 	</select>
- 	<delete id="delete">
- 	
- 	</delete>
- </mapper>
+<mapper namespace="com.spring.mapper.WishlistMapper">
+	<select id="read" resultType="com.spring.domain.WishlistVO">
+		select * from tbl_wishlist where wno=#{wno}
+	</select>
+	<select id="getList" resultType="com.spring.domain.WishlistVO">
+		select * from tbl_wishlist order by wno
+	</select>
+	<insert id="insert">
+		<selectKey keyProperty="wno" order="BEFORE"
+			resultType="Long">
+			select seq_wishlist.currval from dual
+		</selectKey>
+		insert into tbl_wishlist (wno, pid, pname, pprice,
+		pcontent, pimg,
+		pcount)
+		values(seq_wishlist.nextval,#{pid},#{pname},#{pprice},#{pcontent},#{pimg},#{pcount})
+	</insert>
+	<delete id="delete">
+		delete tbl_wishlist where wno=#{wno}
+	</delete>
+</mapper>

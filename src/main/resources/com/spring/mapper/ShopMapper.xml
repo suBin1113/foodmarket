@@ -100,4 +100,17 @@
  		insert into tbl_cart 
  			values(#{cno}, #{pid}, #{pname}, #{pprice}, #{pcontent}, #{pimg}, #{count})
  	</insert>
+ 	
+ 	<insert id="insertWish">
+ 		insert into tbl_wishlist values(seq_wishlist.nextval, #{pid}, #{pname}, #{pprice}, #{pcontent}, #{pimg})
+ 	</insert>
+ 	
+ 	<insert id="insertSelectKeyWish">
+ 		<selectKey keyProperty="wno" order="BEFORE" resultType="long">
+ 			select seq_cart.nextval from dual
+ 		</selectKey>
+ 		
+ 		insert into tbl_wishlist 
+ 			values(#{wno}, #{pid}, #{pname}, #{pprice}, #{pcontent}, #{pimg})
+ 	</insert>
  </mapper>
