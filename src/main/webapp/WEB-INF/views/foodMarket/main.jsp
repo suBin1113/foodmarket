@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <style>
-	#product img{
+	.product img{
 		width: 500px;
 		height: 180px;
 	}
@@ -158,7 +158,8 @@
     	<c:forEach items="${productList}" var="productList">
     		<div class="col-md-6 col-lg-3 ftco-animate">
     			<div class="product">
-    				<a href="/foodMarket/detail?pid=${productList.pid}&pageKind=main" class="img-prod"><img class="img-fluid" src="../resources/images/${productList.pimg}" alt="Colorlib Template">
+    				<a href="/foodMarket/detail?pid=${productList.pid}&pageKind=main" class="img-prod">
+    					<img class="img-fluid" src="../resources/images/${productList.pimg}" alt="Colorlib Template">
     					<div class="overlay"></div>
     				</a>
     				<div class="text py-3 pb-4 px-3 text-center">
