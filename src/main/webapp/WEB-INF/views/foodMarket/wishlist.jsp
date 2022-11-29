@@ -29,18 +29,28 @@
 							<tr class="text-center">
 								<th>&nbsp;</th>
 								<th>Product List</th>
-								<th>&nbsp;</th>
+								<th>Product Name</th>
 								<th>Price</th>
-								<th>&nbsp;</th>
+								<th>Content</th>
 								<th>주문하기</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:set var="sum" value="0" />
 							<c:forEach items="${wishlist}" var="wishlist">
-								<tr class="text-center">
-									<td class="product-remove"><a href="#"><span
-											class="ion-ios-close"></span></a></td>
+
+								<!-- 삭제 폼 -->
+								<form action="/foodMarket/wishDelete" class="delete_form"
+									method="post">
+									<input type="hidden" name="wno" class="delete_wishlistwno">
+								</form>
+
+								<tr class="text-center wishlist_info">
+									<td class="product-remove">
+										<button class="btn_delete btn btn-danger"
+											data-wishlistwno="${wishlist.wno}"
+											style="width: 35px; height: 35px !important">X</button>
+									</td>
 
 									<td class="image-prod"><div class="img"
 											style="background-image: url(../resources/images/${wishlist.pimg});"></div></td>
@@ -56,11 +66,11 @@
 												value="${wishlist.pprice}" readonly>
 										</div></td>
 
-									<td class="quantity"><p>&nbsp;</p></td>
-									<td class="total"><a href="/foodMarket/detail?pid=${wishlist.pid}&pageKind=null">상품정보</a></td>
+									<td class="quantity"><a href="/foodMarket/wishDelete?pid=${wishlist.pid}&pageKind=null">상품정보</a></td>
+									<td class="total"><button id="modalRegisterBtn" type="button" class="btn btn-primary">주문</button></td>
 								</tr>
 								<!-- END TR-->
-								
+
 							</c:forEach>
 						</tbody>
 					</table>
@@ -73,8 +83,8 @@
 	$(function() {
 		$('.btn_delete').on("click", function(e) {
 			e.preventDefault();
-			var wno = $(this).data("cartwno");
-			$(".delete_cartwno").val(wno);
+			var wno = $(this).data("wno");
+			$(".delete_wishlistwno").val(wno);
 			$(".delete_form").submit();
 		});
 	});
