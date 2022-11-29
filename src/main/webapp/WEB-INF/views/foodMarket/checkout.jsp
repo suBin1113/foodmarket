@@ -19,7 +19,8 @@
 
 <section class="ftco-section">
 	<div class="container">
-		<form action="/foodMarket/checkout" class="billing-form" method="post">
+		<form action="/foodMarket/checkout" class="billing-form" method="post"
+			id="chkForm">
 			<div class="row justify-content-center">
 				<div class="col-xl-7 ftco-animate">
 					<h3 class="mb-4 billing-heading">Billing Details</h3>
@@ -34,8 +35,7 @@
 						<div class="col-md-12">
 							<div class="form-group">
 								<label for="streetaddress">Address</label> <input type="text"
-									class="form-control" placeholder="House number and street name"
-									name="address" required>
+									class="form-control" placeholder="" name="address" required>
 							</div>
 						</div>
 						<div class="w-100"></div>
@@ -45,6 +45,12 @@
 									type="text" class="form-control" name="zip" id="zipInput"
 									oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
 									pattern="[0-9]{5}" required title="정확한 우편번호를 입력해주세요.">
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="emailaddress">Email Address</label> <input
+									type="email" name="email" class="form-control" placeholder="">
 							</div>
 						</div>
 					</div>
@@ -61,10 +67,10 @@
 									<c:set var="sum" value="${sum + (cart.pprice * cart.pcount)}" />
 								</c:forEach>
 								<c:if test="${sum<30000}">
-									<c:set var="delivery" value="3000"/>
+									<c:set var="delivery" value="3000" />
 								</c:if>
 								<c:if test="${sum>=30000}">
-									<c:set var="delivery" value="0"/>
+									<c:set var="delivery" value="0" />
 								</c:if>
 								<p class="d-flex">
 									<span>Subtotal</span> <span>${sum}원</span>
@@ -83,8 +89,16 @@
 						</div>
 						<div class="col-md-12">
 							<div class="cart-detail p-3 p-md-4">
+								<div class="form-group">
+									<div class="col-md-12">
+										<div class="checkbox">
+											<label><input type="checkbox" name="emailChk"
+												id="emailChk" class="mr-2">주문내역을 이메일로 수신하시겠습니까?</label>
+										</div>
+									</div>
+								</div>
 								<p>
-									<button type="submit" class="btn btn-primary py-3 px-4">Place
+									<button onclick="submitFnc()" class="btn btn-primary py-3 px-4">Place
 										an order</button>
 								</p>
 							</div>
@@ -117,5 +131,17 @@
 
 		$(".itemsDiv").html(str);
 	});*/
+
+	$(function() {
+		$("#emailChk").on("click", function() {
+			if ($("#emailChk").is(":checked") == true) {
+				console.log("check!");
+				$("input[name=email]").attr("required", true);
+			} else {
+				console.log("uncheck!");
+				$("input[name=email]").attr("required", false);
+			}
+		});
+	});
 </script>
 <%@ include file="../includes/footer.jsp"%>

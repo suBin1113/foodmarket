@@ -14,5 +14,7 @@ public class CheckoutVO {
 	private Date orderDate;
 	private int psum;
 	
+	private String email;
+	private boolean emailChk;
 	private List<OrderItemVO> orders;
 }

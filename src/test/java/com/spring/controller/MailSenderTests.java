@@ -22,7 +22,7 @@ public class MailSenderTests {
 		String subject = "test 메일";
 		String content = "";
 		String from = "pudeumakes@gmail.com";
-		String to = "maing219@naver.com";
+		String to = "";
 		
 		content += "";
 
