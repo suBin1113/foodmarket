@@ -38,7 +38,7 @@ public class ShopController {
 	public void detailForm(@RequestParam("pid") Long pid, @RequestParam("pageKind") String pageKind, @ModelAttribute("cri") Criteria cri, Model model) {
 		log.info("detail form");
 		model.addAttribute("product", service.get(pid));
-		model.addAttribute("wishPid", service.getWishListPid());
+		model.addAttribute("wishPid", service.eqWishPid(pid));
 		model.addAttribute("pageKind", pageKind);
 	}
 	

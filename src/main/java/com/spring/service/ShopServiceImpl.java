@@ -90,4 +90,14 @@ public class ShopServiceImpl implements ShopService{
 		return mapper.getWishListPid();
 	}
 
+	@Override
+	public int eqWishPid(Long pid) {
+		for(int i = 0; i < mapper.getWishListPid().size(); i++) {
+			if(pid.equals(mapper.getWishListPid().get(i))) {
+				return 1;
+			}
+		}
+		return 0;
+	}
+
 }

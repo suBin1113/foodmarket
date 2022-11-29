@@ -7,6 +7,14 @@
 </style>
 <% 
 	String pageKind = (String)request.getAttribute("pageKind");
+	int wishResult = (int)request.getAttribute("wishPid");
+	String dataOper = null;
+	
+	if(wishResult == 1){
+		dataOper = "none";
+	}else{
+		dataOper = "insertWish";
+	}
 %>
 <%@ include file="../includes/header.jsp"%>
 <div class="hero-wrap hero-bread" style="background-image: url('../resources/images/bg_1.jpg');">
@@ -63,15 +71,7 @@
 					<input type="hidden" name="pcontent" value="${product.pcontent}">
 					<input type="hidden" name="pimg" value="${product.pimg}">
 				</form>
-				
-				<c:forEach items="${wishPid}" var="wishPid">
-					<c:if test="${wishPid==product.pid}">
-						<c:set var="dataOper" value="none"/>
-					</c:if>
-					<c:if test="${wishPid!=product.pid}">
-						<c:set var="dataOper" value="insertWish"/>
-					</c:if>
-				</c:forEach>
+
 				<form name="wishlist">
 					<input type="hidden" name="pid" value="${product.pid}">
 					<input type="hidden" name="pname" value="${product.pname}">
@@ -81,7 +81,7 @@
 				</form>
 				
 				<a class="btn py-3 px-5" style="background-color: #82ae46; color: white;"
-						onclick="insertWish(this)" data-oper="${dataOper}">WishList</a>
+						onclick="insertWish(this)" data-oper="<%=dataOper%>">WishList</a>
 				<div><p></p></div>
 				<p>
 					<%if(pageKind.equals("all")){%>

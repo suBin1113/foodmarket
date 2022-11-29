@@ -73,4 +73,8 @@ public class ShopServiceTests {
 	public void testGetWishList() {
 		service.getWishListPid();
 	}
+	@Test
+	public void testeq() {
+		log.info("result--------------------" + service.eqWishPid(82L));
+	}
 }
