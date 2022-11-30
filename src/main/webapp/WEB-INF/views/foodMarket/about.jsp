@@ -63,11 +63,11 @@
 								</span>
 							</div>
 							<div class="text text-center">
-								<p class="mb-5 pl-4 line">Far far away, behind the word
-									mountains, far from the countries Vokalia and Consonantia,
-									there live the blind texts.</p>
+								<p class="mb-5 pl-4 line">
+									Cart 페이지 백앤드 작업
+								</p>
 								<p class="name">김수빈</p>
-								<span class="position">Marketing Manager</span>
+								<span class="position">Developer</span>
 							</div>
 						</div>
 					</div>
@@ -81,11 +81,11 @@
 								</span>
 							</div>
 							<div class="text text-center">
-								<p class="mb-5 pl-4 line">Far far away, behind the word
-									mountains, far from the countries Vokalia and Consonantia,
-									there live the blind texts.</p>
+								<p class="mb-5 pl-4 line">
+									주문 페이지 백앤드 작업
+								</p>
 								<p class="name">김주현</p>
-								<span class="position">Interface Designer</span>
+								<span class="position">Developer</span>
 							</div>
 						</div>
 					</div>
@@ -99,11 +99,11 @@
 								</span>
 							</div>
 							<div class="text text-center">
-								<p class="mb-5 pl-4 line">Far far away, behind the word
-									mountains, far from the countries Vokalia and Consonantia,
-									there live the blind texts.</p>
+								<p class="mb-5 pl-4 line">
+									위시리스트 페이지 백앤드 작업
+								</p>
 								<p class="name">전석호</p>
-								<span class="position">UI Designer</span>
+								<span class="position">Developer</span>
 							</div>
 						</div>
 					</div>
@@ -117,11 +117,12 @@
 								</span>
 							</div>
 							<div class="text text-center">
-								<p class="mb-5 pl-4 line">Far far away, behind the word
-									mountains, far from the countries Vokalia and Consonantia,
-									there live the blind texts.</p>
+								<p class="mb-5 pl-4 line">
+									상품 페이지 백앤드 작업<br>
+									프로젝트 관리
+								</p>
 								<p class="name">최혜원</p>
-								<span class="position">Web Developer</span>
+								<span class="position">Developer</span>
 							</div>
 						</div>
 					</div>
@@ -133,6 +134,13 @@
 
 <section class="ftco-section bg-light">
 	<div class="container">
+		<div class="row justify-content-center mb-5 pb-3">
+			<div class="col-md-7 heading-section ftco-animate text-center">
+				<span class="subheading">Tools</span>
+				<h2 class="mb-4">Introduction to Development tools</h2>
+				<p>FoodMarket 프로젝트에 사용된 도구</p>
+			</div>
+		</div>
 		<div class="row no-gutters ftco-services">
 			<div
 				class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
@@ -142,8 +150,8 @@
 						<span class="flaticon-shipped"></span>
 					</div>
 					<div class="media-body">
-						<h3 class="heading">Free Shipping</h3>
-						<span>On order over $100</span>
+						<h3 class="heading">Spring</h3>
+						<span>웹페이지 디자인, 개발</span>
 					</div>
 				</div>
 			</div>
@@ -155,8 +163,8 @@
 						<span class="flaticon-diet"></span>
 					</div>
 					<div class="media-body">
-						<h3 class="heading">Always Fresh</h3>
-						<span>Product well package</span>
+						<h3 class="heading">Oracle</h3>
+						<span>데이터베이스</span>
 					</div>
 				</div>
 			</div>
@@ -168,8 +176,8 @@
 						<span class="flaticon-award"></span>
 					</div>
 					<div class="media-body">
-						<h3 class="heading">Superior Quality</h3>
-						<span>Quality Products</span>
+						<h3 class="heading">GitHub</h3>
+						<span>Remote Storage</span>
 					</div>
 				</div>
 			</div>
@@ -181,8 +189,8 @@
 						<span class="flaticon-customer-service"></span>
 					</div>
 					<div class="media-body">
-						<h3 class="heading">Support</h3>
-						<span>24/7 Support</span>
+						<h3 class="heading">Template</h3>
+						<span>made with by Colorlib</span>
 					</div>
 				</div>
 			</div>

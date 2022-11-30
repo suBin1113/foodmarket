@@ -48,7 +48,7 @@
               </div>
               <div class="media-body">
                 <h3 class="heading">Free Shipping</h3>
-                <span>On order over $100</span>
+                <span>On order over 30,000 won</span>
               </div>
             </div>      
           </div>

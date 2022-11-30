@@ -72,21 +72,22 @@
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a href="/foodMarket/main"
 						class="nav-link">Home</a></li>
-					<li class="nav-item active dropdown"><a
-						class="nav-link dropdown-toggle" href="#" id="dropdown04"
-						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+					<li class="nav-item active dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="dropdown04"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="/foodMarket/shop">Shop</a> <a
-								class="dropdown-item" href="/foodMarket/wishlist">Wishlist</a> <a
-								class="dropdown-item" href="/foodMarket/cart">Cart</a> <a
-								class="dropdown-item" href="/foodMarket/checkout">Checkout</a>
-						</div></li>
-					<li class="nav-item"><a href="/foodMarket/orderDetails"
-						class="nav-link">Order Details</a></li>
-					<li class="nav-item cta cta-colored"><a
-						href="/foodMarket/cart" class="nav-link"> <span
-							class="icon-shopping_cart"></span> 
-					</a></li>
+							<a class="dropdown-item" href="/foodMarket/shop">Shop</a> 
+							<a class="dropdown-item" href="/foodMarket/wishlist">Wishlist</a> 
+						</div>
+					</li>
+					<li class="nav-item">
+						<a href="/foodMarket/orderDetails" class="nav-link">Order Details</a>
+					</li>
+					<li class="nav-item cta cta-colored">
+						<a href="/foodMarket/cart" class="nav-link"> 
+							<span class="icon-shopping_cart"></span>Cart
+						</a>
+					</li>
 
 				</ul>
 			</div>
