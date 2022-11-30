@@ -21,4 +21,9 @@ public class MainController {
 		model.addAttribute("productList", service.getList());
 	}
 	
+	@GetMapping("/foodMarket/about")
+	public void aboutForm() {
+		
+	}
+	
 }
