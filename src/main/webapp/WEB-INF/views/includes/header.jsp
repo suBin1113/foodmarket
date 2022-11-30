@@ -86,11 +86,8 @@
 					<!-- 카트 아이템 수 집계되게 변경 -->
 					<li class="nav-item cta cta-colored"><a
 						href="/foodMarket/cart" class="nav-link"> <span
-							class="icon-shopping_cart"></span>
+							class="icon-shopping_cart"></span>[${getCount}] 
 							<!-- 이 부분 다시 수정하기 -->
-						<c:forEach items="${cart}" var="cart">
-								<c:set var="realcount" value="${cart.totalCnt}" />
-							</c:forEach> [${realcount}] 
 					</a></li>
 
 				</ul>

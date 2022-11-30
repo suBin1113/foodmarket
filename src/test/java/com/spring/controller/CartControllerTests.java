@@ -39,7 +39,7 @@ public class CartControllerTests {
 
 	@Test
 	public void testgetCount() throws Exception {
-		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/foodMarket/count")).andReturn().getModelAndView()
+		log.info(mockMvc.perform(MockMvcRequestBuilders.get("/foodMarket/main")).andReturn().getModelAndView()
 				.getModelMap());
 	}
 

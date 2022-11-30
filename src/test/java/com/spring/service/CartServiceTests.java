@@ -24,7 +24,8 @@ public class CartServiceTests {
 	}
 
 	@Test
-	public void testGetCount() {
-		log.info(service.getCount());
+	public void testGetCount() throws Exception {
+		CartVO vo = new CartVO();
+		log.info(service.getCount(vo));
 	}
 }
