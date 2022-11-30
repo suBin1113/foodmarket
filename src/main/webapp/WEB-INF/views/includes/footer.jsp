@@ -15,7 +15,7 @@
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">FoodMarket</h2>
               <p>본 사이트는 신선한 재료를 판매하는 온라인 푸드 마켓입니다.</p>
-              <p><a href="/foodMarket/about" class="btn btn-primary">팀원 소개</a></p>
+              <p><a href="/foodMarket/about" class="btn btn-primary">프로젝트 소개</a></p>
             </div>
           </div>
           <div class="col-md">
