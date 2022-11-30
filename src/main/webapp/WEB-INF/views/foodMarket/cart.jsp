@@ -23,8 +23,11 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 ftco-animate">
-				<a href="/foodMarket/shop" class="btn btn-black py-3 px-5" data-oper="back">Back to the Shop</a>
-				<div><p></p></div>
+				<a href="/foodMarket/shop" class="btn btn-black py-3 px-5"
+					data-oper="back">Back to the Shop</a>
+				<div>
+					<p></p>
+				</div>
 				<div class="cart-list">
 					<table class="table">
 						<thead class="thead-primary">
@@ -39,6 +42,8 @@
 						</thead>
 						<tbody>
 							<c:set var="sum" value="0" />
+							<c:set var="delivery" value="0" />
+							<c:set var="quantitysum" value="0"/>
 							<c:forEach items="${cart}" var="cart">
 
 								<!-- 삭제 폼 -->
@@ -84,11 +89,16 @@
 								</tr>
 								<!-- END TR-->
 								<c:set var="sum" value="${sum + (cart.pprice * cart.pcount)}" />
-
-								<c:set var="delivery" value="0" />
+								<c:set var="quantitysum" value="${quantitysum+cart.pcount}" />
+								
+								<c:if test="${sum > 30000}">
+									<c:set var="delivery" value="0" />
+								</c:if>
+								
 								<c:if test="${sum < 30000}">
 									<c:set var="delivery" value="3000" />
 								</c:if>
+								
 							</c:forEach>
 						</tbody>
 					</table>
@@ -101,15 +111,18 @@
 				<div class="cart-total mb-3">
 					<h3>Cart Totals</h3>
 					<p class="d-flex">
-						<span>Product</span> <span>${sum}</span>
+						<span>Order Quantity</span> <span>${quantitysum}개</span>
+					</p>
+					<p class="d-flex">
+						<span>Product Price</span> <span>${sum}원</span>
 					</p>
 					<p class="d-flex delivery">
-						<span>Delivery Fee</span> <span>${delivery}</span>
+						<span>Delivery Fee</span> <span>${delivery}원</span>
 					</p>
 
 					<hr>
 					<p class="d-flex total-price finaltotal">
-						<span>Total</span> <span>${sum+delivery}</span>
+						<span>Total</span> <span>${sum+delivery}원</span>
 					</p>
 				</div>
 				<p>

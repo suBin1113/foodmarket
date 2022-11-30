@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import com.spring.domain.CartVO;
 import com.spring.mapper.CartMapper;
 
-import jdk.internal.org.jline.utils.Log;
 import lombok.extern.log4j.Log4j;
 
 @Service
@@ -27,11 +26,4 @@ public class CartServiceImpl implements CartService {
 		log.info("remove..." + cno);
 		return mapper.delete(cno);
 	}
-
-	@Override
-	public int getCount() {
-		log.info("getCount...");
-		return mapper.getCount();
-	}
-
 }

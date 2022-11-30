@@ -22,9 +22,4 @@ public class CartServiceTests {
 		// 게시물 번호 존재 여부 확인하고 테스트
 		log.info("REMOVE RESULE: " + service.delete(61L));
 	}
-
-	@Test
-	public void testGetCount() {
-		log.info(service.getCount());
-	}
 }

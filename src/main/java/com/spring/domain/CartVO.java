@@ -11,6 +11,4 @@ public class CartVO {
 	private String pcontent; //상품 내용
 	private String pimg; //상품 이미지
 	private int pcount; //상품 개별 갯수
-	
-	private int totalCnt; //상품 총 갯수
 }
