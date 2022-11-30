@@ -72,28 +72,24 @@
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a href="/foodMarket/main"
 						class="nav-link">Home</a></li>
-					<li class="nav-item active dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="dropdown04"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
+					<li class="nav-item active dropdown"><a
+						class="nav-link dropdown-toggle" href="#" id="dropdown04"
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Menu</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="/foodMarket/shop">Shop</a> 
-							<a class="dropdown-item" href="/foodMarket/wishlist">Wishlist</a> 
-							<a class="dropdown-item" href="/foodMarket/cart">Cart</a> 
-						</div>
-					</li>
-					<li class="nav-item">
-						<a href="/foodMarket/orderDetails" class="nav-link">Order Details</a>
-					</li>
+							<a class="dropdown-item" href="/foodMarket/shop">Shop</a> <a
+								class="dropdown-item" href="/foodMarket/wishlist">Wishlist</a> <a
+								class="dropdown-item" href="/foodMarket/cart">Cart</a> <a
+								class="dropdown-item" href="/foodMarket/checkout">Checkout</a>
+						</div></li>
+					<li class="nav-item"><a href="/foodMarket/orderDetails"
+						class="nav-link">Order Details</a></li>
 					<!-- 카트 아이템 수 집계되게 변경 -->
-					<li class="nav-item cta cta-colored">
-						<a href="/foodMarket/cart" class="nav-link"> 
-							<span class="icon-shopping_cart"></span>
+					<li class="nav-item cta cta-colored"><a
+						href="/foodMarket/cart" class="nav-link"> <span
+							class="icon-shopping_cart"></span>[${getCount}] 
 							<!-- 이 부분 다시 수정하기 -->
-							<c:forEach items="${count}" var="count">
-								<c:set var="totalcount" value="${count}" />
-							</c:forEach> [${totalcount}]
-						</a>
-					</li>
+					</a></li>
+
 				</ul>
 			</div>
 		</div>
