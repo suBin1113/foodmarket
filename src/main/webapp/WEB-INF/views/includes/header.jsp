@@ -83,11 +83,9 @@
 						</div></li>
 					<li class="nav-item"><a href="/foodMarket/orderDetails"
 						class="nav-link">Order Details</a></li>
-					<!-- 카트 아이템 수 집계되게 변경 -->
 					<li class="nav-item cta cta-colored"><a
 						href="/foodMarket/cart" class="nav-link"> <span
-							class="icon-shopping_cart"></span>[${getCount}] 
-							<!-- 이 부분 다시 수정하기 -->
+							class="icon-shopping_cart"></span> 
 					</a></li>
 
 				</ul>
