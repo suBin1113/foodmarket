@@ -10,7 +10,4 @@ public interface CartService {
 
 	// 장바구니 품목 삭제
 	public int delete(Long cno);
-
-	// 개수 보여줌
-	public int getCount(CartVO vo) throws Exception;
 }
