@@ -26,11 +26,4 @@ public class CartServiceImpl implements CartService {
 		log.info("remove..." + cno);
 		return mapper.delete(cno);
 	}
-
-	@Override
-	public int getCount(CartVO vo) throws Exception {
-		log.info("getCount...");
-		return mapper.getCount();
-	}
-
 }

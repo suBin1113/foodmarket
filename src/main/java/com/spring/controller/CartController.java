@@ -34,13 +34,4 @@ public class CartController {
 		}
 		return "redirect:/foodMarket/cart";
 	}
-
-	@RequestMapping(value = "/foodMarket/*")
-	public void getCount(@ModelAttribute("vo") CartVO vo, Model model) throws Exception {
-		log.info("count");
-
-		int count = service.getCount(vo);
-		log.info("----------------------" + count);
-		model.addAttribute("getCount", count);
-	}
 }

@@ -11,7 +11,4 @@ public interface CartMapper {
 
 	// 삭제
 	public int delete(Long cno);
-	
-	// 카트 물품 개수 조회
-	public int getCount();
 }
