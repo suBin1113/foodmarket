@@ -43,7 +43,7 @@
 						<tbody>
 							<c:set var="sum" value="0" />
 							<c:set var="delivery" value="0" />
-							<c:set var="quantitysum" value="0"/>
+							<c:set var="quantitysum" value="0" />
 							<c:forEach items="${cart}" var="cart">
 
 								<!-- 삭제 폼 -->
@@ -90,15 +90,15 @@
 								<!-- END TR-->
 								<c:set var="sum" value="${sum + (cart.pprice * cart.pcount)}" />
 								<c:set var="quantitysum" value="${quantitysum+cart.pcount}" />
-								
+
 								<c:if test="${sum > 30000}">
 									<c:set var="delivery" value="0" />
 								</c:if>
-								
+
 								<c:if test="${sum < 30000}">
 									<c:set var="delivery" value="3000" />
 								</c:if>
-								
+
 							</c:forEach>
 						</tbody>
 					</table>
@@ -126,9 +126,10 @@
 					</p>
 				</div>
 				<p>
-					<a href="/foodMarket/checkout" class="btn btn-primary py-3 px-4">Proceed
+					<a class="btn btn-primary py-3 px-4" data-oper="limiting" onclick="limitCount(this)" style="color:white">Proceed
 						to Checkout</a>
 				</p>
+				<form name="cnotzero"></form>
 			</div>
 		</div>
 	</div>
@@ -144,6 +145,26 @@
 			$(".delete_form").submit();
 		});
 	});
+
+	function limitCount(ths) {
+		var quantitysum = ${quantitysum};
+		var formObj = $("form[name='cnotzero']");
+		var operation = $(ths).data("oper");
+
+		if (quantitysum == 0) {
+			alert("카트가 비어있습니다.");
+			return;
+		} else{
+			if(operation==='limiting'){
+				formObj.attr({
+					"action":"/foodMarket/checkout",
+					"method":"get"
+				});
+			}
+			formObj.submit();
+		}
+		
+	}
 </script>
 
 <%@ include file="../includes/footer.jsp"%>
