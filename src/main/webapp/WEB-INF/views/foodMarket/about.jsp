@@ -34,7 +34,7 @@
 				</div>
 				<div class="pb-md-5">
 					<p>본 프로젝트는 대구대학교 웹개발자 양성 프로젝트 수업 과정 중 하나인 팀프로젝트으로 구성된 웹페이지 입니다.</p>
-					<p>FoodMarket 웹페이지는 신선한 재료를 판매하는 푸드 판매 컨셉으로 제작되었습니다.</p>
+					<p>FoodMarket 웹페이지는 신선한 재료를 판매하는 온라인 푸드 마켓 컨셉으로 제작되었습니다.</p>
 				</div>
 			</div>
 		</div>
@@ -142,58 +142,67 @@
 			</div>
 		</div>
 		<div class="row no-gutters ftco-services">
-			<div
-				class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
-				<div class="media block-6 services mb-md-0 mb-4">
-					<div
-						class="icon bg-color-1 active d-flex justify-content-center align-items-center mb-2">
-						<span class="flaticon-shipped"></span>
+			
+			<div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
+				<div class="testimony-wrap p-4 pb-5">
+					<div class="user-img mb-5"
+						style="background-image: url(../resources/images/spring.png)">
 					</div>
 					<div class="media-body">
-						<h3 class="heading">Spring</h3>
+						<h3 style="font-size: 20px">Spring</h3>
 						<span>웹페이지 디자인, 개발</span>
 					</div>
 				</div>
 			</div>
-			<div
-				class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
-				<div class="media block-6 services mb-md-0 mb-4">
-					<div
-						class="icon bg-color-2 d-flex justify-content-center align-items-center mb-2">
-						<span class="flaticon-diet"></span>
+			
+			<div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
+				<div class="testimony-wrap p-4 pb-5">
+					<div class="user-img mb-5"
+						style="background-image: url(../resources/images/oracle.jpg)">
 					</div>
 					<div class="media-body">
-						<h3 class="heading">Oracle</h3>
-						<span>데이터베이스</span>
+						<h3 style="font-size: 20px">Oracle</h3>
+						<span>웹페이지의 데이터베이스</span>
 					</div>
 				</div>
 			</div>
-			<div
-				class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
-				<div class="media block-6 services mb-md-0 mb-4">
-					<div
-						class="icon bg-color-3 d-flex justify-content-center align-items-center mb-2">
-						<span class="flaticon-award"></span>
+			
+			<div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
+				<div class="testimony-wrap p-4 pb-5">
+					<div class="user-img mb-5"
+						style="background-image: url(../resources/images/Anonymous.png)">
 					</div>
 					<div class="media-body">
-						<h3 class="heading">GitHub</h3>
-						<span>Remote Storage</span>
+						<h3 style="font-size: 20px">Apache-Tomcat</h3>
+						<span>서버</span>
 					</div>
 				</div>
 			</div>
-			<div
-				class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
-				<div class="media block-6 services mb-md-0 mb-4">
-					<div
-						class="icon bg-color-4 d-flex justify-content-center align-items-center mb-2">
-						<span class="flaticon-customer-service"></span>
+			
+			<div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
+				<div class="testimony-wrap p-4 pb-5">
+					<div class="user-img mb-5"
+						style="background-image: url(../resources/images/Anonymous.png)">
 					</div>
 					<div class="media-body">
-						<h3 class="heading">Template</h3>
+						<h3 style="font-size: 20px">GitHub</h3>
+						<span>팀원들과 공유한 원격 저장소</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
+				<div class="testimony-wrap p-4 pb-5">
+					<div class="user-img mb-5"
+						style="background-image: url(../resources/images/Anonymous.png)">
+					</div>
+					<div class="media-body">
+						<h3 style="font-size: 20px">Template</h3>
 						<span>made with by Colorlib</span>
 					</div>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 </section>
