@@ -1,4 +1,4 @@
-package com.spring.mapper;
+package com.spring.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,18 +11,12 @@ import lombok.extern.log4j.Log4j;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("file:src/main/webapp/WEB-INF/spring/root-context.xml")
 @Log4j
-public class WishlistMapperTests {
+public class WishlistServiceTests {
 	@Autowired
-	private WishlistMapper mapper;
-	
-	@Test
-	public void testGetshop() {
-		log.info("------------");
-		mapper.getList();
-	}
+	private WishlistService service;
 	
 	@Test
 	public void testDelete() {
-		log.info("------------" + mapper.wishListdelete(2L));
+		log.info("REMOVE RESULE: " + service.wishListdelete(22L));
 	}
 }

@@ -23,7 +23,10 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 ftco-animate">
+				<a href="/foodMarket/shop" class="btn btn-black py-3 px-5"
+					data-oper="back">Back to the Shop</a>
 				<div class="cart-list">
+					<p></p>
 					<table class="table">
 						<thead class="thead-primary">
 							<tr class="text-center">
@@ -35,11 +38,10 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:set var="sum" value="0" />
 							<c:forEach items="${wishlist}" var="wishlist">
 
 								<!-- 삭제 폼 -->
-								<form action="/foodMarket/wishDelete" class="delete_form"
+								<form action="/foodMarket/wishListdelete" class="delete_form"
 									method="post">
 									<input type="hidden" name="wno" class="delete_wishlistwno">
 								</form>
@@ -81,8 +83,9 @@
 	$(function() {
 		$('.btn_delete').on("click", function(e) {
 			e.preventDefault();
-			var wno = $(this).data("wno");
+			var wno = $(this).data("wishlistwno");
 			$(".delete_wishlistwno").val(wno);
+			alert("리스트에서 삭제되었습니다.");
 			$(".delete_form").submit();
 		});
 	});

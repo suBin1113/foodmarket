@@ -33,6 +33,6 @@ public class WishlistController {
 			rttr.addFlashAttribute("result", "success");
 		}
 
-		return "redirect:foodMarket/wishlist";
+		return "redirect:/foodMarket/wishlist";
 	}
 }

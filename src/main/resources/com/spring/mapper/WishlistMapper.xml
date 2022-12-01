@@ -6,12 +6,6 @@
 	<select id="getList" resultType="com.spring.domain.WishlistVO">
 		select * from tbl_wishlist order by wno
 	</select>
-	<select id="read" resultType="com.spring.domain.WishlistVO">
-		select * from tbl_wishlist where wno=#{wno}
-	</select>
-	<insert id="insert">
-		insert into tbl_wishlist values(seq_wishlist.nextval,#{pid},#{pname},#{pprice},#{pcontent},#{pimg},#{pcount})
-	</insert>
 	<delete id="wishListdelete">
 		delete from tbl_wishlist where wno=#{wno}
 	</delete>

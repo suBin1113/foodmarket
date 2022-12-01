@@ -27,9 +27,4 @@ public class WishlistServiceImpl implements WishlistService {
 		return mapper.wishListdelete(wno);
 	}
 
-	@Override
-	public void insert(WishlistVO wno) {
-		mapper.insertSelectKey(wno);
-	}
-
 }
