@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ include file="../includes/header.jsp"%>
-
 <div class="hero-wrap hero-bread"
 	style="background-image: url('../resources/images/bg_1.jpg');">
 	<div class="container">
@@ -40,14 +39,14 @@
 							<c:forEach items="${wishlist}" var="wishlist">
 
 								<!-- 삭제 폼 -->
-								<form action="/foodMarket/wishDelete" class="delete_form"
+								<form action="/foodMarket/wishListdelete" class="delete_form"
 									method="post">
 									<input type="hidden" name="wno" class="delete_wishlistwno">
 								</form>
 
 								<tr class="text-center wishlist_info">
 									<td class="product-remove">
-										<button class="btn_delete btn btn-danger"
+										<button id="deleteBtn" class="btn_delete btn btn-danger"
 											data-wishlistwno="${wishlist.wno}"
 											style="width: 35px; height: 35px !important">X</button>
 									</td>
@@ -66,8 +65,10 @@
 												value="${wishlist.pprice}" readonly>
 										</div></td>
 
-									<td class="quantity"><a href="/foodMarket/wishDelete?pid=${wishlist.pid}&pageKind=null">상품정보</a></td>
-									<td class="total"><button id="modalRegisterBtn" type="button" class="btn btn-primary">주문</button></td>
+									<td class="quantity"><a
+										href="/foodMarket/wishDelete?pid=${wishlist.pid}&pageKind=null">상품정보</a></td>
+									<td class="total"><button id="modalRegisterBtn"
+											type="button" class="btn btn-primary">주문</button></td>
 								</tr>
 								<!-- END TR-->
 
@@ -81,10 +82,11 @@
 </section>
 <script type="text/javascript">
 	$(function() {
-		$('.btn_delete').on("click", function(e) {
+		$('#deleteBtn').on("click", function(e) {
 			e.preventDefault();
-			var wno = $(this).data("wno");
+			var wno = $(this).data("wishListwno");
 			$(".delete_wishlistwno").val(wno);
+			alert("위시리스트에서 삭제되었습니다.");
 			$(".delete_form").submit();
 		});
 	});
