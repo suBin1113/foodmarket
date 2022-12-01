@@ -146,7 +146,7 @@
 			<div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
 				<div class="testimony-wrap p-4 pb-5">
 					<div class="user-img mb-5"
-						style="background-image: url(../resources/images/spring.png)">
+						style="background-image: url(../resources/images/mark-1.png)">
 					</div>
 					<div class="media-body">
 						<h3 style="font-size: 20px">Spring</h3>
@@ -158,7 +158,7 @@
 			<div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
 				<div class="testimony-wrap p-4 pb-5">
 					<div class="user-img mb-5"
-						style="background-image: url(../resources/images/oracle.jpg)">
+						style="background-image: url(../resources/images/mark-2.png)">
 					</div>
 					<div class="media-body">
 						<h3 style="font-size: 20px">Oracle</h3>
@@ -170,7 +170,7 @@
 			<div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
 				<div class="testimony-wrap p-4 pb-5">
 					<div class="user-img mb-5"
-						style="background-image: url(../resources/images/Anonymous.png)">
+						style="background-image: url(../resources/images/mark-3.png)">
 					</div>
 					<div class="media-body">
 						<h3 style="font-size: 20px">Apache-Tomcat</h3>
@@ -182,7 +182,7 @@
 			<div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
 				<div class="testimony-wrap p-4 pb-5">
 					<div class="user-img mb-5"
-						style="background-image: url(../resources/images/Anonymous.png)">
+						style="background-image: url(../resources/images/mark-4.png)">
 					</div>
 					<div class="media-body">
 						<h3 style="font-size: 20px">GitHub</h3>
@@ -194,7 +194,7 @@
 			<div class="col-lg-3 text-center d-flex align-self-stretch ftco-animate">
 				<div class="testimony-wrap p-4 pb-5">
 					<div class="user-img mb-5"
-						style="background-image: url(../resources/images/Anonymous.png)">
+						style="background-image: url(../resources/images/mark-5.png)">
 					</div>
 					<div class="media-body">
 						<h3 style="font-size: 20px">Template</h3>
