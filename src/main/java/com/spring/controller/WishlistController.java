@@ -26,12 +26,13 @@ public class WishlistController {
 	}
 
 	//url 주소 수정
-	@PostMapping("/wishDelete")
-	public String wishDelete(Long wno, RedirectAttributes rttr) {
+	@PostMapping("/wishListdelete")
+	public String wishListdelete(Long wno, RedirectAttributes rttr) {
 		log.info("delete..." + wno);
-		if(service.wishDelete(wno) > 0) {
+		if (service.wishListdelete(wno) == 1) {
 			rttr.addFlashAttribute("result", "success");
 		}
-		return "redirect:/foodMarket/wishlist/";
+
+		return "redirect:foodMarket/wishlist";
 	}
 }

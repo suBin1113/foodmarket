@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.spring.domain.WishlistDTO;
 import com.spring.domain.WishlistVO;
 import com.spring.mapper.WishlistMapper;
 
@@ -23,15 +22,14 @@ public class WishlistServiceImpl implements WishlistService {
 	}
 
 	@Override
-	public int wishDelete(Long wno) {
+	public int wishListdelete(Long wno) {
 		log.info("remove..." + wno);
-		return mapper.delete(wno);
+		return mapper.wishListdelete(wno);
 	}
 
 	@Override
-	public void insert(WishlistDTO dto) {
-		
-		
+	public void insert(WishlistVO wno) {
+		mapper.insertSelectKey(wno);
 	}
 
 }
