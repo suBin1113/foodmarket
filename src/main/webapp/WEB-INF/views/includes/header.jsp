@@ -85,7 +85,7 @@
 					</li>
 					<li class="nav-item cta cta-colored">
 						<a href="/foodMarket/cart" class="nav-link"> 
-							<span class="icon-shopping_cart"></span>Cart
+							Cart <span class="icon-shopping_cart"></span>
 						</a>
 					</li>
 

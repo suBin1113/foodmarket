@@ -48,7 +48,7 @@
               </div>
               <div class="media-body">
                 <h3 class="heading">Free Shipping</h3>
-                <span>On order over 30,000 won</span>
+                <span>30,000원 이상 주문 시 무료 배송</span>
               </div>
             </div>      
           </div>
@@ -59,7 +59,7 @@
               </div>
               <div class="media-body">
                 <h3 class="heading">Always Fresh</h3>
-                <span>Product well package</span>
+                <span>잘 포장된 상품</span>
               </div>
             </div>    
           </div>
@@ -70,7 +70,7 @@
               </div>
               <div class="media-body">
                 <h3 class="heading">Superior Quality</h3>
-                <span>Quality Products</span>
+                <span>양질의 상품</span>
               </div>
             </div>      
           </div>
@@ -81,7 +81,7 @@
               </div>
               <div class="media-body">
                 <h3 class="heading">Support</h3>
-                <span>24/7 Support</span>
+                <span>연중무휴</span>
               </div>
             </div>      
           </div>
@@ -98,7 +98,7 @@
 						<div class="category-wrap-2 ftco-animate img align-self-stretch d-flex" style="background-image: url(../resources/images/category.jpg);">
 							<div class="text text-center">
 								<h2>Vegetables</h2>
-								<p>Protect the health of every home</p>
+								<p>모든 가정의 건강을 보호합니다.</p>
 								<p><a href="/foodMarket/shop" class="btn btn-primary">Shop now</a></p>
 							</div>
 						</div>
@@ -148,7 +148,7 @@
         	<div class="col-md-12 heading-section text-center ftco-animate">
           		<span class="subheading">Featured Products</span>
             	<h2 class="mb-4">Our Products</h2>
-            	<p>신상품을 확인해보세요</p>
+            	<p>신상품을 확인해 보세요.</p>
           	</div>
         </div>   		
     </div>
