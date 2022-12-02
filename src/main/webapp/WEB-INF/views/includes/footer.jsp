@@ -25,7 +25,7 @@
                 <li><a href="/foodMarket/shop" class="py-2 d-block">Shop</a></li>
                 <li><a href="/foodMarket/wishlist" class="py-2 d-block">Wishlist</a></li>
                 <li><a href="/foodMarket/cart" class="py-2 d-block">Cart</a></li>
-                <li><a href="/foodMarket/checkout" class="py-2 d-block">Check Out</a></li>
+                <li><a href="/foodMarket/orderDetails" class="py-2 d-block">order detail</a></li>
               </ul>
             </div>
           </div>

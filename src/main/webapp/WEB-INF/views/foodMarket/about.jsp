@@ -64,7 +64,7 @@
 							</div>
 							<div class="text text-center">
 								<p class="mb-5 pl-4 line">
-									Cart 페이지 백앤드 작업
+									장바구니 페이지 백앤드 작업
 								</p>
 								<p class="name">김수빈</p>
 								<span class="position">Developer</span>
@@ -82,7 +82,8 @@
 							</div>
 							<div class="text text-center">
 								<p class="mb-5 pl-4 line">
-									주문 페이지 백앤드 작업
+									주문 페이지 백앤드 작업<br>
+									주문 내역 페이지 백앤드 작업
 								</p>
 								<p class="name">김주현</p>
 								<span class="position">Developer</span>

@@ -53,16 +53,6 @@
 									</p>
 								</div>
 							</div>
-							<div class="bottom-area d-flex px-3">
-								<div class="m-auto d-flex">
-									<a href="/foodMarket/cart" class="buy-now d-flex justify-content-center align-items-center mx-1">
-										<span><i class="ion-ios-cart"></i></span>
-									</a> 
-									<a href="/foodMarket/wishlist" class="heart d-flex justify-content-center align-items-center">
-										<span><i class="ion-ios-heart"></i></span>
-									</a>
-								</div>
-							</div>
 						</div>
 					</div>
 				</div>
