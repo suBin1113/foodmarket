@@ -33,7 +33,7 @@
 					</div>
 				</div>
 				<div class="pb-md-5">
-					<p>본 프로젝트는 대구대학교 웹개발자 양성 프로젝트 수업 과정 중 하나인 팀프로젝트으로 구성된 웹페이지 입니다.</p>
+					<p>본 프로젝트는 대구대학교 산업협력단에서 진행한 <b>'2022 임베디드 시스템 융합 프레임워크 기반 자바 웹 개발자 양성'</b>  수업 과정 중 하나인 팀프로젝트 과제로 제작된 웹페이지 입니다.</p>
 					<p>FoodMarket 웹페이지는 신선한 재료를 판매하는 온라인 푸드 마켓 컨셉으로 제작되었습니다.</p>
 				</div>
 			</div>
@@ -175,7 +175,7 @@
 					</div>
 					<div class="media-body">
 						<h3 style="font-size: 20px">Apache-Tomcat</h3>
-						<span>서버</span>
+						<span>웹페이지에 사용된 서버</span>
 					</div>
 				</div>
 			</div>
@@ -187,7 +187,7 @@
 					</div>
 					<div class="media-body">
 						<h3 style="font-size: 20px">GitHub</h3>
-						<span>팀원들과 공유한 원격 저장소</span>
+						<span>팀원들과의 작업물 공유를 위해 사용된 원격 저장소</span>
 					</div>
 				</div>
 			</div>
