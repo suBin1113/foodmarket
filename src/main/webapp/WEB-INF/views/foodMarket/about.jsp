@@ -138,7 +138,7 @@
 		<div class="row justify-content-center mb-5 pb-3">
 			<div class="col-md-7 heading-section ftco-animate text-center">
 				<span class="subheading">Tools</span>
-				<h2 class="mb-4">Introduction to Development tools</h2>
+				<h2 class="mb-4">Introduction To Development Tools</h2>
 				<p>FoodMarket 프로젝트에 사용된 도구</p>
 			</div>
 		</div>
