@@ -106,6 +106,7 @@
 <script>
 	$(function(){
 		history.replaceState({}, null, null);
+		
 	});
 	function insert(ths){
 		var formObj = $("form[name='cart']");

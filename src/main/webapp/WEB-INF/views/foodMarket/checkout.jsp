@@ -73,10 +73,10 @@
 									<c:set var="delivery" value="0" />
 								</c:if>
 								<p class="d-flex">
-									<span>Subtotal</span> <span>${sum}원</span>
+									<span>Product Price</span> <span>${sum}원</span>
 								</p>
 								<p class="d-flex">
-									<span>Delivery</span> <span>${delivery}원</span>
+									<span>Delivery Fee</span> <span>${delivery}원</span>
 								</p>
 								<!-- <p class="d-flex">
 									<span>Discount</span> <span>$3.00</span>

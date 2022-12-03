@@ -102,23 +102,6 @@
 	</div>
 </section>
 
-<div class="modal fade in" id="myModal" tabindex="-1" role="dialog">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h4 class="modal-title" id="myModalLabel">Modal title</h4>
-				<!-- <button type="button" class="close" data-dismiss="modal"
-					aria-hidden="true">×</button> -->
-			</div>
-			<div class="modal-body">lorem</div>
-			<div class="modal-footer">
-				<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
-
 <%@ include file="../includes/footer.jsp"%>
 <script>
 	$(function() {
@@ -134,9 +117,7 @@
 		
 		if(orderId != "") {
 			if ("${orderList}" == "[]") {
-				$(".modal-title").html("유효하지 않은 주문번호");
-				$(".modal-body").html("유효하지 않은 주문번호입니다. 주문번호를 확인해주세요.")
-				$("#myModal").modal("show");
+				alert("유효하지 않은 주문번호입니다. 주문번호를 확인해주세요.");
 			} else {
 				$("section").show();
 				$(".mouse").show();
@@ -151,15 +132,10 @@
 			}
 
 			if (result === 'success') {
-				$(".modal-title").html("주문 취소")
-				$(".modal-body").html("정상적으로 처리되었습니다.");
+				alert("정상적으로 처리되었습니다.");
 			} else if (parseInt(result) > 0) {
-				$(".modal-title").html("주문 완료")
-				$(".modal-body").html(
-						"주문번호 " + parseInt(result) + "번으로 주문되었습니다.");
+				alert("주문번호 " + parseInt(result) + "번으로 주문되었습니다.");
 			}
-
-			$("#myModal").modal("show");
 		}
 	});
 </script>
