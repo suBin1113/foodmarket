@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.spring.mapper.ShopMapper">
+ 	<select id="getList" resultType="com.spring.domain.ShopVO">
+ 		select * from tbl_product order by pid
+ 	</select>
+ 	<select id="read" resultType="com.spring.domain.ShopVO">
+ 		select * from tbl_product where pid = #{pid}
+ 	</select>
+ 	<select id="getListVege" resultType="com.spring.domain.ShopVO">
+ 		select * from tbl_product where pkind = 'vegetable' order by pid
+ 	</select>
+ 	<select id="getListFru" resultType="com.spring.domain.ShopVO">
+ 		select * from tbl_product where pkind = 'fruit' order by pid
+ 	</select>
+ 	<select id="getListJui" resultType="com.spring.domain.ShopVO">
+ 		select * from tbl_product where pkind = 'juice' order by pid
+ 	</select>
+ 	<select id="getListDri" resultType="com.spring.domain.ShopVO">
+ 		select * from tbl_product where pkind = 'dried' order by pid
+ 	</select>
+ 	
+ 	<select id="getListWithPaging" resultType="com.spring.domain.ShopVO">
+ 		<![CDATA[
+			select pid, pname, pkind, pcontent, pprice, pimg
+			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
+			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
+			from tbl_product 
+			 where rownum<=#{pageNum}*#{amount}) 
+			 where rn>(#{pageNum}-1)*#{amount}
+		]]>
+ 	</select>
+ 	<select id="getListWithPagingVege" resultType="com.spring.domain.ShopVO">
+ 		<![CDATA[
+			select pid, pname, pkind, pcontent, pprice, pimg
+			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
+			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
+			from tbl_product 
+			 where rownum<=#{pageNum}*#{amount} and pkind = 'vegetable') 
+			 where rn>(#{pageNum}-1)*#{amount} 
+		]]>
+ 	</select>
+ 	<select id="getListWithPagingFru" resultType="com.spring.domain.ShopVO">
+ 		<![CDATA[
+			select pid, pname, pkind, pcontent, pprice, pimg
+			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
+			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
+			from tbl_product 
+			 where rownum<=#{pageNum}*#{amount} and pkind = 'fruit') 
+			 where rn>(#{pageNum}-1)*#{amount}
+		]]>
+ 	</select>
+ 	<select id="getListWithPagingJui" resultType="com.spring.domain.ShopVO">
+ 		<![CDATA[
+			select pid, pname, pkind, pcontent, pprice, pimg
+			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
+				rownum rn, pid, pname, pkind, pcontent, pprice, pimg
+				from tbl_product 
+			 	where rownum<=#{pageNum}*#{amount} and pkind = 'juice') 
+			where rn>(#{pageNum}-1)*#{amount}
+		]]>
+ 	</select>
+ 	<select id="getListWithPagingDri" resultType="com.spring.domain.ShopVO">
+ 		<![CDATA[
+			select pid, pname, pkind, pcontent, pprice, pimg
+			from (select /*+ INDEX_DESC(tbl_product pk_product)*/
+			rownum rn, pid, pname, pkind, pcontent, pprice, pimg
+			from tbl_product 
+			 where rownum<=#{pageNum}*#{amount} and pkind = 'dried') 
+			 where rn>(#{pageNum}-1)*#{amount}
+		]]>
+ 	</select>
+ 	<select id="getTotalCount" resultType="int">
+ 		select count(*) from tbl_product where pid > 0
+ 	</select>
+ 	<select id="getTotalCountVege" resultType="int">
+ 		select count(*) from tbl_product where pid > 0 and pkind = 'vegetable'
+ 	</select>
+ 	<select id="getTotalCountFru" resultType="int">
+ 		select count(*) from tbl_product where pid > 0 and pkind = 'fruit'
+ 	</select>
+ 	<select id="getTotalCountJui" resultType="int">
+ 		select count(*) from tbl_product where pid > 0	and pkind = 'juice'
+ 	</select>
+ 	<select id="getTotalCountDri" resultType="int">
+ 		select count(*) from tbl_product where pid > 0	and pkind = 'dried'
+ 	</select>
+ 	
+ 	<insert id="insert">
+ 		insert into tbl_cart values(seq_cart.nextval, #{pid}, #{pname}, #{pprice}, #{pcontent}, #{pimg}, #{count})
+ 	</insert>
+ 	
+ 	<insert id="insertSelectKey">
+ 		<selectKey keyProperty="cno" order="BEFORE" resultType="long">
+ 			select seq_cart.nextval from dual
+ 		</selectKey>
+ 		
+ 		insert into tbl_cart 
+ 			values(#{cno}, #{pid}, #{pname}, #{pprice}, #{pcontent}, #{pimg}, #{count})
+ 	</insert>
+ 	
+ 	<insert id="insertWish">
+ 		insert into tbl_wishlist values(seq_wishlist.nextval, #{pid}, #{pname}, #{pprice}, #{pcontent}, #{pimg})
+ 	</insert>
+ 	
+ 	<insert id="insertSelectKeyWish">
+ 		<selectKey keyProperty="wno" order="BEFORE" resultType="long">
+ 			select seq_cart.nextval from dual
+ 		</selectKey>
+ 		
+ 		insert into tbl_wishlist 
+ 			values(#{wno}, #{pid}, #{pname}, #{pprice}, #{pcontent}, #{pimg})
+ 	</insert>
+ 	<select id="getWishListPid" resultType="long">
+ 		select pid from tbl_wishlist
+ 	</select>
+ </mapper>
